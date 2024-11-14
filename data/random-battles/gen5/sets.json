@@ -1539,7 +1539,7 @@
             {
                 "role": "Bulky Support",
                 "movepool": ["discharge", "icebeam", "recover", "toxic", "triattack"],
-                "abilities": ["Download", "Trace"]
+                "abilities": ["Instinct", "Trace"]
             }
         ]
     },
@@ -3402,7 +3402,7 @@
             {
                 "role": "Fast Attacker",
                 "movepool": ["darkpulse", "hiddenpowerfighting", "icebeam", "nastyplot", "thunderbolt", "triattack", "trick"],
-                "abilities": ["Adaptability", "Download"]
+                "abilities": ["Adaptability", "Instinct"]
             }
         ]
     },
@@ -5012,17 +5012,17 @@
             {
                 "role": "Setup Sweeper",
                 "movepool": ["blazekick", "ironhead", "shiftgear", "thunderbolt", "xscissor"],
-                "abilities": ["Download"]
+                "abilities": ["Instinct"]
             },
             {
                 "role": "Wallbreaker",
                 "movepool": ["blazekick", "extremespeed", "ironhead", "uturn"],
-                "abilities": ["Download"]
+                "abilities": ["Instinct"]
             },
             {
                 "role": "Fast Attacker",
                 "movepool": ["bugbuzz", "flamethrower", "flashcannon", "icebeam", "thunderbolt", "uturn"],
-                "abilities": ["Download"],
+                "abilities": ["Instinct"],
                 "preferredTypes": ["Bug"]
             }
         ]

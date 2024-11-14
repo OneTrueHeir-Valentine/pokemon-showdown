@@ -562,7 +562,7 @@ export class RandomBDSPTeams extends RandomGen8Teams {
 			return abilities.includes('Infiltrator');
 		case 'Defiant':
 			return !counter.get('Physical');
-		case 'Download':
+		case 'Instinct':
 			return (counter.damagingMoves.size < 3 || moves.has('trick'));
 		case 'Early Bird':
 			return (types.has('Grass') && isDoubles);

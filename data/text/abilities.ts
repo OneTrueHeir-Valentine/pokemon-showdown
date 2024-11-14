@@ -32,8 +32,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	analytic: {
 		name: "Analytic",
-		desc: "The power of this Pokemon's move is multiplied by 1.3 if it is the last to move in a turn. Does not affect Doom Desire and Future Sight.",
-		shortDesc: "This Pokemon's attacks have 1.3x power if it is the last to move in a turn.",
+		desc: "The power of this Pokemon's move is multiplied by 1.6 if it is the last to move in a turn. Does not affect Doom Desire and Future Sight.",
+		shortDesc: "This Pokemon's attacks have 1.6x power if it is the last to move in a turn.",
 	},
 	angerpoint: {
 		name: "Anger Point",
@@ -140,7 +140,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	battery: {
 		name: "Battery",
-		shortDesc: "This Pokemon's allies have the power of their special attacks multiplied by 1.3.",
+		shortDesc: "This Pokemon and its allies have the power of their special attacks multiplied by 1.5.",
 	},
 	battlearmor: {
 		name: "Battle Armor",
@@ -170,8 +170,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	berserk: {
 		name: "Berserk",
-		desc: "When this Pokemon has more than 1/2 its maximum HP and takes damage from an attack bringing it to 1/2 or less of its maximum HP, its Special Attack is raised by 1 stage. This effect applies after all hits from a multi-hit move. This effect is prevented if the move had a secondary effect removed by the Sheer Force Ability.",
-		shortDesc: "This Pokemon's Sp. Atk is raised by 1 when it reaches 1/2 or less of its max HP.",
+		desc: "When this Pokemon has more than 1/2 its maximum HP and takes damage from an attack bringing it to 1/2 or less of its maximum HP, its Special Attack is raised by 2 stages and speed by 1. This effect applies after all hits from a multi-hit move. This effect is prevented if the move had a secondary effect removed by the Sheer Force Ability.",
+		shortDesc: "This Pokemon's Sp. Atk is raised by 2 and Speed by 1 when it reaches 1/2 or less of its max HP.",
 	},
 	bigpecks: {
 		name: "Big Pecks",
@@ -179,12 +179,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	blaze: {
 		name: "Blaze",
-		desc: "When this Pokemon has 1/3 or less of its maximum HP, rounded down, its offensive stat is multiplied by 1.5 while using a Fire-type attack.",
-		shortDesc: "At 1/3 or less of its max HP, this Pokemon's offensive stat is 1.5x with Fire attacks.",
-		gen4: {
-			desc: "When this Pokemon has 1/3 or less of its maximum HP, rounded down, its Fire-type attacks have their power multiplied by 1.5.",
-			shortDesc: "At 1/3 or less of its max HP, this Pokemon's Fire-type attacks have 1.5x power.",
-		},
+		desc: "This Pokemon has its offensive stat multiplied by 1.5 while using a Fire-type attack and defensive stat multiplied by 1.5 while receiving a Fire-type attack.",
+		shortDesc: "This Pokemon's offensive stat is 1.5x with Fire attacks and defensive stat 1.5x against Fire attacks.",
 	},
 	bulletproof: {
 		name: "Bulletproof",
@@ -192,10 +188,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	cheekpouch: {
 		name: "Cheek Pouch",
-		desc: "If this Pokemon eats a held Berry, it restores 1/3 of its maximum HP, rounded down, in addition to the Berry's effect. This effect can also activate after the effects of Bug Bite, Fling, Pluck, Stuff Cheeks, and Teatime if the eaten Berry had an effect on this Pokemon.",
-		shortDesc: "If this Pokemon eats a Berry, it restores 1/3 of its max HP after the Berry's effect.",
+		desc: "If this Pokemon eats a held Berry, it restores 1/2 of its maximum HP, rounded down, in addition to the Berry's effect. This effect can also activate after the effects of Bug Bite, Fling, Pluck, Stuff Cheeks, and Teatime if the eaten Berry had an effect on this Pokemon.",
+		shortDesc: "If this Pokemon eats a Berry, it restores 1/2 of its max HP after the Berry's effect.",
 		gen7: {
-			desc: "If this Pokemon eats a held Berry, it restores 1/3 of its maximum HP, rounded down, in addition to the Berry's effect. This effect can also activate after the effects of Bug Bite, Fling, and Pluck if the eaten Berry has an effect on this Pokemon.",
+			desc: "If this Pokemon eats a held Berry, it restores 1/2 of its maximum HP, rounded down, in addition to the Berry's effect. This effect can also activate after the effects of Bug Bite, Fling, and Pluck if the eaten Berry has an effect on this Pokemon.",
 		},
 	},
 	chillingneigh: {
@@ -377,8 +373,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		block: "  Its disguise served it as a decoy!",
 		transform: "[POKEMON]'s disguise was busted!",
 	},
-	download: {
-		name: "Download",
+	Instinct: {
+		name: "Instinct",
 		desc: "On switch-in, this Pokemon's Attack or Special Attack is raised by 1 stage based on the weaker combined defensive stat of all opposing Pokemon. Attack is raised if their Defense is lower, and Special Attack is raised if their Special Defense is the same or lower.",
 		shortDesc: "On switch-in, Attack or Sp. Atk is raised 1 stage based on the foes' weaker Defense.",
 	},
@@ -815,12 +811,17 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	ironfist: {
 		name: "Iron Fist",
-		desc: "This Pokemon's punch-based attacks have their power multiplied by 1.2.",
-		shortDesc: "This Pokemon's punch-based attacks have 1.2x power. Sucker Punch is not boosted.",
+		desc: "This Pokemon's punch-based attacks have their power multiplied by 1.5.",
+		shortDesc: "This Pokemon's punch-based attacks have 1.5x power.",
 	},
 	justified: {
 		name: "Justified",
 		shortDesc: "This Pokemon's Attack is raised by 1 stage after it is damaged by a Dark-type move.",
+	},
+	Kaiju: {
+		name: "Kaiju",
+		desc: "Boosts the power of Dragon Type moves used by you by 50%. Decreases the damage taken by Dragon Type moves by 50%",
+		shortDesc: "Gain STAB and Resistance towards the Dragon Type",
 	},
 	keeneye: {
 		name: "Keen Eye",
@@ -1574,10 +1575,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	serenegrace: {
 		name: "Serene Grace",
-		desc: "This Pokemon's moves have their secondary effect chance doubled. This effect stacks with the Rainbow effect, except for secondary effects that cause the target to flinch.",
-		shortDesc: "This Pokemon's moves have their secondary effect chance doubled.",
+		desc: "This Pokemon's moves have their secondary effect chance increased by 50%. This effect stacks with the Rainbow effect, except for secondary effects that cause the target to flinch.",
+		shortDesc: "This Pokemon's moves have their secondary effect chance increased by 50%.",
 		gen4: {
-			desc: "This Pokemon's moves have their secondary effect chance doubled.",
+			desc: "This Pokemon's moves have their secondary effect chance increased by 50%.",
 		},
 	},
 	shadowshield: {

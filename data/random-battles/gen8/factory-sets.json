@@ -4982,7 +4982,7 @@
 			"sets": [{
 				"species": "Porygon",
 				"item": ["Choice Scarf"],
-				"ability": ["Download"],
+				"ability": ["Instinct"],
 				"evs": {"def": 36, "spa": 236, "spe": 196},
 				"ivs": {"atk": 0},
 				"nature": "Timid",
@@ -4990,7 +4990,7 @@
 			}, {
 				"species": "Porygon",
 				"item": ["Choice Scarf"],
-				"ability": ["Download"],
+				"ability": ["Instinct"],
 				"evs": {"def": 36, "spa": 236, "spe": 196},
 				"ivs": {"atk": 0},
 				"nature": "Timid",
@@ -4999,7 +4999,7 @@
 			}, {
 				"species": "Porygon",
 				"item": ["Eviolite"],
-				"ability": ["Download"],
+				"ability": ["Instinct"],
 				"evs": {"def": 36, "spa": 236, "spe": 196},
 				"ivs": {"atk": 0},
 				"nature": "Modest",
@@ -5007,7 +5007,7 @@
 			}, {
 				"species": "Porygon",
 				"item": ["Berry Juice"],
-				"ability": ["Download"],
+				"ability": ["Instinct"],
 				"evs": {"def": 36, "spa": 236, "spe": 196},
 				"ivs": {"atk": 0},
 				"nature": "Modest",

@@ -5,12 +5,12 @@ const common = require('./../../common');
 
 let battle;
 
-describe('Download', () => {
+describe('Instinct', () => {
 	afterEach(() => battle.destroy());
 
 	it('should boost based on which defensive stat is higher', () => {
 		battle = common.createBattle([[
-			{species: 'porygon', moves: ['sleeptalk'], ability: 'download'},
+			{species: 'porygon', moves: ['sleeptalk'], ability: 'Instinct'},
 			{species: 'furret', moves: ['sleeptalk']},
 		], [
 			{species: 'stonjourner', moves: ['sleeptalk']},
@@ -24,7 +24,7 @@ describe('Download', () => {
 
 	it('should boost Special Attack if both stats are tied', () => {
 		battle = common.createBattle([[
-			{species: 'porygon', moves: ['sleeptalk'], ability: 'download'},
+			{species: 'porygon', moves: ['sleeptalk'], ability: 'Instinct'},
 		], [
 			{species: 'mew', moves: ['sleeptalk']},
 		]]);
@@ -34,7 +34,7 @@ describe('Download', () => {
 
 	it('should boost based on the total of both foes in a Double Battle', () => {
 		battle = common.createBattle({gameType: 'doubles'}, [[
-			{species: 'porygon', moves: ['sleeptalk'], ability: 'download'},
+			{species: 'porygon', moves: ['sleeptalk'], ability: 'Instinct'},
 			{species: 'blissey', moves: ['sleeptalk']},
 		], [
 			{species: 'blissey', level: 1, moves: ['sleeptalk']},
@@ -47,7 +47,7 @@ describe('Download', () => {
 	it('should trigger even if the foe is behind a Substitute', () => {
 		battle = common.createBattle([[
 			{species: 'furret', moves: ['sleeptalk']},
-			{species: 'porygon', ability: 'download', moves: ['sleeptalk']},
+			{species: 'porygon', ability: 'Instinct', moves: ['sleeptalk']},
 		], [
 			{species: 'blissey', moves: ['substitute']},
 		]]);
@@ -60,7 +60,7 @@ describe('Download', () => {
 		it('should not trigger if the foe is behind a Substitute', () => {
 			battle = common.gen(4).createBattle([[
 				{species: 'furret', moves: ['sleeptalk']},
-				{species: 'porygon', ability: 'download', moves: ['sleeptalk']},
+				{species: 'porygon', ability: 'Instinct', moves: ['sleeptalk']},
 			], [
 				{species: 'ampharos', moves: ['substitute']},
 			]]);
@@ -74,7 +74,7 @@ describe('Download', () => {
 			battle = common.gen(4).createBattle({gameType: 'doubles'}, [[
 				{species: 'furret', moves: ['sleeptalk']},
 				{species: 'ampharos', moves: ['sleeptalk']},
-				{species: 'porygon', ability: 'download', moves: ['sleeptalk']},
+				{species: 'porygon', ability: 'Instinct', moves: ['sleeptalk']},
 			], [
 				{species: 'blissey', moves: ['substitute']},
 				{species: 'furret', moves: ['sleeptalk', 'substitute']},

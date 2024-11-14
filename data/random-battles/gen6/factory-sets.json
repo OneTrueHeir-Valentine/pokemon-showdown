@@ -729,7 +729,7 @@
         {
           "species": "Genesect",
           "item": "Choice Scarf",
-          "ability": "Download",
+          "ability": "Instinct",
           "evs": {"hp": 0, "atk": 248, "def": 0, "spa": 8, "spd": 0, "spe": 252},
           "nature": "Hasty",
           "moves": [["U-turn"], ["Iron Head"], ["Explosion"], ["Ice Beam"]]

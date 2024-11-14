@@ -82,8 +82,13 @@ export const Tags: {[id: IDEntry]: TagData} = {
 	},
 	fist: {
 		name: "Fist",
-		desc: "Boosted 1.2x by Iron Fist.",
+		desc: "Boosted 1.5x by Iron Fist.",
 		moveFilter: move => 'punch' in move.flags,
+	},
+	kick: {
+		name: "Kick",
+		desc: "Boosted 1.5x by Iron Leg.",
+		moveFilter: move => 'kick' in move.flags,
 	},
 	pulse: {
 		name: "Pulse",

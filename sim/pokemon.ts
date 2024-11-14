@@ -572,7 +572,7 @@ export class Pokemon {
 		// base stat
 		let stat = this.storedStats[statName];
 
-		// Download ignores Wonder Room's effect, but this results in
+		// Instinct ignores Wonder Room's effect, but this results in
 		// stat stages being calculated on the opposite defensive stat
 		if (unmodified && 'wonderroom' in this.battle.field.pseudoWeather) {
 			if (statName === 'def') {

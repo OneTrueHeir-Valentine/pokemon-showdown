@@ -1234,16 +1234,20 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	belch: {
 		num: 562,
-		accuracy: 90,
-		basePower: 120,
+		accuracy: 95,
+		basePower: 60,
+		basePowerCallback(pokemon, target, move) {
+			if (!pokemon.ateBerry) {
+				this.debug("BP doubled for ateBerry");
+				return move.basePower * 2;
+			}
+			return move.basePower;
+		},
 		category: "Special",
 		name: "Belch",
-		pp: 10,
+		pp: 15,
 		priority: 0,
 		flags: {protect: 1, failmefirst: 1, nosleeptalk: 1, noassist: 1, failcopycat: 1, failmimic: 1, failinstruct: 1},
-		onDisableMove(pokemon) {
-			if (!pokemon.ateBerry) pokemon.disableMove('belch');
-		},
 		secondary: null,
 		target: "normal",
 		type: "Poison",
@@ -6800,7 +6804,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Giga Impact",
 		pp: 5,
 		priority: 0,
-		flags: {contact: 1, recharge: 1, protect: 1, mirror: 1, metronome: 1},
+		flags: {contact: 1, recharge: 1, mirror: 1, metronome: 1},
 		self: {
 			volatileStatus: 'mustrecharge',
 		},
@@ -9427,7 +9431,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Hyper Beam",
 		pp: 5,
 		priority: 0,
-		flags: {recharge: 1, protect: 1, mirror: 1, metronome: 1},
+		flags: {recharge: 1, mirror: 1, metronome: 1},
 		self: {
 			volatileStatus: 'mustrecharge',
 		},
@@ -11903,7 +11907,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {snatch: 1, metronome: 1},
 		boosts: {
-			atk: 1,
+			spa: 1,
+			spe: 1,
 		},
 		secondary: null,
 		target: "self",
@@ -16713,7 +16718,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {snatch: 1, metronome: 1},
 		boosts: {
-			atk: 1,
+			atk: 2,
 		},
 		secondary: null,
 		target: "self",
@@ -18494,7 +18499,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		secondary: null,
 		target: "foeSide",
-		type: "Rock",
+		type: "Normal",
 		zMove: {boost: {def: 1}},
 		contestType: "Cool",
 	},
@@ -19399,7 +19404,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {snatch: 1, dance: 1, metronome: 1},
 		boosts: {
-			atk: 2,
+			atk: 3,
 		},
 		secondary: null,
 		target: "self",

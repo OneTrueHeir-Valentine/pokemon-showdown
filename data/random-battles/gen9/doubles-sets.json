@@ -1406,19 +1406,19 @@
             {
                 "role": "Doubles Support",
                 "movepool": ["Ice Beam", "Recover", "Thunderbolt", "Trick Room"],
-                "abilities": ["Download"],
+                "abilities": ["Instinct"],
                 "teraTypes": ["Electric", "Ghost"]
             },
             {
                 "role": "Doubles Bulky Attacker",
                 "movepool": ["Icy Wind", "Recover", "Thunderbolt", "Tri Attack"],
-                "abilities": ["Download"],
+                "abilities": ["Instinct"],
                 "teraTypes": ["Electric", "Ghost"]
             },
             {
                 "role": "Tera Blast user",
                 "movepool": ["Recover", "Shadow Ball", "Tera Blast", "Trick Room"],
-                "abilities": ["Download"],
+                "abilities": ["Instinct"],
                 "teraTypes": ["Fairy", "Fighting"]
             }
         ]

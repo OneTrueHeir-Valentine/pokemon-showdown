@@ -683,7 +683,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onSourceModifyAccuracy(accuracy) {
 			if (typeof accuracy !== 'number') return;
 			this.debug('compoundeyes - enhancing accuracy');
-			return this.chainModify([5325, 4096]);
+			return this.chainModify(1.3);
 		},
 		onModifyMovePriority: -2,
 		onModifyMove(move) {
@@ -1042,7 +1042,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 209,
 	},
-	instinct: {
+	Instinct: {
 		onStart(pokemon) {
 			let totaldef = 0;
 			let totalspd = 0;
@@ -1630,7 +1630,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {},
 		name: "Gluttony",
-		rating: 3.5,
+		rating: 3,
 		num: 82,
 	},
 	goodasgold: {
@@ -2265,6 +2265,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 154,
 	},
+	Kaiju: {
 		Kaiju: {
 		onSourceModifyAtkPriority: 5,
 		onSourceModifyAtk(atk, attacker, defender, move) {
@@ -2291,7 +2292,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		flags: {},
 		name: "Kaiju",
 		rating: 3.5,
-		num: 279,
+		num: 200,
 	},
 	keeneye: {
 		onTryBoost(boost, target, source, effect) {
@@ -2574,7 +2575,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				return this.chainModify(1.5);
 			}
 		},
-		onModifySpDPriority: 6,
+		onModifyDefPriority: 6,
 		onModifySpD(spd, pokemon) {
 			if (pokemon.status) {
 				return this.chainModify(1.5);

@@ -32,16 +32,9 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 			// Paralysis occurs after all other Speed modifiers, so evaluate all modifiers up to this point first
 			spe = this.finalModify(spe);
 			if (!pokemon.hasAbility('quickfeet')) {
-				spe = Math.floor(spe * 50 / 100);
+				spe = Math.floor(spe * 25 / 100);
 			}
 			return spe;
-		},
-		onBeforeMovePriority: 1,
-		onBeforeMove(pokemon) {
-			if (this.randomChance(1, 4)) {
-				this.add('cant', pokemon, 'par');
-				return false;
-			}
 		},
 	},
 	slp: {
@@ -56,7 +49,7 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 				this.add('-status', target, 'slp');
 			}
 			// 1-3 turns
-			this.effectState.startTime = this.random(2, 5);
+			this.effectState.startTime = this.random(2, 2);
 			this.effectState.time = this.effectState.startTime;
 
 			if (target.removeVolatile('nightmare')) {
@@ -96,7 +89,7 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		onBeforeMovePriority: 10,
 		onBeforeMove(pokemon, target, move) {
 			if (move.flags['defrost']) return;
-			if (this.randomChance(1, 5)) {
+			if (this.randomChance(1, 1)) {
 				pokemon.cureStatus();
 				return;
 			}

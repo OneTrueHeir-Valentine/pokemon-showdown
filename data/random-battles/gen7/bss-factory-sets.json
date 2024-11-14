@@ -2262,7 +2262,7 @@
 		}, {
 			"species": "Porygon2",
 			"item": "Eviolite",
-			"ability": "Download",
+			"ability": "Instinct",
 			"evs": {"hp": 244, "def": 204, "spd": 60},
 			"ivs": {"atk": 0},
 			"nature": "Bold",
@@ -2270,7 +2270,7 @@
 		}, {
 			"species": "Porygon2",
 			"item": "Eviolite",
-			"ability": "Download",
+			"ability": "Instinct",
 			"evs": {"hp": 244, "spa": 252, "spd": 12},
 			"ivs": {"atk": 0, "spe": 0},
 			"nature": "Quiet",

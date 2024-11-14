@@ -13887,7 +13887,7 @@
 			"sets": [{
 				"species": "Porygon2",
 				"item": ["Eviolite"],
-				"ability": ["Download"],
+				"ability": ["Instinct"],
 				"evs": {"hp": 248, "def": 252, "spd": 8},
 				"nature": "Bold",
 				"moves": [["Recover"], ["Ice Beam"], ["Discharge"], ["Hidden Power Fire"]]

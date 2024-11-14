@@ -72,7 +72,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 			}
 		},
 	},
-	download: {
+	Instinct: {
 		inherit: true,
 		onStart(pokemon) {
 			let totaldef = 0;

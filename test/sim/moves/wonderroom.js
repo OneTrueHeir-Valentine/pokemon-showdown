@@ -48,10 +48,10 @@ describe('Wonder Room', function () {
 		assert.bounded(damage, [100, 118]);
 	});
 
-	it(`should be ignored by Download when determining raw stats, but not stat stage changes`, function () {
+	it(`should be ignored by Instinct when determining raw stats, but not stat stage changes`, function () {
 		battle = common.createBattle([[
 			{species: 'Wynaut', moves: ['wonderroom']},
-			{species: 'Porygon', ability: 'download', moves: ['sleeptalk']},
+			{species: 'Porygon', ability: 'Instinct', moves: ['sleeptalk']},
 		], [
 			{species: 'Venusaur', moves: ['sleeptalk', 'amnesia']},
 		]]);
@@ -59,7 +59,7 @@ describe('Wonder Room', function () {
 		battle.makeChoices();
 		battle.makeChoices('switch porygon', 'auto');
 		const porygon = battle.p1.active[0];
-		assert.statStage(porygon, 'atk', 1); // Download is ignoring Wonder Room, so it's comparing raw Def vs. Sp. Def
+		assert.statStage(porygon, 'atk', 1); // Instinct is ignoring Wonder Room, so it's comparing raw Def vs. Sp. Def
 		battle.makeChoices('switch wynaut', 'move amnesia');
 		battle.makeChoices('switch porygon', 'auto');
 		assert.statStage(porygon, 'spa', 1); // Wonder Room is applying the +2 Sp. Def to Venusaur's Def

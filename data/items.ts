@@ -3036,8 +3036,12 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	leftovers: {
 		name: "Leftovers",
 		spritenum: 242,
+		isBerry: true,
 		fling: {
 			basePower: 10,
+		},
+		onTryEatItem(item, pokemon) {
+			if (!this.runEvent('TryHeal', pokemon, null, this.effect, pokemon.baseMaxhp / 4)) return false;
 		},
 		onResidualOrder: 5,
 		onResidualSubOrder: 4,

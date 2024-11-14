@@ -203,7 +203,7 @@
       {
         "species": "Porygon2",
         "item": ["Eviolite"],
-        "ability": ["Download"],
+        "ability": ["Instinct"],
         "evs": {"hp": 244, "spa": 252, "spd": 12},
         "nature": "Modest",
         "ivs": {"atk": 0},
@@ -212,7 +212,7 @@
       {
         "species": "Porygon2",
         "item": ["Eviolite"],
-        "ability": ["Download"],
+        "ability": ["Instinct"],
         "evs": {"hp": 244, "atk": 28, "def": 172, "spa": 60, "spd": 4},
         "nature": "Quiet",
         "moves": [["Hyper Beam"], ["Giga Impact"], ["Ice Beam"], ["Shadow Ball"]]

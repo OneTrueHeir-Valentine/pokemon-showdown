@@ -34,7 +34,7 @@ describe('Burning Jealousy', function () {
 		battle = common.createBattle([[
 			{species: 'Wynaut', moves: ['burningjealousy']},
 		], [
-			{species: 'Porygon', ability: 'download', moves: ['sleeptalk']},
+			{species: 'Porygon', ability: 'instinct', moves: ['sleeptalk']},
 		]]);
 		battle.makeChoices();
 		assert.equal(battle.p2.active[0].status, 'brn');
@@ -44,8 +44,8 @@ describe('Burning Jealousy', function () {
 		battle = common.createBattle([[
 			{species: 'Wynaut', moves: ['burningjealousy']},
 		], [
-			{species: 'Porygon', ability: 'download', moves: ['memento']},
-			{species: 'Porygon2', ability: 'download', moves: ['sleeptalk']},
+			{species: 'Porygon', ability: 'Instinct', moves: ['memento']},
+			{species: 'Porygon2', ability: 'Instinct', moves: ['sleeptalk']},
 		]]);
 		battle.makeChoices();
 		battle.makeChoices();

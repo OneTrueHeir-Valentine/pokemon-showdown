@@ -204,7 +204,7 @@ describe('Choice parser', function () {
 				battle = common.createBattle({gameType: 'doubles'});
 				battle.setPlayer('p1', {team: [
 					{species: "Porygon-Z", ability: 'adaptability', item: 'normaliumz', moves: ['conversion', 'conversion2']},
-					{species: "Porygon", ability: 'download', moves: ['conversion', 'conversion2']},
+					{species: "Porygon", ability: 'instinct', moves: ['conversion', 'conversion2']},
 				]});
 				battle.setPlayer('p2', {team: [
 					{species: "Gengar", ability: 'cursedbody', moves: ['lick']},

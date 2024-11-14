@@ -29,7 +29,7 @@ describe('Knock Off', function () {
 	it('should not remove plates from Arceus', function () {
 		battle = common.createBattle();
 		battle.setPlayer('p1', {team: [{species: "Mew", ability: 'synchronize', moves: ['knockoff']}]});
-		battle.setPlayer('p2', {team: [{species: "Arceus", ability: 'download', item: 'flameplate', moves: ['swordsdance']}]});
+		battle.setPlayer('p2', {team: [{species: "Arceus", ability: 'Instinct', item: 'flameplate', moves: ['swordsdance']}]});
 		battle.makeChoices('move knockoff', 'move swordsdance');
 		assert.equal(battle.p2.active[0].item, 'flameplate');
 	});
@@ -37,7 +37,7 @@ describe('Knock Off', function () {
 	it('should not remove drives from Genesect', function () {
 		battle = common.createBattle();
 		battle.setPlayer('p1', {team: [{species: "Mew", ability: 'synchronize', moves: ['knockoff']}]});
-		battle.setPlayer('p2', {team: [{species: "Genesect", ability: 'download', item: 'dousedrive', moves: ['shiftgear']}]});
+		battle.setPlayer('p2', {team: [{species: "Genesect", ability: 'Instinct', item: 'dousedrive', moves: ['shiftgear']}]});
 		battle.makeChoices('move knockoff', 'move shiftgear');
 		assert.equal(battle.p2.active[0].item, 'dousedrive');
 	});

@@ -281,7 +281,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		inherit: true,
 		rating: 3.5,
 	},
-	download: {
+	Instinct: {
 		inherit: true,
 		rating: 3.5,
 	},

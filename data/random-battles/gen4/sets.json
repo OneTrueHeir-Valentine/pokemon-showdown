@@ -1480,7 +1480,7 @@
             {
                 "role": "Bulky Support",
                 "movepool": ["discharge", "icebeam", "recover", "toxic", "triattack"],
-                "abilities": ["Download", "Trace"]
+                "abilities": ["Instinct", "Trace"]
             }
         ]
     },
@@ -3373,7 +3373,7 @@
             {
                 "role": "Fast Attacker",
                 "movepool": ["darkpulse", "hiddenpowerfighting", "icebeam", "nastyplot", "thunderbolt", "triattack", "trick"],
-                "abilities": ["Adaptability", "Download"]
+                "abilities": ["Adaptability", "Instinct"]
             }
         ]
     },

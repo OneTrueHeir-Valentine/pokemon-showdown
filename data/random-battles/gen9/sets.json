@@ -1640,13 +1640,13 @@
             {
                 "role": "Bulky Support",
                 "movepool": ["Discharge", "Ice Beam", "Recover", "Tri Attack"],
-                "abilities": ["Download"],
+                "abilities": ["Instinct"],
                 "teraTypes": ["Electric", "Ghost", "Poison"]
             },
             {
                 "role": "Tera Blast user",
                 "movepool": ["Recover", "Shadow Ball", "Tera Blast", "Thunder Wave"],
-                "abilities": ["Download"],
+                "abilities": ["Instinct"],
                 "teraTypes": ["Fairy", "Fighting"]
             }
         ]
@@ -3144,7 +3144,7 @@
             {
                 "role": "Fast Attacker",
                 "movepool": ["Ice Beam", "Nasty Plot", "Shadow Ball", "Thunderbolt", "Tri Attack", "Trick"],
-                "abilities": ["Adaptability", "Download"],
+                "abilities": ["Adaptability", "Instinct"],
                 "teraTypes": ["Electric", "Ghost"]
             }
         ]

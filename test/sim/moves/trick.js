@@ -20,7 +20,7 @@ describe('Trick', function () {
 	it('should not take plates from Arceus', function () {
 		battle = common.createBattle();
 		battle.setPlayer('p1', {team: [{species: "Mew", ability: 'synchronize', moves: ['trick']}]});
-		battle.setPlayer('p2', {team: [{species: "Arceus", ability: 'download', item: 'flameplate', moves: ['swordsdance']}]});
+		battle.setPlayer('p2', {team: [{species: "Arceus", ability: 'Instinct', item: 'flameplate', moves: ['swordsdance']}]});
 		battle.makeChoices('move trick', 'move swordsdance');
 		assert.equal(battle.p2.active[0].item, 'flameplate');
 	});
@@ -28,7 +28,7 @@ describe('Trick', function () {
 	it('should not cause Arceus to gain a plate', function () {
 		battle = common.createBattle();
 		battle.setPlayer('p1', {team: [{species: "Mew", ability: 'synchronize', item: 'fistplate', moves: ['trick']}]});
-		battle.setPlayer('p2', {team: [{species: "Arceus", ability: 'download', moves: ['swordsdance']}]});
+		battle.setPlayer('p2', {team: [{species: "Arceus", ability: 'Instinct', moves: ['swordsdance']}]});
 		battle.makeChoices('move trick', 'move swordsdance');
 		assert.equal(battle.p2.active[0].item, '');
 	});
@@ -36,7 +36,7 @@ describe('Trick', function () {
 	it('should not remove drives from Genesect', function () {
 		battle = common.createBattle();
 		battle.setPlayer('p1', {team: [{species: "Mew", ability: 'synchronize', moves: ['trick']}]});
-		battle.setPlayer('p2', {team: [{species: "Genesect", ability: 'download', item: 'dousedrive', moves: ['shiftgear']}]});
+		battle.setPlayer('p2', {team: [{species: "Genesect", ability: 'Instinct', item: 'dousedrive', moves: ['shiftgear']}]});
 		battle.makeChoices('move trick', 'move shiftgear');
 		assert.equal(battle.p2.active[0].item, 'dousedrive');
 	});
@@ -44,7 +44,7 @@ describe('Trick', function () {
 	it('should not cause Genesect to gain a drive', function () {
 		battle = common.createBattle();
 		battle.setPlayer('p1', {team: [{species: "Mew", ability: 'synchronize', item: 'shockdrive', moves: ['trick']}]});
-		battle.setPlayer('p2', {team: [{species: "Genesect", ability: 'download', moves: ['shiftgear']}]});
+		battle.setPlayer('p2', {team: [{species: "Genesect", ability: 'Instinct', moves: ['shiftgear']}]});
 		battle.makeChoices('move trick', 'move shiftgear');
 		assert.equal(battle.p2.active[0].item, '');
 	});

@@ -289,7 +289,7 @@ describe('Neutralizing Gas', function () {
 
 	it(`should not reactivate abilities that were protected by Ability Shield`, function () {
 		battle = common.createBattle([[
-			{species: 'Porygon', ability: 'download', item: 'abilityshield', moves: ['sleeptalk']},
+			{species: 'Porygon', ability: 'Instinct', item: 'abilityshield', moves: ['sleeptalk']},
 		], [
 			{species: 'Weezing', ability: 'neutralizinggas', moves: ['sleeptalk']},
 			{species: 'Wynaut', moves: ['sleeptalk']},

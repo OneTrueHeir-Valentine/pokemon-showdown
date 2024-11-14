@@ -2116,13 +2116,13 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": ["Discharge", "Ice Beam", "Recover", "Tri Attack"],
-                "abilities": ["Download"],
+                "abilities": ["Instinct"],
                 "teraTypes": ["Electric", "Ghost", "Poison"]
             },
             {
                 "role": "Tera Blast user",
                 "movepool": ["Agility", "Recover", "Shadow Ball", "Tera Blast"],
-                "abilities": ["Download"],
+                "abilities": ["Instinct"],
                 "teraTypes": ["Fairy", "Fighting"]
             }
         ]
