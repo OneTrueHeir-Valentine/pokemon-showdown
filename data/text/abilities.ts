@@ -19,8 +19,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	aftermath: {
 		name: "Aftermath",
-		desc: "If this Pokemon is knocked out with a contact move, that move's user loses 1/4 of its maximum HP, rounded down. If any active Pokemon has the Damp Ability, this effect is prevented.",
-		shortDesc: "If this Pokemon is KOed with a contact move, that move's user loses 1/4 its max HP.",
+		desc: "If this Pokemon is knocked out with a contact move, that move's user loses 1/2 of its maximum HP, rounded down. If any active Pokemon has the Damp Ability, this effect is prevented.",
+		shortDesc: "If this Pokemon is KOed with a contact move, that move's user loses 1/2 its max HP.",
 
 		damage: "  [POKEMON] was hurt!",
 	},
@@ -373,7 +373,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		block: "  Its disguise served it as a decoy!",
 		transform: "[POKEMON]'s disguise was busted!",
 	},
-	Instinct: {
+	instinct: {
 		name: "Instinct",
 		desc: "On switch-in, this Pokemon's Attack or Special Attack is raised by 1 stage based on the weaker combined defensive stat of all opposing Pokemon. Attack is raised if their Defense is lower, and Special Attack is raised if their Special Defense is the same or lower.",
 		shortDesc: "On switch-in, Attack or Sp. Atk is raised 1 stage based on the foes' weaker Defense.",
