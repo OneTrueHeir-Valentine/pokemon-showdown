@@ -140,7 +140,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	battery: {
 		name: "Battery",
-		shortDesc: "This Pokemon and its allies have the power of their special attacks multiplied by 1.5.",
+		shortDesc: "This Pokemon and its allies have the power of their special attacks multiplied by 1.3.",
 	},
 	battlearmor: {
 		name: "Battle Armor",

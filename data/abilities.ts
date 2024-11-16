@@ -351,14 +351,14 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onAllyBasePower(basePower, attacker, defender, move) {
 			if (attacker !== this.effectState.target && move.category === 'Special') {
 				this.debug('Battery boost');
-				return this.chainModify(1.5);
+				return this.chainModify(1.35);
 			}
 		},
 		onBasePowerPriority: 22,
 		onBasePower(basePower, attacker, defender, move) {
 			if (attacker !== this.effectState.target && move.category === 'Special') {
 				this.debug('Battery boost');
-				return this.chainModify(1.5);
+				return this.chainModify(1.35);
 			}
 		},
 		flags: {},
