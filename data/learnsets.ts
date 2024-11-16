@@ -40853,7 +40853,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			psychoshift: ["7E", "6E"],
 			psychup: ["7M", "7L41", "6M", "6L41", "5M", "5L41", "4M", "4L41", "3T", "3L38"],
 			raindance: ["7M", "6M", "5M", "4M", "3M"],
-			rapidspin: ["7E", "6E", "5E"],
+			rapidspin: ["8M", "6E", "5E"],
 			recycle: ["7T", "6T", "5T", "4M"],
 			rest: ["7M", "6M", "5M", "4M", "3M"],
 			retaliate: ["6M", "5M"],

@@ -1502,9 +1502,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 10,
 		priority: 0,
 		flags: {
-			protect: 1, failencore: 1, failmefirst: 1, nosleeptalk: 1, noassist: 1,
-			failcopycat: 1, failmimic: 1, failinstruct: 1, nosketch: 1,
-		},
+			protect: 1, failencore: 1, failmefirst: 1, nosleeptalk: 1, noassist: 1, failcopycat: 1, failmimic: 1, failinstruct: 1, nosketch: 1, spin: 1},
 		secondary: {
 			chance: 30,
 			status: 'brn',
@@ -11994,7 +11992,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Mega Kick",
 		pp: 5,
 		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1, kick: 1, kick: 1},
+		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1, kick: 1},
 		secondary: null,
 		target: "normal",
 		type: "Normal",
@@ -15914,7 +15912,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Rolling Kick",
 		pp: 15,
 		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1, kick: 1},
+		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1, kick: 1, spin: 1},
 		secondary: {
 			chance: 30,
 			volatileStatus: 'flinch',
@@ -18539,7 +18537,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Steamroller",
 		pp: 20,
 		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1},
+		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1, spin: 1},
 		secondary: {
 			chance: 30,
 			volatileStatus: 'flinch',
