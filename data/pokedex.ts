@@ -16556,7 +16556,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		otherFormes: ["Enamorus-Therian"],
 		formeOrder: ["Enamorus", "Enamorus-Therian"],
 	},
-	enamorustherian: {10
+	enamorustherian: {
 		num: 905,
 		name: "Enamorus-Therian",
 		baseSpecies: "Enamorus",
