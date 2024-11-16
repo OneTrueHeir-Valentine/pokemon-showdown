@@ -863,8 +863,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 6,
 	},
 	dancer: {
-		flags: {},
-		name: "Dancer",
 		// implemented in runMove in scripts.js
 		onModifyPriority(priority, pokemon, target, move) {
 			if (move.flags['dance']) {
@@ -872,6 +870,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				return priority + 1;
 			}
 		},
+		flags: {},
+		name: "Dancer",
 		rating: 3.5,
 		num: 216,
 	},
@@ -1165,18 +1165,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	effectspore: {
 		onDamagingHit(damage, target, source, move) {
-			if (this.checkMoveMakesContact(move, source, target) && !source.status && source.runStatusImmunity('powder')) {
-				const r = this.random(100);
-				if (r < 22) {
-					source.setStatus('slp', target);
-				} else if (r < 42) {
-					source.setStatus('par', target);
-				} else if (r < 60) {
-					source.setStatus('psn', target);
-				}
-			}
-		},
-		onSourceDamagingHit(damage, target, source, move) {
 			if (this.checkMoveMakesContact(move, source, target) && !source.status && source.runStatusImmunity('powder')) {
 				const r = this.random(100);
 				if (r < 22) {
