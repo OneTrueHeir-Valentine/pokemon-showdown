@@ -10,12 +10,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	aerilate: {
 		name: "Aerilate",
-		desc: "This Pokemon's Normal-type moves become Flying-type moves and have their power multiplied by 1.2. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
-		shortDesc: "This Pokemon's Normal-type moves become Flying type and have 1.2x power.",
-		gen6: {
-			desc: "This Pokemon's Normal-type moves become Flying-type moves and have their power multiplied by 1.3. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
-			shortDesc: "This Pokemon's Normal-type moves become Flying type and have 1.3x power.",
-		},
+		desc: "This Pokemon's Normal-type moves become Flying-type moves and have their power multiplied by 1.3. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
+		shortDesc: "This Pokemon's Normal-type moves become Flying type and have 1.3x power.",
 	},
 	aftermath: {
 		name: "Aftermath",
@@ -48,8 +44,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	angershell: {
 		name: "Anger Shell",
-		desc: "When this Pokemon has more than 1/2 its maximum HP and takes damage from an attack bringing it to 1/2 or less of its maximum HP, its Attack, Special Attack, and Speed are raised by 1 stage, and its Defense and Special Defense are lowered by 1 stage. This effect applies after all hits from a multi-hit move. This effect is prevented if the move had a secondary effect removed by the Sheer Force Ability.",
-		shortDesc: "At 1/2 or less of this Pokemon's max HP: +1 Atk, Sp. Atk, Spe, and -1 Def, Sp. Def.",
+		desc: "When this Pokemon has more than 1/2 its maximum HP and takes damage from an attack bringing it to 1/2 or less of its maximum HP, its Attack & Special Attackare raised by 1 stage, Speed by 2 stages, and its Defense and Special Defense are lowered by 1 stage. This effect applies after all hits from a multi-hit move. This effect is prevented if the move had a secondary effect removed by the Sheer Force Ability.",
+		shortDesc: "At 1/2 or less of this Pokemon's max HP: +1 Atk, Sp. Atk; +2 Spe, and -1 Def, Sp. Def.",
 	},
 	anticipation: {
 		name: "Anticipation",
@@ -94,7 +90,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	aromaveil: {
 		name: "Aroma Veil",
 		desc: "This Pokemon and its allies cannot become affected by Attract, Disable, Encore, Heal Block, Taunt, or Torment.",
-		shortDesc: "Protects user/allies from Attract, Disable, Encore, Heal Block, Taunt, and Torment.",
+		shortDesc: "Protects user/allies from Attract, Disable, Encore, Heal Block, Imprison, Taunt, and Torment.",
 
 		block: "  [POKEMON] is protected by an aromatic veil!",
 	},
@@ -121,15 +117,15 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	baddreams: {
 		name: "Bad Dreams",
-		desc: "Causes opposing Pokemon to lose 1/8 of their maximum HP, rounded down, at the end of each turn if they are asleep.",
-		shortDesc: "Causes sleeping foes to lose 1/8 of their max HP at the end of each turn.",
+		desc: "Causes opposing Pokemon to lose 1/6 of their maximum HP, rounded down, at the end of each turn if they are asleep.",
+		shortDesc: "Causes sleeping foes to lose 1/6 of their max HP at the end of each turn.",
 		gen6: {
-			desc: "Causes adjacent opposing Pokemon to lose 1/8 of their maximum HP, rounded down, at the end of each turn if they are asleep.",
-			shortDesc: "Causes sleeping adjacent foes to lose 1/8 of their max HP at the end of each turn.",
+			desc: "Causes adjacent opposing Pokemon to lose 1/6 of their maximum HP, rounded down, at the end of each turn if they are asleep.",
+			shortDesc: "Causes sleeping adjacent foes to lose 1/6 of their max HP at the end of each turn.",
 		},
 		gen4: {
-			desc: "Causes opposing Pokemon to lose 1/8 of their maximum HP, rounded down, at the end of each turn if they are asleep.",
-			shortDesc: "Causes sleeping foes to lose 1/8 of their max HP at the end of each turn.",
+			desc: "Causes opposing Pokemon to lose 1/6 of their maximum HP, rounded down, at the end of each turn if they are asleep.",
+			shortDesc: "Causes sleeping foes to lose 1/6 of their max HP at the end of each turn.",
 		},
 
 		damage: "  [POKEMON] is tormented!",
@@ -170,12 +166,12 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	berserk: {
 		name: "Berserk",
-		desc: "When this Pokemon has more than 1/2 its maximum HP and takes damage from an attack bringing it to 1/2 or less of its maximum HP, its Special Attack is raised by 2 stages and speed by 1. This effect applies after all hits from a multi-hit move. This effect is prevented if the move had a secondary effect removed by the Sheer Force Ability.",
-		shortDesc: "This Pokemon's Sp. Atk is raised by 2 and Speed by 1 when it reaches 1/2 or less of its max HP.",
+		desc: "When this Pokemon has more than 1/2 its maximum HP and takes damage from an attack bringing it to 1/2 or less of its maximum HP, its Special Attack nd speed are raised by 1 stage. This effect applies after all hits from a multi-hit move. This effect is prevented if the move had a secondary effect removed by the Sheer Force Ability.",
+		shortDesc: "This Pokemon's Sp. Atk and Speed raised by 1 when it reaches 1/2 or less of its max HP.",
 	},
 	bigpecks: {
 		name: "Big Pecks",
-		shortDesc: "Prevents other Pokemon from lowering this Pokemon's Defense stat stage.",
+		shortDesc: "Prevents other Pokemon from lowering this Pokemon's Defense stat stage. If a stat is lowered by the opponent; increase Def by 2 stages.",
 	},
 	blaze: {
 		name: "Blaze",
@@ -246,7 +242,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	compoundeyes: {
 		name: "Compound Eyes",
-		shortDesc: "This Pokemon's moves have their accuracy multiplied by 1.3.",
+		shortDesc: "This Pokemon's moves have their accuracy multiplied by 1.3 & its moves have their secondary effect chance doubled.",
 	},
 	contrary: {
 		name: "Contrary",
@@ -268,8 +264,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	cottondown: {
 		name: "Cotton Down",
-		desc: "When this Pokemon is hit by an attack, the Speed of all other Pokemon on the field is lowered by 1 stage.",
-		shortDesc: "If this Pokemon is hit, it lowers the Speed of all other Pokemon on the field 1 stage.",
+		desc: "When this Pokemon is hit by an attack, the Speed of all other Pokemon on the field is lowered by 2 stages.",
+		shortDesc: "If this Pokemon is hit, it lowers the Speed of all other Pokemon on the field 2 stages.",
 	},
 	cudchew: {
 		name: "Cud Chew",
@@ -567,7 +563,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	galewings: {
 		name: "Gale Wings",
-		shortDesc: "If this Pokemon is at full HP, its Flying-type moves have their priority increased by 1.",
+		shortDesc: "Flying-type moves have their priority increased by 1.",
 		gen6: {
 			shortDesc: "This Pokemon's Flying-type moves have their priority increased by 1.",
 		},
@@ -825,11 +821,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	keeneye: {
 		name: "Keen Eye",
-		desc: "Prevents other Pokemon from lowering this Pokemon's accuracy stat stage. This Pokemon ignores a target's evasiveness stat stage.",
-		shortDesc: "This Pokemon's accuracy can't be lowered by others; ignores their evasiveness stat.",
-		gen5: {
-			desc: "Prevents other Pokemon from lowering this Pokemon's accuracy stat stage.",
-			shortDesc: "Prevents other Pokemon from lowering this Pokemon's accuracy stat stage.",
+		desc: "Prevents other Pokemon from lowering this Pokemon's accuracy stat stage. This Pokemon ignores a target's evasiveness stat stage. This Pokemon's critical hit ratio is raised by 1 stage. This Pokemon's moves have their accuracy multiplied by 1.3.",
+		shortDesc: "This Pokemon's critical hit ratio is raised by 1 stage, its accuracy is multiplied by 1.3, & it can't be lowered by others; ignores their evasiveness stat.",
 		},
 	},
 	klutz: {
@@ -1853,7 +1846,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	superluck: {
 		name: "Super Luck",
-		shortDesc: "This Pokemon's critical hit ratio is raised by 1 stage.",
+		shortDesc: "This Pokemon's critical hit ratio is raised by 2 stages.",
 	},
 	supersweetsyrup: {
 		name: "Supersweet Syrup",

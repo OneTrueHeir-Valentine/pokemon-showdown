@@ -15213,7 +15213,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Rain Dance",
 		pp: 5,
 		priority: 0,
-		flags: {metronome: 1},
+		flags: {metronome: 1, dance: 1},
 		weather: 'RainDance',
 		secondary: null,
 		target: "all",
