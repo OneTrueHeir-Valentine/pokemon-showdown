@@ -5885,7 +5885,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {protect: 1, mirror: 1, metronome: 1},
 		secondary: {
-			chance: 10,
+			chance: 30,
 			boosts: {
 				spd: -1,
 			},
@@ -12476,8 +12476,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	mirrorshot: {
 		num: 429,
-		accuracy: 85,
-		basePower: 65,
+		accuracy: 95,
+		basePower: 90,
 		category: "Special",
 		isNonstandard: "Past",
 		name: "Mirror Shot",
@@ -12485,9 +12485,11 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {protect: 1, mirror: 1, metronome: 1},
 		secondary: {
-			chance: 30,
-			boosts: {
-				accuracy: -1,
+			chance: 25,
+			self: {
+				boosts: {
+					atk: 1,
+				},
 			},
 		},
 		target: "normal",

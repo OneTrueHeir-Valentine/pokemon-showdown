@@ -830,7 +830,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	keeneye: {
 		name: "Keen Eye",
 		desc: "Prevents other Pokemon from lowering this Pokemon's accuracy stat stage. This Pokemon ignores a target's evasiveness stat stage. This Pokemon's critical hit ratio is raised by 1 stage. This Pokemon's moves have their accuracy multiplied by 1.3.",
-		shortDesc: "This Pokemon's critical hit ratio is raised by 1 stage, its accuracy is multiplied by 1.3, & it can't be lowered by others; ignores their evasiveness stat.",
+		shortDesc: "This Pokemon's crit stage +1, its accuracy * 1.3, & it can't be lowered by others; ignores evasion.",
 	},
 	klutz: {
 		name: "Klutz",
@@ -1691,7 +1691,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	sniper: {
 		name: "Sniper",
-		shortDesc: "If this Pokemon strikes with a critical hit, the damage is multiplied by 1.5.",
+		shortDesc: "If this Pokemon strikes with a critical hit, the damage is multiplied by 2.25.",
 	},
 	snowcloak: {
 		name: "Snow Cloak",

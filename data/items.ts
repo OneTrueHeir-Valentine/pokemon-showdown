@@ -473,7 +473,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onTryHeal(damage, target, source, effect) {
 			const heals = ['drain', 'leechseed', 'ingrain', 'aquaring', 'strengthsap'];
 			if (heals.includes(effect.id)) {
-				return this.chainModify([5324, 4096]);
+				return this.chainModify(2);
 			}
 		},
 		num: 296,
@@ -529,7 +529,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onResidualSubOrder: 4,
 		onResidual(pokemon) {
 			if (pokemon.hasType('Poison')) {
-				this.heal(pokemon.baseMaxhp / 16);
+				this.heal(pokemon.baseMaxhp / 8);
 			} else {
 				this.damage(pokemon.baseMaxhp / 8);
 			}
@@ -1717,7 +1717,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		onModifyDamage(damage, source, target, move) {
 			if (move && target.getMoveHitData(move).typeMod > 0) {
-				return this.chainModify([4915, 4096]);
+				return this.chainModify(1.25);
 			}
 		},
 		num: 268,
@@ -5208,7 +5208,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onAfterMoveSecondarySelfPriority: -1,
 		onAfterMoveSecondarySelf(pokemon, target, move) {
 			if (move.totalDamage && !pokemon.forceSwitchFlag) {
-				this.heal(move.totalDamage / 8, pokemon);
+				this.heal(move.totalDamage / 5, pokemon);
 			}
 		},
 		num: 253,
@@ -5638,7 +5638,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onResidualOrder: 28,
 		onResidualSubOrder: 3,
 		onResidual(pokemon) {
-			this.damage(pokemon.baseMaxhp / 8);
+			this.damage(pokemon.baseMaxhp / 4);
 		},
 		onHit(target, source, move) {
 			if (source && source !== target && !source.item && move && this.checkMoveMakesContact(move, source, target)) {
@@ -7200,7 +7200,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onSourceModifyAccuracyPriority: -2,
 		onSourceModifyAccuracy(accuracy) {
 			if (typeof accuracy === 'number') {
-				return this.chainModify([4505, 4096]);
+				return this.chainModify(1.25);
 			}
 		},
 		num: 265,
@@ -7301,7 +7301,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onSourceModifyAccuracy(accuracy, target) {
 			if (typeof accuracy === 'number' && !this.queue.willMove(target)) {
 				this.debug('Zoom Lens boosting accuracy');
-				return this.chainModify([4915, 4096]);
+				return this.chainModify(2);
 			}
 		},
 		num: 276,

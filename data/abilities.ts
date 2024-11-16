@@ -1178,7 +1178,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {},
 		name: "Effect Spore",
-		rating: 2,
+		rating: 3.5,
 		num: 27,
 	},
 	electricsurge: {
@@ -4409,7 +4409,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onModifyDamage(damage, source, target, move) {
 			if (target.getMoveHitData(move).crit) {
 				this.debug('Sniper boost');
-				return this.chainModify(1.5);
+				return this.chainModify(2.25);
 			}
 		},
 		flags: {},
@@ -4442,6 +4442,15 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Snow Warning",
 		rating: 4,
 		num: 117,
+	},
+	raininghail: {
+		onStart(source) {
+			this.field.setWeather('hail');
+		},
+		flags: {},
+		name: "Raining Hail",
+		rating: 4,
+		num: 280,
 	},
 	solarpower: {
 		onModifySpAPriority: 5,
