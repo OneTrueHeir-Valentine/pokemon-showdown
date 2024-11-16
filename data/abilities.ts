@@ -68,7 +68,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		onBasePowerPriority: 23,
 		onBasePower(basePower, pokemon, target, move) {
-			if (move.typeChangerBoosted === this.effect) return this.chainModify([4915, 4096]);
+			if (move.typeChangerBoosted === this.effect) return this.chainModify([5325, 4096]);
 		},
 		flags: {},
 		name: "Aerilate",
@@ -2468,12 +2468,12 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onModifyType(move, pokemon) {
 			if (move.flags['sound'] && !pokemon.volatiles['dynamax']) { // hardcode
 				move.type = 'Water';
-			},
+			}
+		},
 		onBasePowerPriority: 23,
 		onBasePower(basePower, pokemon, target, move) {
 			if (move.typeChangerBoosted === this.effect) return this.chainModify([5325, 4096]);
-		},
-		},
+			},
 		flags: {},
 		name: "Liquid Voice",
 		rating: 2.5,
