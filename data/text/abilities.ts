@@ -830,7 +830,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	keeneye: {
 		name: "Keen Eye",
 		desc: "Prevents other Pokemon from lowering this Pokemon's accuracy stat stage. This Pokemon ignores a target's evasiveness stat stage. This Pokemon's critical hit ratio is raised by 1 stage. This Pokemon's moves have their accuracy multiplied by 1.3.",
-		shortDesc: "This Pokemon's crit stage +1, its accuracy * 1.3, & it can't be lowered by others; ignores evasion.",
+		shortDesc: "Crit stage +1, accuracy * 1.3, & it can't be lowered by others; ignores evasion.",
 	},
 	klutz: {
 		name: "Klutz",
@@ -2249,6 +2249,21 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 
 		activate: "  [POKEMON] underwent a heroic transformation!",
 	},
+	solidlegs: {
+		name: "Solid Legs",
+		desc: "This Pokemon's kick-based attacks have their power multiplied by 1.5.",
+		shortDesc: "This Pokemon's kick-based attacks have 1.5x power.",
+	},
+	spintowin: {
+		name: "Spin To Win",
+		desc: "This Pokemon's spin-based attacks have their power multiplied by 1.5.",
+		shortDesc: "This Pokemon's spin-based attacks have 1.5x power.",
+	},
+	dizzy: {
+		name: "Dizzy",
+		desc: "Increase all stats by 1 stage when using or hit by a spin move",
+		shortDesc: "Increase all stats by 1 stage when using or hit by a spin move",
+	},
 
 	// CAP
 	mountaineer: {
@@ -2269,4 +2284,5 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 
 		activate: "  [POKEMON] extends [MOVE] by 2 turns!",
 	},
+
 };

@@ -5734,6 +5734,50 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 278,
 	},
+	solidlegs: {
+		onBasePowerPriority: 23,
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.flags['kick']) {
+				this.debug('Solid Legs boost');
+				return this.chainModify(1.5);
+			}
+		},
+		flags: {},
+		name: "Solid Legs",
+		rating: 3,
+		num: 279,
+	},
+	spintowin: {
+		onBasePowerPriority: 23,
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.flags['spin']) {
+				this.debug('Iron Fist boost');
+				return this.chainModify(1.5);
+			}
+		},
+		flags: {},
+		name: "Spin To Win",
+		rating: 3,
+		num: 280,
+	},
+	dizzy: {
+		onDamagingHit(damage, target, source, move) {
+			if (move.flags['spin']) {
+				this.debug('Dizzy boost');
+				this.boost({atk: 1, def: 1, spa: 1, spd: 1, spe: 1});
+			}
+		},
+		onSourceDamagingHit(damage, target, source, move) {
+			if (move.flags['spin']) {
+				this.debug('Dizzy boost');
+				this.boost({atk: 1, def: 1, spa: 1, spd: 1, spe: 1});
+			}
+		},
+		flags: {},
+		name: "Dizzy",
+		rating: 3,
+		num: 280,
+	},
 
 	// CAP
 	mountaineer: {
