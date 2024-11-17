@@ -75,6 +75,69 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 184,
 	},
+	telekinetic: {
+		onModifyTypePriority: -1,
+		onModifyType(move, pokemon) {
+			const noModifyType = [
+				'judgment', 'multiattack', 'naturalgift', 'revelationdance', 'technoblast', 'terrainpulse', 'weatherball',
+			];
+			if (move.type === 'Normal' && !noModifyType.includes(move.id) &&
+				!(move.isZ && move.category !== 'Status') && !(move.name === 'Tera Blast' && pokemon.terastallized)) {
+				move.type = 'Psychic';
+				move.typeChangerBoosted = this.effect;
+			}
+		},
+		onBasePowerPriority: 23,
+		onBasePower(basePower, pokemon, target, move) {
+			if (move.typeChangerBoosted === this.effect) return this.chainModify([5325, 4096]);
+		},
+		flags: {},
+		name: "Telekinetic",
+		rating: 4,
+		num: 184,
+	},
+	martialize: {
+		onModifyTypePriority: -1,
+		onModifyType(move, pokemon) {
+			const noModifyType = [
+				'judgment', 'multiattack', 'naturalgift', 'revelationdance', 'technoblast', 'terrainpulse', 'weatherball',
+			];
+			if (move.type === 'Normal' && !noModifyType.includes(move.id) &&
+				!(move.isZ && move.category !== 'Status') && !(move.name === 'Tera Blast' && pokemon.terastallized)) {
+				move.type = 'Fighting';
+				move.typeChangerBoosted = this.effect;
+			}
+		},
+		onBasePowerPriority: 23,
+		onBasePower(basePower, pokemon, target, move) {
+			if (move.typeChangerBoosted === this.effect) return this.chainModify([5325, 4096]);
+		},
+		flags: {},
+		name: "Martialize",
+		rating: 4,
+		num: 184,
+	},
+	cheapshots: {
+		onModifyTypePriority: -1,
+		onModifyType(move, pokemon) {
+			const noModifyType = [
+				'judgment', 'multiattack', 'naturalgift', 'revelationdance', 'technoblast', 'terrainpulse', 'weatherball',
+			];
+			if (move.type === 'Normal' && !noModifyType.includes(move.id) &&
+				!(move.isZ && move.category !== 'Status') && !(move.name === 'Tera Blast' && pokemon.terastallized)) {
+				move.type = 'Dark';
+				move.typeChangerBoosted = this.effect;
+			}
+		},
+		onBasePowerPriority: 23,
+		onBasePower(basePower, pokemon, target, move) {
+			if (move.typeChangerBoosted === this.effect) return this.chainModify([5325, 4096]);
+		},
+		flags: {},
+		name: "Cheap Shots",
+		rating: 4,
+		num: 184,
+	},
 	aftermath: {
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
@@ -504,7 +567,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	bulletproof: {
 		onTryHit(pokemon, target, move) {
-			if (move.flags['bullet']) {
+			if (move.flags['bullet'] || move.flags['pulse']) {
 				this.add('-immune', pokemon, '[from] ability: Bulletproof');
 				return null;
 			}
@@ -1290,6 +1353,74 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {},
 		name: "Fairy Aura",
+		rating: 3,
+		num: 187,
+	},
+	normalaura: {
+		onStart(pokemon) {
+			if (this.suppressingAbility(pokemon)) return;
+			this.add('-ability', pokemon, 'Normal Aura');
+		},
+		onAnyBasePowerPriority: 20,
+		onAnyBasePower(basePower, source, target, move) {
+			if (target === source || move.category === 'Status' || move.type !== 'Normal') return;
+			if (!move.auraBooster?.hasAbility('Normal Aura')) move.auraBooster = this.effectState.target;
+			if (move.auraBooster !== this.effectState.target) return;
+			return this.chainModify([move.hasAuraBreak ? 3072 : 5448, 4096]);
+		},
+		flags: {},
+		name: "Normal Aura",
+		rating: 3,
+		num: 187,
+	},
+	electricaura: {
+		onStart(pokemon) {
+			if (this.suppressingAbility(pokemon)) return;
+			this.add('-ability', pokemon, 'Electric Aura');
+		},
+		onAnyBasePowerPriority: 20,
+		onAnyBasePower(basePower, source, target, move) {
+			if (target === source || move.category === 'Status' || move.type !== 'Electric') return;
+			if (!move.auraBooster?.hasAbility('Electric Aura')) move.auraBooster = this.effectState.target;
+			if (move.auraBooster !== this.effectState.target) return;
+			return this.chainModify([move.hasAuraBreak ? 3072 : 5448, 4096]);
+		},
+		flags: {},
+		name: "Electric Aura",
+		rating: 3,
+		num: 187,
+	},
+	psychicaura: {
+		onStart(pokemon) {
+			if (this.suppressingAbility(pokemon)) return;
+			this.add('-ability', pokemon, 'Psychic Aura');
+		},
+		onAnyBasePowerPriority: 20,
+		onAnyBasePower(basePower, source, target, move) {
+			if (target === source || move.category === 'Status' || move.type !== 'Psychic') return;
+			if (!move.auraBooster?.hasAbility('Psychic Aura')) move.auraBooster = this.effectState.target;
+			if (move.auraBooster !== this.effectState.target) return;
+			return this.chainModify([move.hasAuraBreak ? 3072 : 5448, 4096]);
+		},
+		flags: {},
+		name: "Psychic Aura",
+		rating: 3,
+		num: 187,
+	},
+	martialaura: {
+		onStart(pokemon) {
+			if (this.suppressingAbility(pokemon)) return;
+			this.add('-ability', pokemon, 'Martial Aura');
+		},
+		onAnyBasePowerPriority: 20,
+		onAnyBasePower(basePower, source, target, move) {
+			if (target === source || move.category === 'Status' || move.type !== 'Fighting') return;
+			if (!move.auraBooster?.hasAbility('Martial Aura')) move.auraBooster = this.effectState.target;
+			if (move.auraBooster !== this.effectState.target) return;
+			return this.chainModify([move.hasAuraBreak ? 3072 : 5448, 4096]);
+		},
+		flags: {},
+		name: "Martial Aura",
 		rating: 3,
 		num: 187,
 	},
@@ -2156,6 +2287,14 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 215,
 	},
 	innerfocus: {
+		onAllyTryAddVolatile(status, target, source, effect) {
+			if (['attract', 'disable', 'encore', 'healblock', 'taunt', 'torment', 'imprison'].includes(status.id)) {
+				if (effect.effectType === 'Move') {
+					const effectHolder = this.effectState.target;
+					this.add('-block', target, 'ability: Aroma Veil', '[of] ' + effectHolder);
+				}
+				return null;
+			}
 		onTryAddVolatile(status, pokemon) {
 			if (status.id === 'flinch') return null;
 		},
@@ -2291,7 +2430,35 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {},
 		name: "Kaiju",
-		rating: 3.5,
+		rating: 4,
+		num: 279,
+	},
+	Brainiac: {
+		onSourceModifyAtkPriority: 5,
+		onSourceModifyAtk(atk, attacker, defender, move) {
+			if (move.type === 'Psychic') {
+				return this.chainModify(0.5);
+			}
+		},
+		onSourceModifySpAPriority: 5,
+		onSourceModifySpA(atk, attacker, defender, move) {
+			if (move.type === 'Psychic') {
+				return this.chainModify(0.5);
+			}
+		},
+		onModifyAtk(atk, attacker, defender, move) {
+			if (move.type === 'Psychic') {
+				return this.chainModify(2);
+			}
+		},
+		onModifySpA(atk, attacker, defender, move) {
+			if (move.type === 'Psychic') {
+				return this.chainModify(2);
+			}
+		},
+		flags: {},
+		name: "Brainiac",
+		rating: 4,
 		num: 279,
 	},
 	keeneye: {
@@ -2323,23 +2490,18 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 103,
 	},
 	leafguard: {
-		onSetStatus(status, target, source, effect) {
-			if (['sunnyday', 'desolateland'].includes(target.effectiveWeather())) {
-				if ((effect as Move)?.status) {
-					this.add('-immune', target, '[from] ability: Leaf Guard');
-				}
-				return false;
-			}
-		},
-		onTryAddVolatile(status, target) {
-			if (status.id === 'yawn' && ['sunnyday', 'desolateland'].includes(target.effectiveWeather())) {
-				this.add('-immune', target, '[from] ability: Leaf Guard');
-				return null;
+		onResidualOrder: 5,
+		onResidualSubOrder: 3,
+		onResidual(pokemon) {
+			if (pokemon.status && ['sunnyday', 'desolateland'].includes(pokemon.effectiveWeather())) {
+				this.debug('leafguard');
+				this.add('-activate', pokemon, 'ability: Leaf Guard');
+				pokemon.cureStatus();
 			}
 		},
 		flags: {breakable: 1},
 		name: "Leaf Guard",
-		rating: 0.5,
+		rating: 1.5,
 		num: 102,
 	},
 	levitate: {
@@ -2593,7 +2755,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	megalauncher: {
 		onBasePowerPriority: 19,
 		onBasePower(basePower, attacker, defender, move) {
-			if (move.flags['pulse']) {
+			if (move.flags['pulse'] || move.flags['bullet']) {
 				return this.chainModify(1.5);
 			}
 		},
@@ -3399,13 +3561,28 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			// Despite not being a secondary, Shield Dust / Covert Cloak block Poison Touch's effect
 			if (target.hasAbility('shielddust') || target.hasItem('covertcloak')) return;
 			if (this.checkMoveMakesContact(move, target, source)) {
-				if (this.randomChance(3, 10)) {
+				if (this.randomChance(5, 10)) {
 					target.trySetStatus('psn', source);
 				}
 			}
 		},
 		flags: {},
 		name: "Poison Touch",
+		rating: 2,
+		num: 143,
+	},
+	tinglytouch: {
+		onSourceDamagingHit(damage, target, source, move) {
+			// Despite not being a secondary, Shield Dust / Covert Cloak block Poison Touch's effect
+			if (target.hasAbility('shielddust') || target.hasItem('covertcloak')) return;
+			if (this.checkMoveMakesContact(move, target, source)) {
+				if (this.randomChance(50, 10)) {
+					target.trySetStatus('par', source);
+				}
+			}
+		},
+		flags: {},
+		name: "Tingly Touch",
 		rating: 2,
 		num: 143,
 	},
@@ -4596,12 +4773,21 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 9,
 	},
 	steadfast: {
-		onFlinch(pokemon) {
-			this.boost({spe: 1});
+		onTryBoost(boost, target, source, effect) {
+			if (source && target === source) return;
+			if (boost.spe && boost.spe < 0) {
+				delete boost.spe;
+				if (!(effect as ActiveMove).secondaries && effect.id !== 'octolock') {
+					this.add("-fail", target, "unboost", "Speed", "[from] ability: Steadfast", "[of] " + target);
+				}
+				if (statsLowered) {
+				this.boost({spe: 2}, target, target, null, false, true);
+			}
+		  }
 		},
 		flags: {},
 		name: "Steadfast",
-		rating: 1,
+		rating: 4,
 		num: 80,
 	},
 	steamengine: {
@@ -4813,18 +4999,26 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 207,
 	},
 	swarm: {
-		onModifyAtkPriority: 5,
-		onModifyAtk(atk, attacker, defender, move) {
-			if (move.type === 'Bug' && attacker.hp <= attacker.maxhp / 3) {
-				this.debug('Swarm boost');
-				return this.chainModify(1.5);
+		onSourceModifyAtkPriority: 5,
+		onSourceModifyAtk(atk, attacker, defender, move) {
+			if (move.type === 'Bug') {
+				return this.chainModify(0.5);
 			}
 		},
-		onModifySpAPriority: 5,
+		onSourceModifySpAPriority: 5,
+		onSourceModifySpA(atk, attacker, defender, move) {
+			if (move.type === 'Bug') {
+				return this.chainModify(0.5);
+			}
+		},
+		onModifyAtk(atk, attacker, defender, move) {
+			if (move.type === 'Bug') {
+				return this.chainModify(2);
+			}
+		},
 		onModifySpA(atk, attacker, defender, move) {
-			if (move.type === 'Bug' && attacker.hp <= attacker.maxhp / 3) {
-				this.debug('Swarm boost');
-				return this.chainModify(1.5);
+			if (move.type === 'Bug') {
+				return this.chainModify(2);
 			}
 		},
 		flags: {},
@@ -5601,6 +5795,11 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				pokemon.addVolatile('charge');
 			}
 		},
+		onStart(pokemon) {
+			if (pokemon.side.sideConditions['tailwind'] || pokemon.side.sideConditions['deltastream']) {
+				this.pokemon.addVolatile('charge');
+			}
+		},
 		flags: {},
 		name: "Wind Power",
 		rating: 1,
@@ -5608,7 +5807,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	windrider: {
 		onStart(pokemon) {
-			if (pokemon.side.sideConditions['tailwind']) {
+			if (pokemon.side.sideConditions['tailwind'] || pokemon.side.sideConditions['deltastream']) {
 				this.boost({atk: 1}, pokemon, pokemon);
 			}
 		},
@@ -5628,7 +5827,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {breakable: 1},
 		name: "Wind Rider",
-		rating: 3.5,
+		rating: 4,
 		// We do not want Brambleghast to get Infiltrator in Randbats
 		num: 274,
 	},

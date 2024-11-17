@@ -10,8 +10,35 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	aerilate: {
 		name: "Aerilate",
-		desc: "This Pokemon's Normal-type moves become Flying-type moves and have their power multiplied by 1.2. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
+		desc: "This Pokemon's Normal-type moves become Flying-type moves and have their power multiplied by 1.3. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
 		shortDesc: "This Pokemon's Normal-type moves become Flying type and have 1.3x power.",
+		gen6: {
+			desc: "This Pokemon's Normal-type moves become Flying-type moves and have their power multiplied by 1.3. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
+			shortDesc: "This Pokemon's Normal-type moves become Flying type and have 1.3x power.",
+		},
+	},
+	telekinetic: {
+		name: "Telekinetic",
+		desc: "This Pokemon's Normal-type moves become Psychic-type moves and have their power multiplied by 1.3. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
+		shortDesc: "This Pokemon's Normal-type moves become Psychic type and have 1.3x power.",
+		gen6: {
+			desc: "This Pokemon's Normal-type moves become Flying-type moves and have their power multiplied by 1.3. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
+			shortDesc: "This Pokemon's Normal-type moves become Flying type and have 1.3x power.",
+		},
+	},
+	martialize: {
+		name: "Martialize",
+		desc: "This Pokemon's Normal-type moves become Fighting-type moves and have their power multiplied by 1.3. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
+		shortDesc: "This Pokemon's Normal-type moves become Fighting-type and have 1.3x power.",
+		gen6: {
+			desc: "This Pokemon's Normal-type moves become Flying-type moves and have their power multiplied by 1.3. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
+			shortDesc: "This Pokemon's Normal-type moves become Flying type and have 1.3x power.",
+		},
+	},
+	cheapshots: {
+		name: "Cheap Shots",
+		desc: "This Pokemon's Normal-type moves become Dark-type moves and have their power multiplied by 1.3. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
+		shortDesc: "This Pokemon's Normal-type moves become Dark-type and have 1.3x power.",
 		gen6: {
 			desc: "This Pokemon's Normal-type moves become Flying-type moves and have their power multiplied by 1.3. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
 			shortDesc: "This Pokemon's Normal-type moves become Flying type and have 1.3x power.",
@@ -114,7 +141,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	aurabreak: {
 		name: "Aura Break",
-		desc: "While this Pokemon is active, the effects of the Dark Aura and Fairy Aura Abilities are reversed, multiplying the power of Dark- and Fairy-type moves, respectively, by 3/4 instead of 1.33.",
+		desc: "While this Pokemon is active, the effects of the Aura Abilities are reversed, multiplying the power of respective moves by 3/4 instead of 1.33.",
 		shortDesc: "While this Pokemon is active, the Dark Aura and Fairy Aura power modifier is 0.75x.",
 
 		start: "  [POKEMON] reversed all other Pok\u00E9mon's auras!",
@@ -144,7 +171,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	battlearmor: {
 		name: "Battle Armor",
-		shortDesc: "This Pokemon cannot be struck by a critical hit.",
+		shortDesc: "This Pokemon is immune to crits and is unaffected by hazards on its side of the field.",
 	},
 	battlebond: {
 		name: "Battle Bond",
@@ -188,7 +215,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	bulletproof: {
 		name: "Bulletproof",
-		shortDesc: "This Pokemon is immune to bullet moves.",
+		shortDesc: "This Pokemon is immune to bullet and pulse moves.",
 	},
 	cheekpouch: {
 		name: "Cheek Pouch",
@@ -250,7 +277,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	compoundeyes: {
 		name: "Compound Eyes",
-		shortDesc: "This Pokemon's moves have their accuracy multiplied by 1.3 & its moves have their secondary effect chance doubled.",
+		shortDesc: "This Pokemon's accuracy is multiplied by 1.3 & its moves secondary effect chance doubled.",
 	},
 	contrary: {
 		name: "Contrary",
@@ -470,6 +497,34 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		shortDesc: "While this Pokemon is active, a Fairy move used by any Pokemon has 1.33x power.",
 
 		start: "  [POKEMON] is radiating a fairy aura!",
+	},
+	normalaura: {
+		name: "Normal Aura",
+		desc: "While this Pokemon is active, the power of Normal-type moves used by active Pokemon is multiplied by 1.33.",
+		shortDesc: "While this Pokemon is active, a Normal move used by any Pokemon has 1.33x power.",
+
+		start: "  [POKEMON] is radiating a menacingly normal aura!",
+	},
+	electricaura: {
+		name: "Electric Aura",
+		desc: "While this Pokemon is active, the power of Electric-type moves used by active Pokemon is multiplied by 1.33.",
+		shortDesc: "While this Pokemon is active, a Electric move used by any Pokemon has 1.33x power.",
+
+		start: "  [POKEMON] is radiating a electric aura!",
+	},
+	psychicaura: {
+		name: "Psychic Aura",
+		desc: "While this Pokemon is active, the power of Psychic-type moves used by active Pokemon is multiplied by 1.33.",
+		shortDesc: "While this Pokemon is active, a Psychic move used by any Pokemon has 1.33x power.",
+
+		start: "  [POKEMON] is radiating a psychic aura!",
+	},
+	martialaura: {
+		name: "Martial Aura",
+		desc: "While this Pokemon is active, the power of Fighting-type moves used by active Pokemon is multiplied by 1.33.",
+		shortDesc: "While this Pokemon is active, a Fighting move used by any Pokemon has 1.33x power.",
+
+		start: "  [POKEMON] is radiating a psychic aura!",
 	},
 	filter: {
 		name: "Filter",
@@ -769,8 +824,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	innerfocus: {
 		name: "Inner Focus",
-		desc: "This Pokemon cannot be made to flinch. This Pokemon is immune to the effect of the Intimidate Ability.",
-		shortDesc: "This Pokemon cannot be made to flinch. Immune to Intimidate.",
+		desc: "Protects user from Attract, Disable, Encore, Heal Block, Imprison, Taunt, Torment, Intimidate, and Pressure.",
+		shortDesc: "Protects user from Attract, Disable, Encore, Heal Block, Imprison, Taunt, Torment, Intimidate, and Pressure.",
 		gen7: {
 			desc: "This Pokemon cannot be made to flinch.",
 			shortDesc: "This Pokemon cannot be made to flinch.",
@@ -826,6 +881,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Kaiju",
 		desc: "Boosts the power of Dragon Type moves used by you by 50%. Decreases the damage taken by Dragon Type moves by 50%",
 		shortDesc: "Gain STAB and Resistance towards the Dragon Type",
+	},
+	Brainiac: {
+		name: "Brainiac",
+		desc: "Boosts the power of Psychic Type moves used by you by 50%. Decreases the damage taken by Psychic Type moves by 50%",
+		shortDesc: "Gain STAB and Resistance towards the Psychic Type",
 	},
 	keeneye: {
 		name: "Keen Eye",
@@ -981,8 +1041,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	megalauncher: {
 		name: "Mega Launcher",
-		desc: "This Pokemon's pulse moves have their power multiplied by 1.5. Heal Pulse restores 3/4 of a target's maximum HP, rounded half down.",
-		shortDesc: "This Pokemon's pulse moves have 1.5x power. Heal Pulse heals 3/4 target's max HP.",
+		desc: "This Pokemon's pulse and bullet moves have their power multiplied by 1.5. Heal Pulse restores 3/4 of a target's maximum HP, rounded half down.",
+		shortDesc: "This Pokemon's pulse & bullet moves have 1.5x power. Heal Pulse heals 3/4 target's max HP.",
 	},
 	merciless: {
 		name: "Merciless",
@@ -1288,8 +1348,13 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	poisontouch: {
 		name: "Poison Touch",
-		desc: "This Pokemon's contact moves have a 30% chance of poisoning. This effect comes after a move's inherent secondary effect chance.",
-		shortDesc: "This Pokemon's contact moves have a 30% chance of poisoning.",
+		desc: "This Pokemon's contact moves have a 50% chance of poisoning. This effect comes after a move's inherent secondary effect chance.",
+		shortDesc: "This Pokemon's contact moves have a 50% chance of poisoning.",
+	},
+	tingly: {
+		name: "Tingly Touch",
+		desc: "This Pokemon's contact moves have a 50% chance of paralysis. This effect comes after a move's inherent secondary effect chance.",
+		shortDesc: "This Pokemon's contact moves have a 50% chance of paralysis.",
 	},
 	powerconstruct: {
 		name: "Power Construct",
@@ -1783,7 +1848,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	steadfast: {
 		name: "Steadfast",
-		shortDesc: "If this Pokemon flinches, its Speed is raised by 1 stage.",
+		shortDesc: "Prevents other Pokemon from lowering this Pokemon's Speed stat stage. If a stat is lowered by the opponent; increase Spe by 2 stages.",
 	},
 	steamengine: {
 		name: "Steam Engine",
