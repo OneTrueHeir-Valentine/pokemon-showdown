@@ -571,7 +571,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Electric", "Dark"],
 		gender: "F",
 		baseStats: {hp: 50, atk: 70, def: 50, spa: 70, spd: 50, spe: 135},
-		abilities: {0: "Punk Rock", 1: "Cheap Shots", H: "Contrary", S: "Dark Aura"},
+		abilities: {0: "Punk Rock", 1: "Cheap Shot", H: "Contrary", S: "Dark Aura"},
 		heightm: 0.4,
 		weightkg: 6,
 		color: "Yellow",
