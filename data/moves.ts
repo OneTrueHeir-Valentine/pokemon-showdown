@@ -1582,7 +1582,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		flags: {protect: 1, mirror: 1, metronome: 1, cantusetwice: 1},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "Cosmic",
 	},
 	bloomdoom: {
 		num: 644,
@@ -2753,7 +2753,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		multihit: [2, 5],
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "Cosmic",
 		maxMove: {basePower: 100},
 		contestType: "Tough",
 	},
@@ -3036,7 +3036,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Psychic",
+		type: "Cosmic",
 		zMove: {boost: {spd: 1}},
 		contestType: "Beautiful",
 	},
@@ -4819,6 +4819,37 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		hasSheerForce: true,
 		target: "normal",
 		type: "Electric",
+	},
+	cosmicshower: {
+		num: 905,
+		accuracy: 100,
+		basePower: 130,
+		category: "Special",
+		name: "Cosmic Shower",
+		pp: 10,
+		priority: 0,
+		flags: {charge: 1, protect: 1, mirror: 1, metronome: 1},
+		onTryMove(attacker, defender, move) {
+			if (attacker.removeVolatile(move.id)) {
+				return;
+			}
+			this.add('-prepare', attacker, move.name);
+			this.boost({spa: 1}, attacker, attacker, move);
+			if (this.field.getPseudoWeather('gravity')) {
+				this.attrLastMove('[still]');
+				this.addMove('-anim', attacker, move.name, defender);
+				return;
+			}
+			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
+				return;
+			}
+			attacker.addVolatile('twoturnmove', defender);
+			return null;
+		},
+		secondary: null,
+		hasSheerForce: true,
+		target: "normal",
+		type: "Cosmic",
 	},
 	electroweb: {
 		num: 527,
@@ -6775,7 +6806,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Fairy",
+		type: "Cosmic",
 		zMove: {boost: {atk: 1, def: 1, spa: 1, spd: 1, spe: 1}},
 		contestType: "Beautiful",
 	},
@@ -8110,7 +8141,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		secondary: null,
 		target: "all",
-		type: "Psychic",
+		type: "Cosmic",
 		zMove: {boost: {spa: 1}},
 		contestType: "Clever",
 	},
@@ -8651,7 +8682,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Psychic",
+		type: "Cosmic",
 		contestType: "Beautiful",
 	},
 	healorder: {
@@ -10525,6 +10556,25 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Grass",
 		contestType: "Beautiful",
 	},
+	Starstorm: {
+		num: 437,
+		accuracy: 90,
+		basePower: 130,
+		category: "Special",
+		name: "Star Storm",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, metronome: 1},
+		self: {
+			boosts: {
+				spa: -2,
+			},
+		},
+		secondary: null,
+		target: "normal",
+		type: "Cosmic",
+		contestType: "Beautiful",
+	},
 	leaftornado: {
 		num: 536,
 		accuracy: 90,
@@ -10930,7 +10980,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		secondary: null,
 		target: "allies",
-		type: "Psychic",
+		type: "Cosmic",
 	},
 	lunardance: {
 		num: 461,
@@ -10971,7 +11021,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Psychic",
+		type: "Cosmic",
 		contestType: "Beautiful",
 	},
 	lunge: {
@@ -12650,7 +12700,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			},
 		},
 		target: "normal",
-		type: "Fairy",
+		type: "Cosmic",
 		contestType: "Beautiful",
 	},
 	moongeistbeam: {
@@ -12701,7 +12751,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Fairy",
+		type: "Cosmic",
 		zMove: {effect: 'clearnegativeboost'},
 		contestType: "Beautiful",
 	},
@@ -12738,7 +12788,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Normal",
+		type: "Cosmic",
 		zMove: {effect: 'clearnegativeboost'},
 		contestType: "Beautiful",
 	},
@@ -13047,7 +13097,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			} else if (this.field.isTerrain('grassyterrain')) {
 				move = 'energyball';
 			} else if (this.field.isTerrain('mistyterrain')) {
-				move = 'moonblast';
+				move = 'sparklyswirl';
 			} else if (this.field.isTerrain('psychicterrain')) {
 				move = 'psychic';
 			}
@@ -14576,6 +14626,25 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, metronome: 1},
+		secondary: {
+			chance: 10,
+			boosts: {
+				spd: -1,
+			},
+		},
+		target: "normal",
+		type: "Psychic",
+		contestType: "Clever",
+	},
+	starstrike: {
+		num: 94,
+		accuracy: 100,
+		basePower: 90,
+		category: "Physical",
+		name: "Cosmic",
+		pp: 10,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1},
 		secondary: {
 			chance: 10,
 			boosts: {
@@ -18041,29 +18110,22 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	sparklyswirl: {
 		num: 740,
-		accuracy: 85,
-		basePower: 120,
+		accuracy: 100,
+		basePower: 95,
 		category: "Special",
-		isNonstandard: "LGPE",
 		name: "Sparkly Swirl",
-		pp: 5,
+		pp: 15,
 		priority: 0,
-		flags: {protect: 1, mirror: 1},
-		self: {
-			onHit(pokemon, source, move) {
-				this.add('-activate', source, 'move: Aromatherapy');
-				for (const ally of source.side.pokemon) {
-					if (ally !== source && (ally.volatiles['substitute'] && !move.infiltrates)) {
-						continue;
-					}
-					ally.cureStatus();
-				}
+		flags: {protect: 1, mirror: 1, metronome: 1},
+		secondary: {
+			chance: 30,
+			boosts: {
+				spa: -1,
 			},
 		},
-		secondary: null,
 		target: "normal",
 		type: "Fairy",
-		contestType: "Clever",
+		contestType: "Beautiful",
 	},
 	spectralthief: {
 		num: 712,

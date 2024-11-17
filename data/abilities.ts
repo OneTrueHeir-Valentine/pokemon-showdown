@@ -3316,23 +3316,33 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 142,
 	},
 	overgrow: {
+		onSourceModifyAtkPriority: 5,
+		onSourceModifyAtk(atk, attacker, defender, move) {
+			if (move.type === 'Grass') {
+				return this.chainModify(0.5);
+			}
+		},
+		onSourceModifySpAPriority: 5,
+		onSourceModifySpA(atk, attacker, defender, move) {
+			if (move.type === 'Grass') {
+				return this.chainModify(0.5);
+			}
+		},
 		onModifyAtkPriority: 5,
 		onModifyAtk(atk, attacker, defender, move) {
-			if (move.type === 'Grass' && attacker.hp <= attacker.maxhp / 3) {
-				this.debug('Overgrow boost');
+			if (move.type === 'Grass') {
 				return this.chainModify(1.5);
 			}
 		},
 		onModifySpAPriority: 5,
 		onModifySpA(atk, attacker, defender, move) {
-			if (move.type === 'Grass' && attacker.hp <= attacker.maxhp / 3) {
-				this.debug('Overgrow boost');
+			if (move.type === 'Grass') {
 				return this.chainModify(1.5);
 			}
 		},
 		flags: {},
 		name: "Overgrow",
-		rating: 2,
+		rating: 4,
 		num: 65,
 	},
 	owntempo: {
@@ -4652,13 +4662,13 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onModifySpAPriority: 5,
 		onModifySpA(spa, pokemon) {
 			if (['sunnyday', 'desolateland'].includes(pokemon.effectiveWeather())) {
-				return this.chainModify(1.5);
+				return this.chainModify(2);
 			}
 		},
 		onWeather(target, source, effect) {
 			if (target.hasItem('utilityumbrella')) return;
 			if (effect.id === 'sunnyday' || effect.id === 'desolateland') {
-				this.damage(target.baseMaxhp / 8, target, target);
+				this.damage(target.baseMaxhp / 16, target, target);
 			}
 		},
 		flags: {},
@@ -5325,17 +5335,25 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 110,
 	},
 	torrent: {
-		onModifyAtkPriority: 5,
+		onSourceModifyAtkPriority: 5,
+		onSourceModifyAtk(atk, attacker, defender, move) {
+			if (move.type === 'Water') {
+				return this.chainModify(0.5);
+			}
+		},
+		onSourceModifySpAPriority: 5,
+		onSourceModifySpA(atk, attacker, defender, move) {
+			if (move.type === 'Water') {
+				return this.chainModify(0.5);
+			}
+		},
 		onModifyAtk(atk, attacker, defender, move) {
-			if (move.type === 'Water' && attacker.hp <= attacker.maxhp / 3) {
-				this.debug('Torrent boost');
+			if (move.type === 'Water') {
 				return this.chainModify(1.5);
 			}
 		},
-		onModifySpAPriority: 5,
 		onModifySpA(atk, attacker, defender, move) {
-			if (move.type === 'Water' && attacker.hp <= attacker.maxhp / 3) {
-				this.debug('Torrent boost');
+			if (move.type === 'Water') {
 				return this.chainModify(1.5);
 			}
 		},

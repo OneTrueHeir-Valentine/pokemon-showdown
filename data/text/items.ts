@@ -1243,6 +1243,10 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 		name: "Normalium Z",
 		shortDesc: "If holder has a Normal move, this item allows it to use a Normal Z-Move.",
 	},
+	soundiumz: {
+		name: "Soundium Z",
+		shortDesc: "If holder has a Sound move, this item allows it to use a Sound Z-Move.",
+	},
 	occaberry: {
 		name: "Occa Berry",
 		shortDesc: "Halves damage taken from a supereffective Fire-type attack. Single use.",
@@ -1665,6 +1669,14 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	skyplate: {
 		name: "Sky Plate",
 		shortDesc: "Holder's Flying-type attacks have 1.2x power. Judgment is Flying type.",
+	},
+	soundplate: {
+		name: "Sound Plate",
+		shortDesc: "Holder's Sound-type attacks have 1.2x power. Judgment is Sound type.",
+	},
+	cosmicplate: {
+		name: "Cosmic Plate",
+		shortDesc: "Holder's Cosmic-type attacks have 1.2x power. Judgment is Cosmic type.",
 	},
 	slowbronite: {
 		name: "Slowbronite",

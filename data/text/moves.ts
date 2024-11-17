@@ -1721,6 +1721,13 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 
 		prepare: "[POKEMON] absorbed electricity!",
 	},
+	cosmicshower: {
+		name: "Cosmic Shower",
+		desc: "This attack charges on the first turn and executes on the second. Raises the user's Special Attack by 1 stage on the first turn. If the user is holding a Power Herb or Gravity is active, the move completes in one turn. If the user is holding Utility Umbrella and gravity is set, the move still requires a turn to charge.",
+		shortDesc: "Raises Sp. Atk by 1, hits turn 2. Gravity: no charge.",
+
+		prepare: "[POKEMON] absorbed cosmic energy!",
+	},
 	electroweb: {
 		name: "Electroweb",
 		desc: "Has a 100% chance to lower the target's Speed by 1 stage.",
@@ -3518,6 +3525,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Lowers the user's Special Attack by 2 stages.",
 		shortDesc: "Lowers the user's Sp. Atk by 2.",
 	},
+	starstorm: {
+		name: "Star Storm",
+		desc: "Lowers the user's Special Attack by 2 stages.",
+		shortDesc: "Lowers the user's Sp. Atk by 2.",
+	},
 	leaftornado: {
 		name: "Leaf Tornado",
 		desc: "Has a 50% chance to lower the target's accuracy by 1 stage.",
@@ -4878,6 +4890,16 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 			shortDesc: "33% chance to lower the target's Special by 1.",
 		},
 	},
+	starstrike: {
+		name: "Star Strike",
+		desc: "Has a 10% chance to lower the target's Special Defense by 1 stage.",
+		shortDesc: "10% chance to lower the target's Sp. Def by 1.",
+		gen1: {
+			desc: "Has a 33% chance to lower the target's Special by 1 stage.",
+			shortDesc: "33% chance to lower the target's Special by 1.",
+		},
+	},
+
 	psychicfangs: {
 		name: "Psychic Fangs",
 		desc: "If this attack does not miss, the effects of Reflect, Light Screen, and Aurora Veil end for the target's side of the field before damage is calculated.",

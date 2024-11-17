@@ -1364,7 +1364,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move && move.type === 'Dragon') {
-				return this.chainModify([4915, 4096]);
+				return this.chainModify(1.4);
 			}
 		},
 		onTakeItem(item, pokemon, source) {
@@ -1450,7 +1450,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move && move.type === 'Dark') {
-				return this.chainModify([4915, 4096]);
+				return this.chainModify(1.3);
 			}
 		},
 		onTakeItem(item, pokemon, source) {
@@ -1515,7 +1515,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move && move.type === 'Ground') {
-				return this.chainModify([4915, 4096]);
+				return this.chainModify(1.3);
 			}
 		},
 		onTakeItem(item, pokemon, source) {
@@ -1913,7 +1913,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move && move.type === 'Fighting') {
-				return this.chainModify([4915, 4096]);
+				return this.chainModify(1.3);
 			}
 		},
 		onTakeItem(item, pokemon, source) {
@@ -1948,7 +1948,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move && move.type === 'Fire') {
-				return this.chainModify([4915, 4096]);
+				return this.chainModify(1.3);
 			}
 		},
 		onTakeItem(item, pokemon, source) {
@@ -2674,7 +2674,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move.type === 'Ice') {
-				return this.chainModify([4915, 4096]);
+				return this.chainModify(1.3);
 			}
 		},
 		onTakeItem(item, pokemon, source) {
@@ -2726,7 +2726,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move.type === 'Bug') {
-				return this.chainModify([4915, 4096]);
+				return this.chainModify(1.3);
 			}
 		},
 		onTakeItem(item, pokemon, source) {
@@ -2764,7 +2764,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move.type === 'Steel') {
-				return this.chainModify([4915, 4096]);
+				return this.chainModify(1.3);
 			}
 		},
 		onTakeItem(item, pokemon, source) {
@@ -3519,7 +3519,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move.type === 'Grass') {
-				return this.chainModify([4915, 4096]);
+				return this.chainModify(1.3);
 			}
 		},
 		onTakeItem(item, pokemon, source) {
@@ -3769,7 +3769,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move.type === 'Psychic') {
-				return this.chainModify([4915, 4096]);
+				return this.chainModify(1.3);
 			}
 		},
 		onTakeItem(item, pokemon, source) {
@@ -3964,6 +3964,18 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onTakeItem: false,
 		zMove: true,
 		zMoveType: "Normal",
+		forcedForme: "Arceus-Normal",
+		num: 776,
+		gen: 7,
+		isNonstandard: "Past",
+	},
+	normaliumz: {
+		name: "Normalium Z",
+		spritenum: 631,
+		onTakeItem: false,
+		zMove: true,
+		zMoveType: "Normal",
+		forcedForme: "Arceus-Normal",
 		num: 776,
 		gen: 7,
 		isNonstandard: "Past",
@@ -4248,7 +4260,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move && move.type === 'Fairy') {
-				return this.chainModify([4915, 4096]);
+				return this.chainModify(1.3);
 			}
 		},
 		onTakeItem(item, pokemon, source) {
@@ -5272,9 +5284,10 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move.type === 'Normal') {
-				return this.chainModify([4915, 4096]);
+				return this.chainModify(1.4);
 			}
 		},
+		forcedForme: "Arceus-Normal",
 		num: 251,
 		gen: 3,
 	},
@@ -5332,7 +5345,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move.type === 'Flying') {
-				return this.chainModify([4915, 4096]);
+				return this.chainModify(1.3);
 			}
 		},
 		onTakeItem(item, pokemon, source) {
@@ -5345,6 +5358,47 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 306,
 		gen: 4,
 	},
+	soundplate: {
+		name: "Sound Plate",
+		spritenum: 450,
+		onPlate: 'Sound',
+		onBasePowerPriority: 15,
+		onBasePower(basePower, user, target, move) {
+			if (move.type === 'Sound') {
+				return this.chainModify(1.3);
+			}
+		},
+		onTakeItem(item, pokemon, source) {
+			if ((source && source.baseSpecies.num === 493) || pokemon.baseSpecies.num === 493) {
+				return false;
+			}
+			return true;
+		},
+		forcedForme: "Arceus-Sound",
+		num: 306,
+		gen: 4,
+	},
+	cosmicplate: {
+		name: "Cosmic Plate",
+		spritenum: 450,
+		onPlate: 'Cosmic',
+		onBasePowerPriority: 15,
+		onBasePower(basePower, user, target, move) {
+			if (move.type === 'Cosmic') {
+				return this.chainModify(1.3);
+			}
+		},
+		onTakeItem(item, pokemon, source) {
+			if ((source && source.baseSpecies.num === 493) || pokemon.baseSpecies.num === 493) {
+				return false;
+			}
+			return true;
+		},
+		forcedForme: "Arceus-Cosmic",
+		num: 306,
+		gen: 4,
+	},
+
 	slowbronite: {
 		name: "Slowbronite",
 		spritenum: 620,
@@ -5476,7 +5530,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move.type === 'Water') {
-				return this.chainModify([4915, 4096]);
+				return this.chainModify(1.3);
 			}
 		},
 		onTakeItem(item, pokemon, source) {
@@ -5496,7 +5550,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move.type === 'Ghost') {
-				return this.chainModify([4915, 4096]);
+				return this.chainModify(1.3);
 			}
 		},
 		onTakeItem(item, pokemon, source) {
@@ -5658,7 +5712,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move.type === 'Rock') {
-				return this.chainModify([4915, 4096]);
+				return this.chainModify(1.3);
 			}
 		},
 		onTakeItem(item, pokemon, source) {
@@ -5866,7 +5920,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move.type === 'Poison') {
-				return this.chainModify([4915, 4096]);
+				return this.chainModify(1.3);
 			}
 		},
 		onTakeItem(item, pokemon, source) {
@@ -7278,7 +7332,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move.type === 'Electric') {
-				return this.chainModify([4915, 4096]);
+				return this.chainModify(1.3);
 			}
 		},
 		onTakeItem(item, pokemon, source) {

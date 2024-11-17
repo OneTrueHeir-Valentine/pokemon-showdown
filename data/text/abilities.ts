@@ -206,12 +206,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	blaze: {
 		name: "Blaze",
-		desc: "This Pokemon has its offensive stat multiplied by 1.5 while using a Fire-type attack and defensive stat multiplied by 1.5 while receiving a Fire-type attack.",
-		shortDesc: "This Pokemon's offensive stat is 1.5x with Fire attacks.",
-		gen4: {
-			desc: "When this Pokemon has 1/3 or less of its maximum HP, rounded down, its Fire-type attacks have their power multiplied by 1.5.",
-			shortDesc: "At 1/3 or less of its max HP, this Pokemon's Fire-type attacks have 1.5x power.",
-		},
+		desc: "Boosts the power of Fire Type moves used by you by 50%. Decreases the damage taken by Fire Type moves by 50%",
+		shortDesc: "Gain STAB and Resistance towards the Fire Type",
 	},
 	bulletproof: {
 		name: "Bulletproof",
@@ -2080,12 +2076,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	torrent: {
 		name: "Torrent",
-		desc: "When this Pokemon has 1/3 or less of its maximum HP, rounded down, its offensive stat is multiplied by 1.5 while using a Water-type attack.",
-		shortDesc: "At 1/3 or less of its max HP, this Pokemon's offensive stat is 1.5x with Water attacks.",
-		gen4: {
-			desc: "When this Pokemon has 1/3 or less of its maximum HP, rounded down, its Water-type attacks have their power multiplied by 1.5.",
-			shortDesc: "At 1/3 or less of its max HP, this Pokemon's Water-type attacks have 1.5x power.",
-		},
+		desc: "Boosts the power of Water Type moves used by you by 50%. Decreases the damage taken by Water Type moves by 50%",
+		shortDesc: "Gain STAB and Resistance towards the Water Type",
 	},
 	toughclaws: {
 		name: "Tough Claws",
