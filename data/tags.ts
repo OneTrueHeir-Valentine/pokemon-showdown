@@ -70,10 +70,10 @@ export const Tags: {[id: IDEntry]: TagData} = {
 		desc: "Affected by a variety of moves, abilities, and items. Moves affected by contact moves include: Spiky Shield, King's Shield. Abilities affected by contact moves include: Iron Barbs, Rough Skin, Gooey, Flame Body, Static, Tough Claws. Items affected by contact moves include: Rocky Helmet, Sticky Barb.",
 		moveFilter: move => 'contact' in move.flags,
 	},
-	sound: {
-		name: "Sound",
-		desc: "Doesn't affect Soundproof Pokémon. (All sound moves also bypass Substitute.)",
-		moveFilter: move => 'sound' in move.flags,
+	vibration: {
+		name: "Vibration",
+		desc: "Doesn't affect Soundproof Pokémon. (All vibration moves also bypass Substitute.)",
+		moveFilter: move => 'vibration' in move.flags,
 	},
 	powder: {
 		name: "Powder",
@@ -89,6 +89,11 @@ export const Tags: {[id: IDEntry]: TagData} = {
 		name: "Kick",
 		desc: "Boosted 1.5x by Iron Leg.",
 		moveFilter: move => 'kick' in move.flags,
+	},
+	spin: {
+		name: "spin",
+		desc: "Boosted 1.5x by Spin to Win.",
+		moveFilter: move => 'spin' in move.flags,
 	},
 	pulse: {
 		name: "Pulse",

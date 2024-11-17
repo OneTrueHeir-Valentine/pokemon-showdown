@@ -61,7 +61,7 @@ function generateSSBMoveInfo(sigMove: Move, dex: ModdedDex) {
 		if (sigMove.isNonstandard === "Past" && dex.gen >= 8) details["&#10007; Past Gens Only"] = "";
 		if (sigMove.secondary || sigMove.secondaries || sigMove.hasSheerForce) details["&#10003; Boosted by Sheer Force"] = "";
 		if (sigMove.flags['contact'] && dex.gen >= 3) details["&#10003; Contact"] = "";
-		if (sigMove.flags['sound'] && dex.gen >= 3) details["&#10003; Sound"] = "";
+		if (sigMove.flags['vibration'] && dex.gen >= 3) details["&#10003; Vibration"] = "";
 		if (sigMove.flags['bullet'] && dex.gen >= 6) details["&#10003; Bullet"] = "";
 		if (sigMove.flags['pulse'] && dex.gen >= 6) details["&#10003; Pulse"] = "";
 		if (!sigMove.flags['protect'] && sigMove.target !== 'self') details["&#10003; Bypasses Protect"] = "";
@@ -77,6 +77,8 @@ function generateSSBMoveInfo(sigMove: Move, dex: ModdedDex) {
 		if (sigMove.flags['dance'] && dex.gen >= 7) details["&#10003; Dance move"] = "";
 		if (sigMove.flags['slicing'] && dex.gen >= 9) details["&#10003; Slicing move"] = "";
 		if (sigMove.flags['wind'] && dex.gen >= 9) details["&#10003; Wind move"] = "";
+		if (sigMove.flags['kick'] && dex.gen >= 9) details["&#10003; Kick move"] = "";
+		if (sigMove.flags['spin'] && dex.gen >= 9) details["&#10003; Spin move"] = "";
 
 		if (sigMove.zMove?.basePower) {
 			details["Z-Power"] = String(sigMove.zMove.basePower);

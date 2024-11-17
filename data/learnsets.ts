@@ -983,6 +983,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			liquidation: ["9M", "8M", "7T"],
 			megakick: ["8M", "7V", "3T"],
 			megapunch: ["8M", "7V", "3T"],
+			metalsound: ["9L1", "8L1", "8V", "7L1", "7V", "6L1", "5L1", "4L1", "3L1"],
 			mimic: ["7V", "3T"],
 			muddywater: ["9M", "8M"],
 			mudshot: ["9M"],
@@ -4222,6 +4223,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 	},
 	nidorina: {
 		learnset: {
+			banefulbunker: ["9L0", "8L0", "7L1"],
 			aerialace: ["7M", "6M", "5M", "4M", "3M"],
 			attract: ["8M", "7M", "7V", "6M", "5M", "4M", "3M"],
 			beatup: ["8M"],
@@ -4306,6 +4308,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 	},
 	nidoqueen: {
 		learnset: {
+			banefulbunker: ["9L0", "8L0", "7L1"],
 			aerialace: ["7M", "6M", "5M", "4M", "3M"],
 			aquatail: ["7T", "6T", "5T", "4T"],
 			attract: ["8M", "7M", "7V", "6M", "5M", "4M", "3M"],
@@ -4533,6 +4536,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 	},
 	nidorino: {
 		learnset: {
+			banefulbunker: ["9L0", "8L0", "7L1"],
 			amnesia: ["8M"],
 			attract: ["8M", "7M", "7V", "6M", "5M", "4M", "3M"],
 			beatup: ["8M"],
@@ -4616,6 +4620,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 	},
 	nidoking: {
 		learnset: {
+			banefulbunker: ["9L0", "8L0", "7L1"],
 			amnesia: ["8M"],
 			aquatail: ["7T", "7S0", "6T", "5T", "4T"],
 			attract: ["8M", "7M", "7V", "6M", "5M", "4M", "3M"],

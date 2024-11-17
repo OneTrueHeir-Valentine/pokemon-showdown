@@ -2619,7 +2619,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	liquidvoice: {
 		onModifyTypePriority: -1,
 		onModifyType(move, pokemon) {
-			if (move.flags['sound'] && !pokemon.volatiles['dynamax']) { // hardcode
+			if (move.flags['vibration'] && !pokemon.volatiles['dynamax']) { // hardcode
 				move.type = 'Water';
 			}
 		},
@@ -3811,13 +3811,13 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	punkrock: {
 		onBasePowerPriority: 7,
 		onBasePower(basePower, attacker, defender, move) {
-			if (move.flags['sound']) {
+			if (move.flags['vibration']) {
 				this.debug('Punk Rock boost');
 				return this.chainModify([5325, 4096]);
 			}
 		},
 		onSourceModifyDamage(damage, source, target, move) {
-			if (move.flags['sound']) {
+			if (move.flags['vibration']) {
 				this.debug('Punk Rock weaken');
 				return this.chainModify(0.5);
 			}
@@ -4188,6 +4188,24 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onBasePower(basePower, attacker, defender, move) {
 			if (this.field.isWeather('sandstorm')) {
 				if (move.type === 'Rock' || move.type === 'Ground' || move.type === 'Steel') {
+					this.debug('Sand Force boost');
+					return this.chainModify(1.5);
+				}
+			}
+		},
+		onImmunity(type, pokemon) {
+			if (type === 'sandstorm') return false;
+		},
+		flags: {},
+		name: "Sand Force",
+		rating: 2,
+		num: 159,
+	},
+	slushforce: {
+		onBasePowerPriority: 21,
+		onBasePower(basePower, attacker, defender, move) {
+			if (this.field.isWeather(['hail', 'snow'])) {
+				if (move.type === 'Ice' || move.type === 'Water' || move.type === 'Steel') {
 					this.debug('Sand Force boost');
 					return this.chainModify(1.5);
 				}
@@ -4672,13 +4690,13 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	soundproof: {
 		onTryHit(target, source, move) {
-			if (target !== source && move.flags['sound']) {
+			if (target !== source && move.flags['vibration']) {
 				this.add('-immune', target, '[from] ability: Soundproof');
 				return null;
 			}
 		},
 		onAllyTryHitSide(target, source, move) {
-			if (move.flags['sound']) {
+			if (move.flags['vibration']) {
 				this.add('-immune', this.effectState.target, '[from] ability: Soundproof');
 			}
 		},

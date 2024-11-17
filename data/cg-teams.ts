@@ -546,7 +546,7 @@ export default class TeamGenerator {
 		if (move.flags.punch && ability === 'Iron Fist') weight *= 1.2;
 		if (!move.flags.protect) weight *= 1.05;
 		if (move.flags.slicing && ability === 'Sharpness') weight *= 1.5;
-		if (move.flags.sound && ability === 'Punk Rock') weight *= 1.3;
+		if (move.flags.vibration && ability === 'Punk Rock') weight *= 1.3;
 
 		// boosts/secondaries
 		// TODO: consider more possible secondaries
@@ -832,7 +832,7 @@ export default class TeamGenerator {
 			return 20;
 
 		case 'throatspray':
-			if (moves.some(m => m.flags.sound) && moves.some(m => m.category === 'Special')) return 30;
+			if (moves.some(m => m.flags.vibration) && moves.some(m => m.category === 'Special')) return 30;
 			return 0;
 
 		default:

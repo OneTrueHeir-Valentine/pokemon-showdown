@@ -979,8 +979,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	liquidvoice: {
 		name: "Liquid Voice",
-		desc: "This Pokemon's sound-based moves become Water-type moves. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
-		shortDesc: "This Pokemon's sound-based moves become Water type.",
+		desc: "This Pokemon's vibration-based moves become Water-type moves. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
+		shortDesc: "This Pokemon's vibration-based moves become Water type.",
 	},
 	longreach: {
 		name: "Long Reach",
@@ -1446,8 +1446,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	punkrock: {
 		name: "Punk Rock",
-		desc: "This Pokemon's sound-based moves have their power multiplied by 1.3. This Pokemon takes halved damage from sound-based moves.",
-		shortDesc: "This Pokemon receives 1/2 damage from sound moves. Its own have 1.3x power.",
+		desc: "This Pokemon's vibration-based moves have their power multiplied by 1.3. This Pokemon takes halved damage from vibration-based moves.",
+		shortDesc: "This Pokemon receives 1/2 damage from vibration moves. Its own have 1.3x power.",
 	},
 	purepower: {
 		name: "Pure Power",
@@ -1792,15 +1792,15 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	soundproof: {
 		name: "Soundproof",
-		shortDesc: "This Pokemon is immune to sound-based moves, unless it used the move.",
+		shortDesc: "This Pokemon is immune to vibration-based moves, unless it used the move.",
 		gen7: {
-			shortDesc: "This Pokemon is immune to sound-based moves, including Heal Bell.",
+			shortDesc: "This Pokemon is immune to vibration-based moves, including Heal Bell.",
 		},
 		gen5: {
-			shortDesc: "This Pokemon is immune to sound-based moves, except Heal Bell.",
+			shortDesc: "This Pokemon is immune to vibration-based moves, except Heal Bell.",
 		},
 		gen4: {
-			shortDesc: "This Pokemon is immune to sound-based moves, including Heal Bell.",
+			shortDesc: "This Pokemon is immune to vibration-based moves, including Heal Bell.",
 		},
 	},
 	speedboost: {
