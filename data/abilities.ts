@@ -2295,6 +2295,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				}
 				return null;
 			}
+		},
 		onTryAddVolatile(status, pokemon) {
 			if (status.id === 'flinch') return null;
 		},
