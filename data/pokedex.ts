@@ -1149,7 +1149,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		num: 45,
 		name: "Vileplume",
 		types: ["Grass", "Poison"],
-		baseStats: {hp: 85, atk: 80, def: 95, spa: 115, spd: 110, spe: 65},
+		baseStats: {hp: 85, atk: 80, def: 95, spa: 115, spd: 115, spe: 65},
 		abilities: {0: "Chlorophyll", 1: "Solar Power", H: "Grassy Surge", S: "Prankster"},
 		heightm: 1.2,
 		weightkg: 18.6,
