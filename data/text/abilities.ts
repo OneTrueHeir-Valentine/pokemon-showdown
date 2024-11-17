@@ -35,8 +35,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 			shortDesc: "This Pokemon's Normal-type moves become Flying type and have 1.3x power.",
 		},
 	},
-	cheapshots: {
-		name: "Cheap Shots",
+	cheapshot: {
+		name: "Cheap Shot",
 		desc: "This Pokemon's Normal-type moves become Dark-type moves and have their power multiplied by 1.3. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
 		shortDesc: "This Pokemon's Normal-type moves become Dark-type and have 1.3x power.",
 		gen6: {
@@ -877,7 +877,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Justified",
 		shortDesc: "This Pokemon's Attack is raised by 1 stage after it is damaged by a Dark-type move.",
 	},
-	Kaiju: {
+	kaiju: {
 		name: "Kaiju",
 		desc: "Boosts the power of Dragon Type moves used by you by 50%. Decreases the damage taken by Dragon Type moves by 50%",
 		shortDesc: "Gain STAB and Resistance towards the Dragon Type",
