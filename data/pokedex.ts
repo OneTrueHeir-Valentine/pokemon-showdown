@@ -999,7 +999,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		evoItem: "Moon Stone",
 		eggGroups: ["Fairy"],
 	},
-	vulpix: {50
+	vulpix: {
 		num: 37,
 		name: "Vulpix",
 		types: ["Fire", "Ghost"],

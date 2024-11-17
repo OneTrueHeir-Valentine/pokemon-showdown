@@ -3969,13 +3969,13 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		gen: 7,
 		isNonstandard: "Past",
 	},
-	normaliumz: {
-		name: "Normalium Z",
+	soundiumz: {
+		name: "Soundium Z",
 		spritenum: 631,
 		onTakeItem: false,
 		zMove: true,
-		zMoveType: "Normal",
-		forcedForme: "Arceus-Normal",
+		zMoveType: "Sound",
+		forcedForme: "Arceus-Sound",
 		num: 776,
 		gen: 7,
 		isNonstandard: "Past",
