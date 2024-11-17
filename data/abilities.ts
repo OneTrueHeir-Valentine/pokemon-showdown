@@ -117,7 +117,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 184,
 	},
-	cheapshots: {
+	cheapshot: {
 		onModifyTypePriority: -1,
 		onModifyType(move, pokemon) {
 			const noModifyType = [
@@ -134,7 +134,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (move.typeChangerBoosted === this.effect) return this.chainModify([5325, 4096]);
 		},
 		flags: {},
-		name: "Cheap Shots",
+		name: "Cheap Shot",
 		rating: 4,
 		num: 184,
 	},

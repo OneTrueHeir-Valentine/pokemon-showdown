@@ -1305,8 +1305,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	pixilate: {
 		name: "Pixilate",
-		desc: "This Pokemon's Normal-type moves become Fairy-type moves and have their power multiplied by 1.2. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
-		shortDesc: "This Pokemon's Normal-type moves become Fairy type and have 1.2x power.",
+		desc: "This Pokemon's Normal-type moves become Fairy-type moves and have their power multiplied by 1.3. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
+		shortDesc: "This Pokemon's Normal-type moves become Fairy type and have 1.3x power.",
 		gen6: {
 			desc: "This Pokemon's Normal-type moves become Fairy-type moves and have their power multiplied by 1.3. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
 			shortDesc: "This Pokemon's Normal-type moves become Fairy type and have 1.3x power.",
@@ -1351,7 +1351,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "This Pokemon's contact moves have a 50% chance of poisoning. This effect comes after a move's inherent secondary effect chance.",
 		shortDesc: "This Pokemon's contact moves have a 50% chance of poisoning.",
 	},
-	tingly: {
+	tinglytouch: {
 		name: "Tingly Touch",
 		desc: "This Pokemon's contact moves have a 50% chance of paralysis. This effect comes after a move's inherent secondary effect chance.",
 		shortDesc: "This Pokemon's contact moves have a 50% chance of paralysis.",
