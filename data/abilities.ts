@@ -6043,19 +6043,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 280,
 	},
-	drizzle: {
-		onStart(source) {
-			for (const action of this.queue) {
-				if (action.choice === 'runPrimal' && action.pokemon === source && source.species.id === 'kyogre') return;
-				if (action.choice !== 'runSwitch' && action.choice !== 'runPrimal') break;
-			}
-			this.field.setWeather('raindance');
-		},
-		flags: {},
-		name: "Drizzle",
-		rating: 4,
-		num: 2,
-	},
 
 	// CAP
 	mountaineer: {
