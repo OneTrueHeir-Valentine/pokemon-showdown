@@ -8336,7 +8336,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		name: "Mamoswine",
 		types: ["Ice", "Ground"],
 		baseStats: {hp: 140, atk: 145, def: 90, spa: 40, spd: 70, spe: 90},
-		abilities: {0: "Oblivious", 1: "Refrigerate", H: "Thick Fat", S: "Slush Rush"}
+		abilities: {0: "Oblivious", 1: "Refrigerate", H: "Thick Fat", S: "Slush Rush"},
 		heightm: 2.5,
 		weightkg: 291,
 		color: "Brown",
