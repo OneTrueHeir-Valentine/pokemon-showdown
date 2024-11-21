@@ -9735,8 +9735,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				status: 'brn',
 			}, {
 				chance: 25,
-				boost
+				boost: {
 				def: -1,
+			}
 			},
 		],
 		target: "normal",
