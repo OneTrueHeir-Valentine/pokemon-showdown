@@ -4390,7 +4390,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		name: "Piloswine",
 		types: ["Ice", "Ground"],
 		baseStats: {hp: 105, atk: 105, def: 90, spa: 40, spd: 70, spe: 70},
-		abilities: {0: "Oblivious", 1: "Refrigerate", H: "Thick Fat", S: "Slush Rush"}
+		abilities: {0: "Oblivious", 1: "Refrigerate", H: "Thick Fat", S: "Slush Rush"},
 		heightm: 1.1,
 		weightkg: 55.8,
 		color: "Brown",
