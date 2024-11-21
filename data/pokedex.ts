@@ -4219,7 +4219,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		forme: "Hisui",
 		types: ["Dark", "Poison"],
 		baseStats: {hp: 65, atk: 95, def: 95, spa: 95, spd: 80, spe: 95},
-		abilities: 0: "Poison Point", 1: "Swift Swim", H: "Intimidate", S: "Instinct"},
+		abilities: {0: "Poison Point", 1: "Swift Swim", H: "Intimidate", S: "Instinct"},
 		heightm: 0.5,
 		weightkg: 3.9,
 		color: "Black",
