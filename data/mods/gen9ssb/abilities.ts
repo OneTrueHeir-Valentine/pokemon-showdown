@@ -2625,18 +2625,18 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 
 	// Vistar
 	virtualidol: {
-		shortDesc: "Dancer + Punk Rock.",
+		shortDesc: "Dancer + Amplifier.",
 		name: "Virtual Idol",
 		onBasePowerPriority: 7,
 		onBasePower(basePower, attacker, defender, move) {
 			if (move.flags['sound']) {
-				this.debug('Punk Rock boost');
+				this.debug('Amplifier boost');
 				return this.chainModify([5325, 4096]);
 			}
 		},
 		onSourceModifyDamage(damage, source, target, move) {
 			if (move.flags['sound']) {
-				this.debug('Punk Rock weaken');
+				this.debug('Amplifier weaken');
 				return this.chainModify(0.5);
 			}
 		},

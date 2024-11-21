@@ -5755,13 +5755,13 @@
             {
                 "role": "Fast Attacker",
                 "movepool": ["Boomburst", "Overdrive", "Sludge Wave", "Volt Switch"],
-                "abilities": ["Punk Rock"],
+                "abilities": ["Amplifier"],
                 "teraTypes": ["Normal"]
             },
             {
                 "role": "Setup Sweeper",
                 "movepool": ["Boomburst", "Gunk Shot", "Overdrive", "Shift Gear"],
-                "abilities": ["Punk Rock"],
+                "abilities": ["Amplifier"],
                 "teraTypes": ["Normal"]
             }
         ]
@@ -6524,19 +6524,19 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": ["Earthquake", "Protect", "Recover", "Salt Cure", "Stealth Rock"],
-                "abilities": ["Purifying Salt"],
+                "abilities": ["Sacred Power"],
                 "teraTypes": ["Dragon", "Ghost"]
             },
             {
                 "role": "Bulky Support",
                 "movepool": ["Body Press", "Protect", "Recover", "Salt Cure", "Stealth Rock"],
-                "abilities": ["Purifying Salt"],
+                "abilities": ["Sacred Power"],
                 "teraTypes": ["Dragon", "Ghost"]
             },
             {
                 "role": "Bulky Setup",
                 "movepool": ["Body Press", "Iron Defense", "Recover", "Salt Cure"],
-                "abilities": ["Purifying Salt"],
+                "abilities": ["Sacred Power"],
                 "teraTypes": ["Dragon", "Ghost"]
             }
         ]

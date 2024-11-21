@@ -2640,7 +2640,7 @@
       {
         "species": "Toxtricity",
         "item": ["Assault Vest"],
-        "ability": ["Punk Rock"],
+        "ability": ["Amplifier"],
         "evs": {"hp": 108, "spa": 252, "spe": 148},
         "nature": "Modest",
         "ivs": {"atk": 0},
@@ -2650,7 +2650,7 @@
         "species": "Toxtricity",
         "gigantamax": true,
         "item": ["Throat Spray"],
-        "ability": ["Punk Rock"],
+        "ability": ["Amplifier"],
         "evs": {"spa": 252, "spd": 4, "spe": 252},
         "nature": "Timid",
         "ivs": {"atk": 0},

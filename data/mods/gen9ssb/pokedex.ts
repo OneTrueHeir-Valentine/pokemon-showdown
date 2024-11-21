@@ -109,7 +109,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 		inherit: true,
 		types: ["Ground", "Dragon"],
 		baseStats: {hp: 80, atk: 100, def: 90, spa: 120, spd: 100, spe: 130},
-		abilities: {0: "Punk Rock"},
+		abilities: {0: "Amplifier"},
 	},
 	flygon: {
 		inherit: true,

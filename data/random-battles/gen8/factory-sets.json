@@ -3153,7 +3153,7 @@
 			"sets": [{
 				"species": "Toxtricity",
 				"item": ["Choice Specs"],
-				"ability": ["Punk Rock"],
+				"ability": ["Amplifier"],
 				"evs": {"hp": 4, "spa": 252, "spe": 252},
 				"ivs": {"atk": 0},
 				"nature": "Modest",

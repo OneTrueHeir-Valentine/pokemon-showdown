@@ -6,13 +6,13 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "NFE",
 	},
 	venusaur: {
-		tier: "PU",
+		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
 	venusaurmega: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "OU",
+		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
 	venusaurgmax: {
@@ -26,18 +26,18 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "NFE",
 	},
 	charizard: {
-		tier: "ZU",
+		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
 	charizardmegax: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "OU",
+		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
 	charizardmegay: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "OU",
+		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
 	charizardgmax: {
@@ -51,13 +51,13 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "NFE",
 	},
 	blastoise: {
-		tier: "RUBL",
+		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
 	blastoisemega: {
-		isNonstandard: "Past",
 		tier: "OU",
+		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
 	blastoisegmax: {
@@ -75,8 +75,8 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "NFE",
 	},
 	butterfree: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "OU",
+		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
 	butterfreegmax: {
@@ -94,34 +94,31 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "NFE",
 	},
 	beedrill: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "OU",
+		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
 	beedrillmega: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "OU",
+		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
 	pidgey: {
-		isNonstandard: "Past",
-		tier: "Illegal",
-		natDexTier: "LC",
+		tier: "LC",
 	},
 	pidgeotto: {
-		isNonstandard: "Past",
-		tier: "Illegal",
-		natDexTier: "NFE",
+		tier: "NFE",
+		natDexTier: "UU",
 	},
 	pidgeot: {
-		isNonstandard: "Past",
-		tier: "Illegal",
-		natDexTier: "RU",
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
 	},
 	pidgeotmega: {
-		isNonstandard: "Past",
-		tier: "Illegal",
-		natDexTier: "RU",
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
 	},
 	rattata: {
 		isNonstandard: "Past",

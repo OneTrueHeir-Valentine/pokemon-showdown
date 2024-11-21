@@ -787,7 +787,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		inherit: true,
 		rating: 4,
 	},
-	punkrock: {
+	amplifier: {
 		inherit: true,
 		rating: 3.5,
 	},

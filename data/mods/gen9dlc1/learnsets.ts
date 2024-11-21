@@ -81654,7 +81654,7 @@ export const Learnsets: import('../../../sim/dex-species').ModdedLearnsetDataTab
 			wildcharge: ["9M", "8M"],
 		},
 		eventData: [
-			{generation: 8, level: 50, shiny: true, nature: "Rash", abilities: ["punkrock"], moves: ["overdrive", "sludgewave", "boomburst", "risingvoltage"], pokeball: "cherishball"},
+			{generation: 8, level: 50, shiny: true, nature: "Rash", abilities: ["amplifier"], moves: ["overdrive", "sludgewave", "boomburst", "risingvoltage"], pokeball: "cherishball"},
 		],
 	},
 	toxtricitylowkey: {

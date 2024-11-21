@@ -5086,13 +5086,13 @@
             {
                 "role": "Choice Item user",
                 "movepool": ["Overdrive", "Sludge Bomb", "Snarl", "Volt Switch"],
-                "abilities": ["Punk Rock"],
+                "abilities": ["Amplifier"],
                 "teraTypes": ["Dark", "Electric", "Flying"]
             },
             {
                 "role": "Doubles Wallbreaker",
                 "movepool": ["Overdrive", "Psychic Noise", "Sludge Bomb", "Volt Switch"],
-                "abilities": ["Punk Rock"],
+                "abilities": ["Amplifier"],
                 "teraTypes": ["Electric", "Flying", "Psychic"]
             }
         ]
@@ -5103,13 +5103,13 @@
             {
                 "role": "Choice Item user",
                 "movepool": ["Overdrive", "Sludge Bomb", "Snarl", "Volt Switch"],
-                "abilities": ["Punk Rock"],
+                "abilities": ["Amplifier"],
                 "teraTypes": ["Dark", "Electric", "Flying"]
             },
             {
                 "role": "Doubles Wallbreaker",
                 "movepool": ["Overdrive", "Psychic Noise", "Sludge Bomb", "Volt Switch"],
-                "abilities": ["Punk Rock"],
+                "abilities": ["Amplifier"],
                 "teraTypes": ["Electric", "Flying", "Psychic"]
             }
         ]
@@ -5848,7 +5848,7 @@
             {
                 "role": "Bulky Protect",
                 "movepool": ["Protect", "Recover", "Salt Cure", "Stealth Rock", "Wide Guard"],
-                "abilities": ["Purifying Salt"],
+                "abilities": ["Sacred Power"],
                 "teraTypes": ["Ghost"]
             }
         ]

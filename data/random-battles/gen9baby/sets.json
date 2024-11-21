@@ -1860,7 +1860,7 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": ["Curse", "Earthquake", "Recover", "Stealth Rock", "Stone Edge"],
-                "abilities": ["Purifying Salt"],
+                "abilities": ["Sacred Power"],
                 "teraTypes": ["Dragon", "Fairy"]
             }
         ]

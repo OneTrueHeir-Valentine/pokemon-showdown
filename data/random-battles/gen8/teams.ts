@@ -1645,7 +1645,7 @@ export class RandomGen8Teams {
 			return (
 				!counter.get('technician') ||
 				moves.has('tailslap') ||
-				abilities.includes('Punk Rock') ||
+				abilities.includes('Amplifier') ||
 				// For Doubles Alolan Persian
 				movePool.includes('snarl')
 			);

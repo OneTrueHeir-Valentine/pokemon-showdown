@@ -1052,7 +1052,7 @@
               "evs": {"hp": 252, "atk": 4, "def": 252},
               "teraType": ["Fairy", "Poison", "Water"],
               "wantsTera": true,
-              "ability": ["Purifying Salt"]
+              "ability": ["Sacred Power"]
           },
           {
               "species": "Garganacl",
@@ -1068,7 +1068,7 @@
               "evs": {"hp": 252, "atk": 4, "spd": 252},
               "teraType": ["Ghost"],
               "wantsTera": true,
-              "ability": ["Purifying Salt"]
+              "ability": ["Sacred Power"]
           },
           {
               "species": "Garganacl",
@@ -1084,7 +1084,7 @@
               "evs": {"hp": 252, "def": 4, "spd": 252},
               "teraType": ["Fairy", "Poison", "Water"],
               "wantsTera": true,
-              "ability": ["Purifying Salt"]
+              "ability": ["Sacred Power"]
           }
       ]
   },

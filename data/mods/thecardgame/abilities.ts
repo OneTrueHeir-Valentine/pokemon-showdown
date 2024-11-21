@@ -79,17 +79,17 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 			}
 		},
 	},
-	purifyingsalt: {
+	sacredpower: {
 		inherit: true,
 		onSourceModifyAtk(atk, attacker, defender, move) {
 			if (move.type === 'Psychic') {
-				this.debug('Purifying Salt weaken');
+				this.debug('Sacred Power weaken');
 				return this.chainModify(0.5);
 			}
 		},
 		onSourceModifySpA(spa, attacker, defender, move) {
 			if (move.type === 'Psychic') {
-				this.debug('Purifying Salt weaken');
+				this.debug('Sacred Power weaken');
 				return this.chainModify(0.5);
 			}
 		},

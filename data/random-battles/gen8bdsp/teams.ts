@@ -647,7 +647,7 @@ export class RandomBDSPTeams extends RandomGen8Teams {
 			return (
 				!counter.get('technician') ||
 				moves.has('tailslap') ||
-				abilities.includes('Punk Rock')
+				abilities.includes('Amplifier')
 			);
 		case 'Tinted Lens':
 			return (

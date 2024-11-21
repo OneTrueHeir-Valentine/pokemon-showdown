@@ -543,10 +543,10 @@ export default class TeamGenerator {
 		// 5% boost for ability to break subs
 		if (move.flags.bypasssub) weight *= 1.05;
 		if (move.flags.pulse && ability === 'Mega Launcher') weight *= 1.5;
-		if (move.flags.punch && ability === 'Iron Fist') weight *= 1.2;
+		if (move.flags.punch && ability === 'Iron Fist') weight *= 1.4;
 		if (!move.flags.protect) weight *= 1.05;
 		if (move.flags.slicing && ability === 'Sharpness') weight *= 1.5;
-		if (move.flags.vibration && ability === 'Punk Rock') weight *= 1.3;
+		if (move.flags.vibration && ability === 'Amplifier') weight *= 1.3;
 
 		// boosts/secondaries
 		// TODO: consider more possible secondaries
