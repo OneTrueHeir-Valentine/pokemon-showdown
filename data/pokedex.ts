@@ -3411,7 +3411,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Fire", "Ghost"],
 		genderRatio: {M: 0.875, F: 0.125},
 		baseStats: {hp: 73, atk: 112, def: 78, spa: 114, spd: 78, spe: 105},
-		abilities: {0: "Blaze", 1: "Sacred Power", H: "Instinct", S: "Beast Boost"}
+		abilities: {0: "Blaze", 1: "Sacred Power", H: "Instinct", S: "Beast Boost"},
 		heightm: 1.6,
 		weightkg: 69.8,
 		color: "Yellow",
