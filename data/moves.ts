@@ -3937,7 +3937,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				chance: 20,
 				boosts: {
 				spa: -1,
-			}, {
+			}
+			}, 
+			{
 				chance: 20,
 				volatileStatus: 'confusion',
 			},

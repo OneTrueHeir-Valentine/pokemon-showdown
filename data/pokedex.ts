@@ -1839,7 +1839,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		evoLevel: 40,
 		eggGroups: ["Field"],
 	},
-	slowpoke: {10
+	slowpoke: {
 		num: 79,
 		name: "Slowpoke",
 		types: ["Water", "Psychic"],
