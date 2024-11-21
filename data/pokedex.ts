@@ -7817,7 +7817,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		num: 438,
 		name: "Bonsly",
 		types: ["Rock"],
-		baseStats: {hp: 55 atk: 80, def: 95, spa: 5, spd: 65, spe: 50},
+		baseStats: {hp: 55, atk: 80, def: 95, spa: 5, spd: 65, spe: 50},
 		abilities: {0: "Sturdy", 1: "Rock Head", H: "Contrary", S: "Sap Sipper"},
 		heightm: 0.5,
 		weightkg: 15,
