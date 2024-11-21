@@ -1403,8 +1403,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1, bite: 1},
 		secondary: {
 			chance: 50,
-			boost
+			boost: {
 			def: -1,
+		},
 		},
 		target: "normal",
 		type: "Dark",

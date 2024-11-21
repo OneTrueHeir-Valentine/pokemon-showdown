@@ -1223,7 +1223,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		otherFormes: ["Diglett-Alola"],
 		formeOrder: ["Diglett", "Diglett-Alola"],
 	},
-	diglettalola: {10
+	diglettalola: {
 		num: 50,
 		name: "Diglett-Alola",
 		baseSpecies: "Diglett",
