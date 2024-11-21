@@ -2754,7 +2754,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		evos: ["Magmortar"],
 		eggGroups: ["Human-Like"],
 	},
-	pinsir: {20
+	pinsir: {
 		num: 127,
 		name: "Pinsir",
 		types: ["Bug"],
