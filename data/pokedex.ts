@@ -2143,7 +2143,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		formeOrder: ["Gengar", "Gengar-Mega"],
 		canGigantamax: "G-Max Terror",
 	},
-	gengarmega: {5
+	gengarmega: {
 		num: 94,
 		name: "Gengar-Mega",
 		baseSpecies: "Gengar",
