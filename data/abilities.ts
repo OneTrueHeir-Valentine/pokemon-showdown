@@ -2451,7 +2451,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 279,
 	},
-	Brainiac: {
+	brainiac: {
 		onSourceModifyAtkPriority: 5,
 		onSourceModifyAtk(atk, attacker, defender, move) {
 			if (move.type === 'Psychic') {
@@ -4237,7 +4237,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onBasePower(basePower, attacker, defender, move) {
 			if (this.field.isWeather(['hail', 'snow'])) {
 				if (move.type === 'Ice' || move.type === 'Water' || move.type === 'Steel') {
-					this.debug('Sand Force boost');
+					this.debug('Slush Force boost');
 					return this.chainModify(1.5);
 				}
 			}
@@ -4246,7 +4246,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (type === 'sandstorm') return false;
 		},
 		flags: {},
-		name: "Sand Force",
+		name: "Slush Force",
 		rating: 2,
 		num: 159,
 	},
