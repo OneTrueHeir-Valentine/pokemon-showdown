@@ -5565,6 +5565,17 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fire",
 		contestType: "Beautiful",
 	},
+	secondaries: [
+			{
+				chance: 40,
+				boosts: {
+				def: -1,
+			}
+			}, {
+				chance: 20,
+				volatileStatus: 'confusion',
+			},
+		],
 	firefang: {
 		num: 424,
 		accuracy: 95,
