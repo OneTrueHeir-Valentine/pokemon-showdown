@@ -897,7 +897,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	cutecharm: {
 		onDamagingHit(damage, target, source, move) {
 			if (this.checkMoveMakesContact(move, source, target)) {
-				if (this.randomChance(6, 10)) {
+				if (this.randomChance(8, 10)) {
 					source.addVolatile('attract', this.effectState.target);
 				}
 			}

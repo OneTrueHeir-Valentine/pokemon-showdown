@@ -9737,7 +9737,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				chance: 25,
 				boost: {
 				def: -1,
-			}
+			},
 			},
 		],
 		target: "normal",
@@ -20372,7 +20372,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				chance: 30,
 				boost:{
 				def: -1,
-			}
+			},
 			},
 		],
 		target: "normal",
