@@ -561,20 +561,6 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 
 		start: "  [POKEMON] took the attack!",
 	},
-	fireeater: {
-		name: "Fire Eater",
-		desc: "This Pokemon is immune to Fire-type moves and raises its Attack by 1 stage when hit by an Fire-type move. If this Pokemon is not the target of a single-target Fire-type move used by another Pokemon, this Pokemon redirects that move to itself if it is within the range of that move. If multiple Pokemon could redirect with this Ability, it goes to the one with the highest Speed, or in the case of a tie to the one that has had this Ability active longer.",
-		shortDesc: "This Pokemon draws Fire moves to itself to raise Atk by 1; Fire immunity.",
-
-		start: "  [POKEMON] took the attack!",
-	},
-	fireeater: {
-		name: "Fire Eater",
-		desc: "This Pokemon is immune to Fire-type moves and raises its Attack by 1 stage when hit by an Fire-type move. If this Pokemon is not the target of a single-target Fire-type move used by another Pokemon, this Pokemon redirects that move to itself if it is within the range of that move. If multiple Pokemon could redirect with this Ability, it goes to the one with the highest Speed, or in the case of a tie to the one that has had this Ability active longer.",
-		shortDesc: "This Pokemon draws Fire moves to itself to raise Atk by 1; Fire immunity.",
-
-		start: "  [POKEMON] took the attack!",
-	},
 	flowergift: {
 		name: "Flower Gift",
 		desc: "If this Pokemon is a Cherrim and Sunny Day is active, it changes to Sunshine Form and the Attack and Special Defense of it and its allies are multiplied by 1.5. These effects are prevented if the Pokemon is holding a Utility Umbrella.",
