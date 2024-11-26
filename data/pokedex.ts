@@ -6286,7 +6286,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		evoLevel: 40,
 		eggGroups: ["Water 3"],
 	},
-	anorith: {50
+	anorith: {
 		num: 347,
 		name: "Anorith",
 		types: ["Rock", "Bug"],
