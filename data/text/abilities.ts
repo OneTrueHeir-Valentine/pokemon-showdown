@@ -287,7 +287,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	corrosion: {
 		name: "Corrosion",
-		shortDesc: "This Pokemon can poison or badly poison a Pokemon regardless of its typing.",
+		shortDesc: "This Pokemon can hit poison and steel types with poison andpoison/badly poison a Pokemon regardless of its typing.",
 	},
 	costar: {
 		name: "Costar",
@@ -551,16 +551,24 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	flashfire: {
 		name: "Flash Fire",
-		desc: "This Pokemon is immune to Fire-type moves. The first time it is hit by a Fire-type move, its offensive stat is multiplied by 2 while using a Fire-type attack as long as it remains active and has this Ability. If this Pokemon is frozen, it cannot be defrosted by Fire-type attacks.",
-		shortDesc: "This Pokemon's Fire attacks do 2x damage if hit by one Fire move; Fire immunity.",
-		gen4: {
-			desc: "This Pokemon is immune to Fire-type moves, as long as it is not frozen. The first time it is hit by a Fire-type move, damage from its Fire-type attacks will be multiplied by 1.5 as long as it remains active and has this Ability.",
-		},
-		gen3: {
-			desc: "This Pokemon is immune to Fire-type moves, as long as it is not frozen. The first time it is hit by a Fire-type move, damage from its Fire-type attacks will be multiplied by 1.5 as long as it remains active and has this Ability. If this Pokemon has a non-volatile status condition, is a Fire type, or has a substitute, Will-O-Wisp will not activate this Ability.",
-		},
+		desc: "This Pokemon is immune to Fire-type moves and raises its Special Attack by 1 stage when hit by an Fire-type move. If this Pokemon is not the target of a single-target Fire-type move used by another Pokemon, this Pokemon redirects that move to itself if it is within the range of that move. If multiple Pokemon could redirect with this Ability, it goes to the one with the highest Speed, or in the case of a tie to the one that has had this Ability active longer.",
+		shortDesc: "This Pokemon draws Fire moves to itself to raise Sp. Atk by 1; Fire immunity.",
 
-		start: "  The power of [POKEMON]'s Fire-type moves rose!",
+		start: "  [POKEMON] took the attack!",
+	},
+	fireeater: {
+		name: "Fire Eater",
+		desc: "This Pokemon is immune to Fire-type moves and raises its Attack by 1 stage when hit by an Fire-type move. If this Pokemon is not the target of a single-target Fire-type move used by another Pokemon, this Pokemon redirects that move to itself if it is within the range of that move. If multiple Pokemon could redirect with this Ability, it goes to the one with the highest Speed, or in the case of a tie to the one that has had this Ability active longer.",
+		shortDesc: "This Pokemon draws Fire moves to itself to raise Atk by 1; Fire immunity.",
+
+		start: "  [POKEMON] took the attack!",
+	},
+	fireeater: {
+		name: "Fire Eater",
+		desc: "This Pokemon is immune to Fire-type moves and raises its Attack by 1 stage when hit by an Fire-type move. If this Pokemon is not the target of a single-target Fire-type move used by another Pokemon, this Pokemon redirects that move to itself if it is within the range of that move. If multiple Pokemon could redirect with this Ability, it goes to the one with the highest Speed, or in the case of a tie to the one that has had this Ability active longer.",
+		shortDesc: "This Pokemon draws Fire moves to itself to raise Atk by 1; Fire immunity.",
+
+		start: "  [POKEMON] took the attack!",
 	},
 	flowergift: {
 		name: "Flower Gift",
@@ -583,8 +591,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	fluffy: {
 		name: "Fluffy",
-		desc: "This Pokemon receives 1/2 damage from contact moves, but double damage from Fire moves.",
-		shortDesc: "This Pokemon takes 1/2 damage from contact moves, 2x damage from Fire moves.",
+		desc: "This Pokemon receives 1/3 damage from physical moves, but double damage from Fire moves.",
+		shortDesc: "This Pokemon takes 1/3 damage from physical moves, 2x damage from Fire moves.",
 	},
 	forecast: {
 		name: "Forecast",
@@ -876,6 +884,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "This Pokemon's punch-based attacks have their power multiplied by 1.4.",
 		shortDesc: "This Pokemon's punch-based attacks have 1.4x power.",
 	},
+	potentdrain: {
+		name: "Potent Drain",
+		desc: "This Pokemon's drain-based attacks have their power multiplied by 1.4.",
+		shortDesc: "This Pokemon's drain-based attacks have 1.4x power.",
+	},
 	justified: {
 		name: "Justified",
 		shortDesc: "This Pokemon's Attack is raised by 1 stage after it is damaged by a Dark-type move.",
@@ -1164,8 +1177,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	myceliummight: {
 		name: "Mycelium Might",
-		desc: "This Pokemon's Status moves ignore certain Abilities of other Pokemon, and go last among Pokemon using the same or greater priority moves.",
-		shortDesc: "This Pokemon's Status moves go last in their priority bracket and ignore Abilities.",
+		desc: "This Pokemon's Status moves ignore certain Abilities of other Pokemon.",
+		shortDesc: "This Pokemon's Status moves ignore Abilities.",
 	},
 	naturalcure: {
 		name: "Natural Cure",
@@ -1195,8 +1208,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	normalize: {
 		name: "Normalize",
-		desc: "This Pokemon's moves are changed to be Normal type and have their power multiplied by 1.2. This effect comes before other effects that change a move's type.",
-		shortDesc: "This Pokemon's moves are changed to be Normal type and have 1.2x power.",
+		shortDesc: "On switch-in, change the type of opposing pokemon to normal",
 		gen6: {
 			desc: "This Pokemon's moves are changed to be Normal type. This effect comes before other effects that change a move's type.",
 			shortDesc: "This Pokemon's moves are changed to be Normal type.",
@@ -1445,7 +1457,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	purepower: {
 		name: "Pure Power",
-		shortDesc: "This Pokemon's Attack is doubled.",
+		shortDesc: "This Pokemon's Special Attack is doubled.",
 	},
 	sacredpower: {
 		name: "Sacred Power",
@@ -1556,7 +1568,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	rockypayload: {
 		name: "Rocky Payload",
-		shortDesc: "This Pokemon's offensive stat is multiplied by 1.5 while using a Rock-type attack.",
+		shortDesc: "This Pokemon's offensive stat is multiplied by 2 while using a Rock-type attack.",
 	},
 	roughskin: {
 		name: "Rough Skin",
@@ -1617,8 +1629,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	scrappy: {
 		name: "Scrappy",
-		desc: "This Pokemon can hit Ghost types with Normal- and Fighting-type moves. This Pokemon is immune to the effect of the Intimidate Ability.",
-		shortDesc: "Fighting, Normal moves hit Ghost. Immune to Intimidate.",
+		desc: "This Pokemon can hit Ghost types with Normal- and Fighting-type moves. This Pokemon is immune to the effects of Intimidate and Pressure.",
+		shortDesc: "Fighting, Normal moves hit Ghost. Immune to Intimidate & Pressure.",
 		gen7: {
 			desc: "This Pokemon can hit Ghost types with Normal- and Fighting-type moves.",
 			shortDesc: "This Pokemon can hit Ghost types with Normal- and Fighting-type moves.",
@@ -1851,7 +1863,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	steelworker: {
 		name: "Steelworker",
-		shortDesc: "This Pokemon's offensive stat is multiplied by 1.5 while using a Steel-type attack.",
+		shortDesc: "This Pokemon's offensive stat is multiplied by 2 while using a Steel-type attack.",
+	},
+	icesculptor: {
+		name: "Ice Sculptor",
+		shortDesc: "This Pokemon's offensive stat is multiplied by 2 while using a Ice-type attack.",
 	},
 	steelyspirit: {
 		name: "Steely Spirit",
@@ -2122,9 +2138,9 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	transistor: {
 		name: "Transistor",
-		shortDesc: "This Pokemon's offensive stat is multiplied by 1.3 while using an Electric-type attack.",
+		shortDesc: "This Pokemon's offensive stat is multiplied by 2 while using an Electric-type attack.",
 		gen8: {
-			shortDesc: "This Pokemon's offensive stat is multiplied by 1.5 while using an Electric-type attack.",
+			shortDesc: "This Pokemon's offensive stat is multiplied by 2 while using an Electric-type attack.",
 		},
 	},
 	triage: {
@@ -2220,6 +2236,26 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Water Absorb",
 		desc: "This Pokemon is immune to Water-type moves and restores 1/4 of its maximum HP, rounded down, when hit by a Water-type move.",
 		shortDesc: "This Pokemon heals 1/4 of its max HP when hit by Water moves; Water immunity.",
+	},
+	rockabsorb: {
+		name: "Rock Absorb",
+		desc: "This Pokemon is immune to Rock-type moves and restores 1/4 of its maximum HP, rounded down, when hit by a Rock-type move.",
+		shortDesc: "This Pokemon heals 1/4 of its max HP when hit by Rock moves; Rock immunity.",
+	},
+	steelabsorb: {
+		name: "Steel Absorb",
+		desc: "This Pokemon is immune to Steel-type moves and restores 1/4 of its maximum HP, rounded down, when hit by a Steel-type move.",
+		shortDesc: "This Pokemon heals 1/4 of its max HP when hit by Steel moves; Steel immunity.",
+	},
+	iceabsorb: {
+		name: "Ice Absorb",
+		desc: "This Pokemon is immune to Ice-type moves and restores 1/4 of its maximum HP, rounded down, when hit by a Ice-type move.",
+		shortDesc: "This Pokemon heals 1/4 of its max HP when hit by Ice moves; Ice immunity.",
+	},
+	dragonabsorb: {
+		name: "Dragon Absorb",
+		desc: "This Pokemon is immune to Dragon-type moves and restores 1/4 of its maximum HP, rounded down, when hit by a Dragon-type move.",
+		shortDesc: "This Pokemon heals 1/4 of its max HP when hit by Dragon moves; Dragon immunity.",
 	},
 	waterbubble: {
 		name: "Water Bubble",

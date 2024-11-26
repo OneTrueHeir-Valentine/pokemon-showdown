@@ -160,11 +160,43 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	aquaring: {
 		name: "Aqua Ring",
-		desc: "The user has 1/16 of its maximum HP, rounded down, restored at the end of each turn while it remains active. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down. If the user uses Baton Pass, the replacement will receive the healing effect.",
-		shortDesc: "User recovers 1/16 max HP per turn.",
+		desc: "The user has 1/8 of its maximum HP, rounded down, restored at the end of each turn while it remains active. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down. If the user uses Baton Pass, the replacement will receive the healing effect.",
+		shortDesc: "User recovers 1/8 max HP per turn.",
 
 		start: "  [POKEMON] surrounded itself with a veil of water!",
 		heal: "  A veil of water restored [POKEMON]'s HP!",
+	},
+	draconicrestoration: {
+		name: "Draconic Restoration",
+		desc: "The user has 1/8 of its maximum HP, rounded down, restored at the end of each turn while it remains active. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down. If the user uses Baton Pass, the replacement will receive the healing effect.",
+		shortDesc: "User recovers 1/8 max HP per turn.",
+
+		start: "  [POKEMON] surrounded itself with restoring dragon energy!",
+		heal: "  Draconic Energy restored [POKEMON]'s HP!",
+	},
+	ionsphere: {
+		name: "Ion Sphere",
+		desc: "The user has 1/8 of its maximum HP, rounded down, restored at the end of each turn while it remains active. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down. If the user uses Baton Pass, the replacement will receive the healing effect.",
+		shortDesc: "User recovers 1/8 max HP per turn.",
+
+		start: "  [POKEMON] surrounded itself with a Sphere of electric energy!",
+		heal: "  Electric Energy restored [POKEMON]'s HP!",
+	},
+	epoxyresin: {
+		name: "Epoxy Resin",
+		desc: "The user has 1/8 of its maximum HP, rounded down, restored at the end of each turn while it remains active. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down. If the user uses Baton Pass, the replacement will receive the healing effect.",
+		shortDesc: "User recovers 1/8 max HP per turn.",
+
+		start: "  An oily resin begins coating [POKEMON]!",
+		heal: "  Resin restored [POKEMON]'s HP!",
+	},
+	galliumdrip: {
+		name: "Gallium Drip",
+		desc: "The user has 1/8 of its maximum HP, rounded down, restored at the end of each turn while it remains active. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down. If the user uses Baton Pass, the replacement will receive the healing effect.",
+		shortDesc: "User recovers 1/8 max HP per turn.",
+
+		start: "  Gallium begins dripping onto [POKEMON]!",
+		heal: "  Gallium restored [POKEMON]'s HP!",
 	},
 	aquastep: {
 		name: "Aqua Step",

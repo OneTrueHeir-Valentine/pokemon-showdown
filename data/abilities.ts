@@ -784,6 +784,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (!move.ignoreImmunity) move.ignoreImmunity = {};
 			if (move.ignoreImmunity !== true) {
 				move.ignoreImmunity['Steel'] = true;
+				move.ignoreImmunity['Poison'] = true;
 			}
 		},
 		flags: {},
@@ -1481,41 +1482,75 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	flashfire: {
 		onTryHit(target, source, move) {
 			if (target !== source && move.type === 'Fire') {
-				move.accuracy = true;
-				if (!target.addVolatile('flashfire')) {
+				if (!this.boost({spa: 1})) {
 					this.add('-immune', target, '[from] ability: Flash Fire');
 				}
 				return null;
 			}
 		},
-		onEnd(pokemon) {
-			pokemon.removeVolatile('flashfire');
-		},
-		condition: {
-			noCopy: true, // doesn't get copied by Baton Pass
-			onStart(target) {
-				this.add('-start', target, 'ability: Flash Fire');
-			},
-			onModifyAtkPriority: 5,
-			onModifyAtk(atk, attacker, defender, move) {
-				if (move.type === 'Fire' && attacker.hasAbility('flashfire')) {
-					this.debug('Flash Fire boost');
-					return this.chainModify(1.5);
+		onAnyRedirectTarget(target, source, source2, move) {
+			if (move.type !== 'Fire' || move.flags['pledgecombo']) return;
+			const redirectTarget = ['randomNormal', 'adjacentFoe'].includes(move.target) ? 'normal' : move.target;
+			if (this.validTarget(this.effectState.target, source, redirectTarget)) {
+				if (move.smartTarget) move.smartTarget = false;
+				if (this.effectState.target !== target) {
+					this.add('-activate', this.effectState.target, 'ability: Flash Fire');
 				}
-			},
-			onModifySpAPriority: 5,
-			onModifySpA(atk, attacker, defender, move) {
-				if (move.type === 'Fire' && attacker.hasAbility('flashfire')) {
-					this.debug('Flash Fire boost');
-					return this.chainModify(2);
-				}
-			},
-			onEnd(target) {
-				this.add('-end', target, 'ability: Flash Fire', '[silent]');
-			},
+				return this.effectState.target;
+			}
 		},
 		flags: {breakable: 1},
 		name: "Flash Fire",
+		rating: 4.5,
+		num: 18,
+	},
+	flameeater: {
+		onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Fire') {
+				if (!this.boost({atk: 1})) {
+					this.add('-immune', target, '[from] ability: Flame Eater');
+				}
+				return null;
+			}
+		},
+		onAnyRedirectTarget(target, source, source2, move) {
+			if (move.type !== 'Fire' || move.flags['pledgecombo']) return;
+			const redirectTarget = ['randomNormal', 'adjacentFoe'].includes(move.target) ? 'normal' : move.target;
+			if (this.validTarget(this.effectState.target, source, redirectTarget)) {
+				if (move.smartTarget) move.smartTarget = false;
+				if (this.effectState.target !== target) {
+					this.add('-activate', this.effectState.target, 'ability: Flame Eater');
+				}
+				return this.effectState.target;
+			}
+		},
+		flags: {breakable: 1},
+		name: "Flame Eater",
+		rating: 4.5,
+		num: 18,
+	},
+	eartheater: {
+		onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Ground') {
+				if (!this.boost({atk: 1})) {
+					this.add('-immune', target, '[from] ability: Earth Eater');
+				}
+				return null;
+			}
+		},
+		onAnyRedirectTarget(target, source, source2, move) {
+			if (move.type !== 'Ground' || move.flags['pledgecombo']) return;
+			const redirectTarget = ['randomNormal', 'adjacentFoe'].includes(move.target) ? 'normal' : move.target;
+			if (this.validTarget(this.effectState.target, source, redirectTarget)) {
+				if (move.smartTarget) move.smartTarget = false;
+				if (this.effectState.target !== target) {
+					this.add('-activate', this.effectState.target, 'ability: Earth Eater');
+				}
+				return this.effectState.target;
+			}
+		},
+		flags: {breakable: 1},
+		name: "Earth Eater",
 		rating: 4.5,
 		num: 18,
 	},
@@ -1598,7 +1633,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onSourceModifyDamage(damage, source, target, move) {
 			let mod = 1;
 			if (move.type === 'Fire') mod *= 2;
-			if (move.category === 'Physical') mod /= 2;
+			if (move.category === 'Physical') mod /= 3;
 			return this.chainModify(mod);
 		},
 		flags: {breakable: 1},
@@ -2409,7 +2444,20 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {},
 		name: "Iron Fist",
-		rating: 3.5,
+		rating: 4,
+		num: 89,
+	},
+	potentdrain: {
+		onBasePowerPriority: 23,
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.flags['drain']) {
+				this.debug('Potent Drain boost');
+				return this.chainModify(1.4);
+			}
+		},
+		flags: {},
+		name: "Potent Drain",
+		rating: 4,
 		num: 89,
 	},
 	justified: {
@@ -3007,12 +3055,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 152,
 	},
 	myceliummight: {
-		onFractionalPriorityPriority: -1,
-		onFractionalPriority(priority, pokemon, target, move) {
-			if (move.category === 'Status') {
-				return -0.1;
-			}
-		},
 		onModifyMove(move) {
 			if (move.category === 'Status') {
 				move.ignoreAbility = true;
@@ -3020,7 +3062,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {},
 		name: "Mycelium Might",
-		rating: 2,
+		rating: 4,
 		num: 298,
 	},
 	naturalcure: {
@@ -3198,21 +3240,16 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 99,
 	},
 	normalize: {
-		onModifyTypePriority: 1,
-		onModifyType(move, pokemon) {
-			const noModifyType = [
-				'hiddenpower', 'judgment', 'multiattack', 'naturalgift', 'revelationdance', 'struggle', 'technoblast', 'terrainpulse', 'weatherball',
-			];
-			if (!(move.isZ && move.category !== 'Status') && !noModifyType.includes(move.id) &&
-				// TODO: Figure out actual interaction
-				!(move.name === 'Tera Blast' && pokemon.terastallized)) {
-				move.type = 'Normal';
-				move.typeChangerBoosted = this.effect;
+		onStart(pokemon) {
+			// n.b. only affects Hackmons
+			// interaction with No Ability is complicated: https://www.smogon.com/forums/threads/pokemon-sun-moon-battle-mechanics-research.3586701/page-76#post-7790209
+			if (target.getTypes().join() === 'Normal' || !target.setType('Normal')) {
+				// Soak should animate even when it fails.
+				// Returning false would suppress the animation.
+				this.add('-fail', target);
+				return null;
 			}
-		},
-		onBasePowerPriority: 23,
-		onBasePower(basePower, pokemon, target, move) {
-			if (move.typeChangerBoosted === this.effect) return this.chainModify([4915, 4096]);
+			this.add('-start', target, 'typechange', 'Normal');
 		},
 		flags: {},
 		name: "Normalize",
@@ -3859,8 +3896,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 244,
 	},
 	purepower: {
-		onModifyAtkPriority: 5,
-		onModifyAtk(atk) {
+		onModifySpaPriority: 5,
+		onModifySpA(spa) {
 			return this.chainModify(2);
 		},
 		flags: {},
@@ -4174,14 +4211,14 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onModifyAtk(atk, attacker, defender, move) {
 			if (move.type === 'Rock') {
 				this.debug('Rocky Payload boost');
-				return this.chainModify(1.5);
+				return this.chainModify(2);
 			}
 		},
 		onModifySpAPriority: 5,
 		onModifySpA(atk, attacker, defender, move) {
 			if (move.type === 'Rock') {
 				this.debug('Rocky Payload boost');
-				return this.chainModify(1.5);
+				return this.chainModify(2);
 			}
 		},
 		flags: {},
@@ -4368,10 +4405,14 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				delete boost.atk;
 				this.add('-fail', target, 'unboost', 'Attack', '[from] ability: Scrappy', '[of] ' + target);
 			}
+			if (effect.name === 'Pressure' && boost.spa) {
+				delete boost.atk;
+				this.add('-fail', target, 'unboost', 'Special Attack', '[from] ability: Scrappy', '[of] ' + target);
+			}
 		},
 		flags: {},
 		name: "Scrappy",
-		rating: 3,
+		rating: 4,
 		num: 113,
 	},
 	screencleaner: {
@@ -4866,18 +4907,38 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onModifyAtk(atk, attacker, defender, move) {
 			if (move.type === 'Steel') {
 				this.debug('Steelworker boost');
-				return this.chainModify(1.5);
+				return this.chainModify(2);
 			}
 		},
 		onModifySpAPriority: 5,
 		onModifySpA(atk, attacker, defender, move) {
 			if (move.type === 'Steel') {
 				this.debug('Steelworker boost');
-				return this.chainModify(1.5);
+				return this.chainModify(2);
 			}
 		},
 		flags: {},
 		name: "Steelworker",
+		rating: 3.5,
+		num: 200,
+	},
+	icesculptor: {
+		onModifyAtkPriority: 5,
+		onModifyAtk(atk, attacker, defender, move) {
+			if (move.type === 'Ice') {
+				this.debug('Ice Sculptor boost');
+				return this.chainModify(2);
+			}
+		},
+		onModifySpAPriority: 5,
+		onModifySpA(atk, attacker, defender, move) {
+			if (move.type === 'Ice') {
+				this.debug('Ice Sculptor boost');
+				return this.chainModify(2);
+			}
+		},
+		flags: {},
+		name: "Ice Sculptor",
 		rating: 3.5,
 		num: 200,
 	},
@@ -5480,14 +5541,14 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onModifyAtk(atk, attacker, defender, move) {
 			if (move.type === 'Electric') {
 				this.debug('Transistor boost');
-				return this.chainModify([5325, 4096]);
+				return this.chainModify(2);
 			}
 		},
 		onModifySpAPriority: 5,
 		onModifySpA(atk, attacker, defender, move) {
 			if (move.type === 'Electric') {
 				this.debug('Transistor boost');
-				return this.chainModify([5325, 4096]);
+				return this.chainModify(2);
 			}
 		},
 		flags: {},
@@ -5713,6 +5774,62 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {breakable: 1},
 		name: "Water Absorb",
+		rating: 3.5,
+		num: 11,
+	},
+	rockabsorb: {
+		onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Rock') {
+				if (!this.heal(target.baseMaxhp / 4)) {
+					this.add('-immune', target, '[from] ability: Rock Absorb');
+				}
+				return null;
+			}
+		},
+		flags: {breakable: 1},
+		name: "Rock Absorb",
+		rating: 3.5,
+		num: 11,
+	},
+	steelabsorb: {
+		onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Steel') {
+				if (!this.heal(target.baseMaxhp / 4)) {
+					this.add('-immune', target, '[from] ability: Steel Absorb');
+				}
+				return null;
+			}
+		},
+		flags: {breakable: 1},
+		name: "Steel Absorb",
+		rating: 3.5,
+		num: 11,
+	},
+	iceabsorb: {
+		onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Ice') {
+				if (!this.heal(target.baseMaxhp / 4)) {
+					this.add('-immune', target, '[from] ability: Ice Absorb');
+				}
+				return null;
+			}
+		},
+		flags: {breakable: 1},
+		name: "Ice Absorb",
+		rating: 3.5,
+		num: 11,
+	},
+	dragonabsorb: {
+		onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Dragon') {
+				if (!this.heal(target.baseMaxhp / 4)) {
+					this.add('-immune', target, '[from] ability: Dragon Absorb');
+				}
+				return null;
+			}
+		},
+		flags: {breakable: 1},
+		name: "Dragon Absorb",
 		rating: 3.5,
 		num: 11,
 	},

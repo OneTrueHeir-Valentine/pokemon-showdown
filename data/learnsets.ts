@@ -34990,6 +34990,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			protect: ["7M", "6M", "5M", "4M", "3M"],
 			psychic: ["7M", "6M", "5M", "4M", "3M"],
 			quiverdance: ["7L40", "6L40", "5L45"],
+			victorydance: ["7M", "6M", "5T", "4M", "3T"],
 			rage: ["7L37", "6L37"],
 			rest: ["7M", "6M", "5M", "4M", "3M"],
 			return: ["7M", "6M", "5M", "4M", "3M"],
@@ -35001,6 +35002,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			signalbeam: ["7T", "6T", "5T", "4T"],
 			silverwind: ["7L25", "6L25", "5L34", "4M", "4L34", "3L34"],
 			sleeptalk: ["7M", "6M", "5T", "4M", "3T"],
+			sleeppowder: ["7M", "6M", "5T", "4M", "3T"],
 			snore: ["7T", "6T", "5T", "4T", "3T"],
 			solarbeam: ["7M", "6M", "5M", "4M", "3M"],
 			stringshot: ["4T"],
@@ -35070,6 +35072,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			psybeam: ["7L22", "6L22", "5L24", "4L24", "3L24"],
 			psychic: ["7M", "6M", "5M", "4M", "3M"],
 			quiverdance: ["7L40", "6L40", "5L45"],
+			victorydance: ["7M", "6M", "5T", "4M", "3T"],
 			rest: ["7M", "6M", "5M", "4M", "3M"],
 			return: ["7M", "6M", "5M", "4M", "3M"],
 			roost: ["7M", "6M", "5T", "4M"],
@@ -35079,6 +35082,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			signalbeam: ["7T", "6T", "5T", "4T"],
 			silverwind: ["7L25", "6L25", "5L34", "4M", "4L34", "3L34"],
 			sleeptalk: ["7M", "6M", "5T", "4M", "3T"],
+			sleeppowder: ["7M", "6M", "5T", "4M", "3T"],
 			sludgebomb: ["7M", "6M", "5M", "4M", "3M"],
 			snore: ["7T", "6T", "5T", "4T", "3T"],
 			solarbeam: ["7M", "6M", "5M", "4M", "3M"],
@@ -45584,6 +45588,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 	},
 	regirock: {
 		learnset: {
+			epoxyresin: ["9L12", "8L12", "7L31", "6L31", "6S4", "5L33", "4T", "4L33", "3L33", "3S0", "3S1"],
 			ancientpower: ["9L12", "8L12", "7L31", "6L31", "6S4", "5L33", "4T", "4L33", "3L33", "3S0", "3S1"],
 			block: ["7T", "6T", "5T", "4T"],
 			bodypress: ["9M", "8M"],
@@ -45686,6 +45691,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 	},
 	regice: {
 		learnset: {
+			aquaring: ["9M", "9L36", "8M", "8L36", "8S7", "7L37", "6L37", "6S4", "6S5", "5L41", "5S3", "4L41", "3L41"],
 			amnesia: ["9M", "9L36", "8M", "8L36", "8S7", "7L37", "6L37", "6S4", "6S5", "5L41", "5S3", "4L41", "3L41"],
 			ancientpower: ["9L12", "8L12", "7L31", "6L31", "6S4", "5L33", "4T", "4L33", "3L33", "3S0", "3S1"],
 			auroraveil: ["7M"],
@@ -45784,6 +45790,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 	},
 	registeel: {
 		learnset: {
+			galliumdrip: ["9M", "9L36", "8M", "8L36", "8S7", "7L37", "6L37", "6S4", "6S5", "5L41", "5S3", "4L41", "3L41"],
 			aerialace: ["7M", "6M", "5M", "4M", "3M"],
 			amnesia: ["9M", "9L36", "8M", "8L36", "7L37", "6L37", "6S4", "5L41", "5S3", "4L41", "3L41"],
 			ancientpower: ["9L12", "8L12", "7L31", "6L31", "6S4", "5L33", "4T", "4L33", "3L33", "3S0", "3S1"],
@@ -86488,6 +86495,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 	},
 	regieleki: {
 		learnset: {
+			ionsphere: ["9M", "9L36", "8M", "8L36", "8S7", "7L37", "6L37", "6S4", "6S5", "5L41", "5S3", "4L41", "3L41"],
 			acrobatics: ["9M", "8M"],
 			agility: ["9M", "8M"],
 			ancientpower: ["9L12", "8L12"],
@@ -86543,6 +86551,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 	},
 	regidrago: {
 		learnset: {
+			draconicrestoration: ["9M", "9L36", "8M", "8L36", "8S7", "7L37", "6L37", "6S4", "6S5", "5L41", "5S3", "4L41", "3L41"],
 			ancientpower: ["9L12", "8L12"],
 			bite: ["9L6", "8L6"],
 			bodyslam: ["9M", "8M"],
