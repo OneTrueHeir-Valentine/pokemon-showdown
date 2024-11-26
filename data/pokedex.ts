@@ -4983,7 +4983,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		evos: ["Swampert"],
 		eggGroups: ["Monster", "Water 1"],
 	},
-	swampert: {15
+	swampert: {
 		num: 260,
 		name: "Swampert",
 		types: ["Water", "Ground"],
