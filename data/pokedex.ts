@@ -6318,7 +6318,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		name: "Feebas",
 		types: ["Water"],
 		baseStats: {hp: 45, atk: 15, def: 49, spa: 45, spd: 85, spe: 61},
-		abilities: {0: "Marvel Scale", 1: "Swift Swim", H: "Multiscale", H: "Adaptability"},
+		abilities: {0: "Marvel Scale", 1: "Swift Swim", H: "Multiscale", S: "Adaptability"},
 		heightm: 0.6,
 		weightkg: 7.4,
 		color: "Brown",
