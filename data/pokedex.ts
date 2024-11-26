@@ -5630,7 +5630,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		name: "Mawile",
 		types: ["Steel", "Fairy"],
 		baseStats: {hp: 65, atk: 105, def: 135, spa: 53, spd: 105, spe: 62},
-		abilities: {0: "Strong Jaw", 1: "Intimidate", H: "Sheer Force" S: "Hustle"},
+		abilities: {0: "Strong Jaw", 1: "Intimidate", H: "Sheer Force", S: "Hustle"},
 		heightm: 0.6,
 		weightkg: 11.5,
 		color: "Black",
