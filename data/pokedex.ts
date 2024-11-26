@@ -5530,7 +5530,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		evos: ["Hariyama"],
 		eggGroups: ["Human-Like"],
 	},
-	hariyama: {71
+	hariyama: {
 		num: 297,
 		name: "Hariyama",
 		types: ["Fighting"],
