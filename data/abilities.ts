@@ -1822,6 +1822,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if ((source && source !== pokemon) || this.activeMove.id === 'knockoff') {
 				this.add('-activate', pokemon, 'ability: Gooey');
 				return false;
+			}
 			},
 		flags: {},
 		name: "Gooey",
