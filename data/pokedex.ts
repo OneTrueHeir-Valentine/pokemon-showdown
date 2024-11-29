@@ -7777,7 +7777,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	chingling: {
 		num: 433,
 		name: "Chingling",
-		types: "Psychic", "Sound"
+		types: ["Psychic", "Sound"],
 		baseStats: {hp: 50, atk: 30, def: 65, spa: 85, spd: 80, spe: 65},
 		abilities: {0: "Levitate", 1: "Steelworker", H: "Super Luck", S: "Aerilate"},
 		heightm: 0.2,
