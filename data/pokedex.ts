@@ -7205,7 +7205,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		name: "Staravia",
 		types: ["Fighting", "Flying"],
 		baseStats: {hp: 55, atk: 90, def: 55, spa: 45, spd: 55, spe: 110},
-		abilities: {0: "Keen Eye", 1: "Martialize", H: "Reckless", S: "Intimidate"}
+		abilities: {0: "Keen Eye", 1: "Martialize", H: "Reckless", S: "Intimidate"},
 		heightm: 0.6,
 		weightkg: 15.5,
 		color: "Brown",
@@ -7219,7 +7219,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		name: "Staraptor",
 		types: ["Fighting", "Flying"],
 		baseStats: {hp: 85, atk: 120, def: 80, spa: 50, spd: 70, spe: 120},
-		abilities: {0: "Keen Eye", 1: "Martialize", H: "Reckless", S: "Intimidate"}
+		abilities: {0: "Keen Eye", 1: "Martialize", H: "Reckless", S: "Intimidate"},
 		heightm: 1.2,
 		weightkg: 24.9,
 		color: "Brown",
