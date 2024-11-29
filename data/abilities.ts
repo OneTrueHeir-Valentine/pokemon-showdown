@@ -1810,19 +1810,19 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 283,
 	},
 	gooey: {
+		onDamagingHit(damage, target, source, move) {
+			if (this.checkMoveMakesContact(move, source, target, true)) {
+				this.add('-ability', target, 'Gooey');
+				this.boost({spe: -2}, source, target, null, true);
+			}
+		}
 		onTakeItem(item, pokemon, source) {
 			if (!this.activeMove) throw new Error("Battle.activeMove is null");
 			if (!pokemon.hp || pokemon.item === 'stickybarb') return;
 			if ((source && source !== pokemon) || this.activeMove.id === 'knockoff') {
 				this.add('-activate', pokemon, 'ability: Gooey');
 				return false;
-			}
-		onDamagingHit(damage, target, source, move) {
-			if (this.checkMoveMakesContact(move, source, target, true)) {
-				this.add('-ability', target, 'Gooey');
-				this.boost({spe: -2}, source, target, null, true);
-			}
-		},
+			},
 		flags: {},
 		name: "Gooey",
 		rating: 4,
