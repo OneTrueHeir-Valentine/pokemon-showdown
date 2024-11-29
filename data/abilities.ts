@@ -1815,7 +1815,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.add('-ability', target, 'Gooey');
 				this.boost({spe: -2}, source, target, null, true);
 			}
-		}
+		},
 		onTakeItem(item, pokemon, source) {
 			if (!this.activeMove) throw new Error("Battle.activeMove is null");
 			if (!pokemon.hp || pokemon.item === 'stickybarb') return;
