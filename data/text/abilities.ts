@@ -649,7 +649,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	gooey: {
 		name: "Gooey",
-		shortDesc: "Pokemon making contact with this Pokemon have their Speed lowered by 1 stage.",
+		shortDesc: "This Pokemon cannot lose its held item & Pokemon making contact with it have their Speed lowered by 2.",
 	},
 	gorillatactics: {
 		name: "Gorilla Tactics",

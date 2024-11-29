@@ -47613,6 +47613,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 	empoleon: {
 		learnset: {
 			aerialace: ["9M", "7M", "6M", "5M", "4M"],
+			curse: ["9M", "7M", "6M", "5M", "4M"],
 			agility: ["9M"],
 			aircutter: ["9M"],
 			airslash: ["9M"],

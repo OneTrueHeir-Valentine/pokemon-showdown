@@ -5426,7 +5426,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Soul Dew",
 		spritenum: 459,
 		fling: {
-			basePower: 30,
+			basePower: 130,
 		},
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
@@ -5434,7 +5434,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 				move && (user.baseSpecies.num === 380 || user.baseSpecies.num === 381) &&
 				(move.type === 'Psychic' || move.type === 'Dragon')
 			) {
-				return this.chainModify([4915, 4096]);
+				return this.chainModify(1.5);
 			}
 		},
 		itemUser: ["Latios", "Latias"],
