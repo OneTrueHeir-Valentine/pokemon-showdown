@@ -13003,7 +13003,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		evoLevel: 34,
 		eggGroups: ["Water 1", "Field"],
 	},
-	pikipek: {60
+	pikipek: {
 		num: 731,
 		name: "Pikipek",
 		types: ["Normal", "Flying"],
@@ -13015,7 +13015,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		evos: ["Trumbeak"],
 		eggGroups: ["Flying"],
 	},
-	trumbeak: {85
+	trumbeak: {
 		num: 732,
 		name: "Trumbeak",
 		types: ["Normal", "Flying"],
