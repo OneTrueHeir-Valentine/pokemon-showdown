@@ -3011,6 +3011,17 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 153,
 	},
+	hubris: {
+		onSourceAfterFaint(length, target, source, effect) {
+			if (effect && effect.effectType === 'Move') {
+				this.boost({spa: length}, source);
+			}
+		},
+		flags: {},
+		name: "Hubris",
+		rating: 3,
+		num: 153,
+	},
 	multiscale: {
 		onSourceModifyDamage(damage, source, target, move) {
 			if (target.hp >= target.maxhp / 2) {
@@ -3928,6 +3939,38 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {breakable: 1},
 		name: "Sacred Power",
+		rating: 4,
+		num: 272,
+	},
+	cursedpower: {
+		onSetStatus(status, target, source, effect) {
+			if ((effect as Move)?.status) {
+				this.add('-immune', target, '[from] ability: Cursed Power');
+			}
+			return false;
+		},
+		onTryAddVolatile(status, target) {
+			if (status.id === 'yawn') {
+				this.add('-immune', target, '[from] ability: Cursed Power');
+				return null;
+			}
+		},
+		onSourceModifyAtkPriority: 6,
+		onSourceModifyAtk(atk, attacker, defender, move) {
+			if (move.type === 'Fairy') {
+				this.debug('Cursed Power weaken');
+				return this.chainModify(0.5);
+			}
+		},
+		onSourceModifySpAPriority: 5,
+		onSourceModifySpA(spa, attacker, defender, move) {
+			if (move.type === 'Fairy') {
+				this.debug('Cursed Power weaken');
+				return this.chainModify(0.5);
+			}
+		},
+		flags: {breakable: 1},
+		name: "Cursed Power",
 		rating: 4,
 		num: 272,
 	},

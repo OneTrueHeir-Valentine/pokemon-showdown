@@ -1130,6 +1130,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "This Pokemon's Attack is raised by 1 stage if it attacks and knocks out another Pokemon.",
 		shortDesc: "This Pokemon's Attack is raised by 1 stage if it attacks and KOes another Pokemon.",
 	},
+	hubris: {
+		name: "Hubris",
+		desc: "This Pokemon's Special Attack is raised by 1 stage if it attacks and knocks out another Pokemon.",
+		shortDesc: "This Pokemon's Special Attack is raised by 1 stage if it attacks and KOes another Pokemon.",
+	},
 	multiscale: {
 		name: "Multiscale",
 		shortDesc: "If this Pokemon is at/above half HP, damage is reduced by 1/3.",
@@ -1454,6 +1459,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Sacred Power",
 		desc: "This Pokemon cannot become affected by a non-volatile status condition or Yawn. If a Pokemon uses a Ghost-type attack against this Pokemon, that Pokemon's offensive stat is halved when calculating the damage to this Pokemon.",
 		shortDesc: "Ghost damage to this Pokemon dealt with a halved offensive stat; can't be statused.",
+	},
+	cursedpower: {
+		name: "Cursed Power",
+		desc: "This Pokemon cannot become affected by a non-volatile status condition or Yawn. If a Pokemon uses a Fairy-type attack against this Pokemon, that Pokemon's offensive stat is halved when calculating the damage to this Pokemon.",
+		shortDesc: "Fairy damage to this Pokemon dealt with a halved offensive stat; can't be statused.",
 	},
 	quarkdrive: {
 		name: "Quark Drive",
