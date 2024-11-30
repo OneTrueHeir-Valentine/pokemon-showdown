@@ -8019,7 +8019,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		name: "Skorupi",
 		types: ["Poison", "Bug"],
 		baseStats: {hp: 40, atk: 90, def: 90, spa: 20, spd: 55, spe: 75},
-		abilities: {0: "Battle Armor", 1: "Merciless", H: "Keen Eye", S: "Sand Rush"}
+		abilities: {0: "Battle Armor", 1: "Merciless", H: "Keen Eye", S: "Sand Rush"},
 		heightm: 0.8,
 		weightkg: 12,
 		color: "Purple",
@@ -8031,7 +8031,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		name: "Drapion",
 		types: ["Poison", "Dark"],
 		baseStats: {hp: 90, atk: 125, def: 125, spa: 30, spd: 85, spe: 95},
-		abilities: {0: "Battle Armor", 1: "Sheer Force", H: "Swarm", S: "Sand Rush"}
+		abilities: {0: "Battle Armor", 1: "Sheer Force", H: "Swarm", S: "Sand Rush"},
 		heightm: 1.3,
 		weightkg: 61.5,
 		color: "Purple",

@@ -13629,7 +13629,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 		learnset: {
 			aurasphere: ["9M"],
 			icebeam: ["9M"]
-			flamethrower: ["9M"],,
+			flamethrower: ["9M"],
 			acidspray: ["9M"],
 			allyswitch: ["8M", "7T"],
 			astonish: ["6S4"],
