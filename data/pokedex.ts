@@ -12527,7 +12527,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		forme: "Small",
 		types: ["Ghost", "Grass"],
 		baseStats: {hp: 64, atk: 76, def: 109, spa: 30, spd: 55, spe: 56},
-		abilities: {0: "Flame Eater", 1: "Unburden", H: "Harvest", S: "Grassy Surge"}
+		abilities: {0: "Flame Eater", 1: "Unburden", H: "Harvest", S: "Grassy Surge"},
 		heightm: 0.3,
 		weightkg: 3.5,
 		color: "Brown",
@@ -12541,7 +12541,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		forme: "Large",
 		types: ["Ghost", "Grass"],
 		baseStats: {hp: 79, atk: 76, def: 109, spa: 30, spd: 55, spe: 46},
-		abilities: {0: "Flame Eater", 1: "Unburden", H: "Harvest", S: "Grassy Surge"}
+		abilities: {0: "Flame Eater", 1: "Unburden", H: "Harvest", S: "Grassy Surge"},
 		heightm: 0.5,
 		weightkg: 7.5,
 		color: "Brown",
@@ -12555,7 +12555,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		forme: "Super",
 		types: ["Ghost", "Grass"],
 		baseStats: {hp: 84, atk: 76, def: 109, spa: 30, spd: 55, spe: 41},
-		abilities: {0: "Flame Eater", 1: "Unburden", H: "Harvest", S: "Grassy Surge"}
+		abilities: {0: "Flame Eater", 1: "Unburden", H: "Harvest", S: "Grassy Surge"},
 		heightm: 0.8,
 		weightkg: 15,
 		color: "Brown",
@@ -12568,7 +12568,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		baseForme: "Average",
 		types: ["Ghost", "Grass"],
 		baseStats: {hp: 127, atk: 110, def: 122, spa: 30, spd: 87, spe: 84},
-		abilities: {0: "Flame Eater", 1: "Unburden", H: "Harvest", S: "Grassy Surge"}
+		abilities: {0: "Flame Eater", 1: "Unburden", H: "Harvest", S: "Grassy Surge"},
 		heightm: 0.9,
 		weightkg: 12.5,
 		color: "Brown",
@@ -12585,7 +12585,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		forme: "Small",
 		types: ["Ghost", "Grass"],
 		baseStats: {hp: 117, atk: 105, def: 122, spa: 30, spd: 87, spe: 99},
-		abilities: {0: "Flame Eater", 1: "Unburden", H: "Harvest", S: "Grassy Surge"}
+		abilities: {0: "Flame Eater", 1: "Unburden", H: "Harvest", S: "Grassy Surge"},
 		heightm: 0.7,
 		weightkg: 9.5,
 		color: "Brown",
@@ -12600,7 +12600,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		forme: "Large",
 		types: ["Ghost", "Grass"],
 		baseStats: {hp: 137, atk: 115, def: 122, spa: 30, spd: 87, spe: 69},
-		abilities: {0: "Flame Eater", 1: "Unburden", H: "Harvest", S: "Grassy Surge"}
+		abilities: {0: "Flame Eater", 1: "Unburden", H: "Harvest", S: "Grassy Surge"},
 		heightm: 1.1,
 		weightkg: 14,
 		color: "Brown",
@@ -12615,7 +12615,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		forme: "Super",
 		types: ["Ghost", "Grass"],
 		baseStats: {hp: 147, atk: 120, def: 122, spa: 30, spd: 87, spe: 54},
-		abilities: {0: "Flame Eater", 1: "Unburden", H: "Harvest", S: "Grassy Surge"}
+		abilities: {0: "Flame Eater", 1: "Unburden", H: "Harvest", S: "Grassy Surge"},
 		heightm: 1.7,
 		weightkg: 39,
 		color: "Brown",
