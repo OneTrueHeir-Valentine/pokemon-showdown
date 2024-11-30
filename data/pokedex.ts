@@ -9119,7 +9119,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Fire"],
 		genderRatio: {M: 0.875, F: 0.125},
 		baseStats: {hp: 50, atk: 68, def: 55, spa: 45, spd: 55, spe: 47},
-		abilities: {0: "Blaze", 1: "Intimidate", H: "Reckless", S: "Chlorophyll"}
+		abilities: {0: "Blaze", 1: "Intimidate", H: "Reckless", S: "Chlorophyll"},
 		heightm: 0.5,
 		weightkg: 9.9,
 		color: "Red",
@@ -9132,7 +9132,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Fire", "Fighting"],
 		genderRatio: {M: 0.875, F: 0.125},
 		baseStats: {hp: 80, atk: 98, def: 70, spa: 60, spd: 70, spe: 57},
-		abilities: {0: "Blaze", 1: "Intimidate", H: "Reckless", S: "Chlorophyll"}
+		abilities: {0: "Blaze", 1: "Intimidate", H: "Reckless", S: "Chlorophyll"},
 		heightm: 1,
 		weightkg: 55.5,
 		color: "Red",
