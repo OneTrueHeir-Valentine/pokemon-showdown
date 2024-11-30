@@ -11905,7 +11905,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Fairy", "Dark"],
 		gender: "F",
 		baseStats: {hp: 74, atk: 30, def: 67, spa: 154, spd: 128, spe: 97},
-		abilities: {0: "Dark Aura", 1: "Grassy Surge", H: "Fairy Aura", S: "Harvest"}
+		abilities: {0: "Dark Aura", 1: "Grassy Surge", H: "Fairy Aura", S: "Harvest"},
 		heightm: 0.2,
 		weightkg: 0.9,
 		color: "White",
@@ -11918,7 +11918,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Fairy", "Grass"],
 		gender: "F",
 		baseStats: {hp: 88, atk: 35, def: 78, spa: 122, spd: 154, spe: 75},
-		abilities: {0: "Flower Veil", 1: "Serene Grace", H: "Grassy Surge", S: "Harvest"}
+		abilities: {0: "Flower Veil", 1: "Serene Grace", H: "Grassy Surge", S: "Harvest"},
 		heightm: 1.1,
 		weightkg: 10,
 		color: "White",
