@@ -3,7 +3,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Ability Shield",
 		spritenum: 746,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		ignoreKlutz: true,
 		// Neutralizing Gas protection implemented in Pokemon.ignoringAbility() within sim/pokemon.ts
@@ -51,7 +51,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Absorb Bulb",
 		spritenum: 2,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		onDamagingHit(damage, target, source, move) {
 			if (move.type === 'Water') {
@@ -88,7 +88,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Adamant Orb",
 		spritenum: 4,
 		fling: {
-			basePower: 60,
+			basePower: 130,
 		},
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
@@ -104,7 +104,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Adrenaline Orb",
 		spritenum: 660,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		onAfterBoost(boost, target, source, effect) {
 			// Adrenaline Orb activates if Intimidate is blocked by an ability like Hyper Cutter,
@@ -182,7 +182,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Air Balloon",
 		spritenum: 6,
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		onStart(target) {
 			if (!target.ignoringItem() && !this.field.getPseudoWeather('gravity')) {
@@ -285,7 +285,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Armor Fossil",
 		spritenum: 12,
 		fling: {
-			basePower: 100,
+			basePower: 130,
 		},
 		num: 104,
 		gen: 4,
@@ -316,7 +316,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Assault Vest",
 		spritenum: 581,
 		fling: {
-			basePower: 80,
+			basePower: 130,
 		},
 		onModifySpDPriority: 1,
 		onModifySpD(spd) {
@@ -351,7 +351,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Auspicious Armor",
 		spritenum: 753,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		num: 2344,
 		gen: 9,
@@ -432,7 +432,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Berry Juice",
 		spritenum: 22,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		onUpdate(pokemon) {
 			if (pokemon.hp <= pokemon.maxhp / 2) {
@@ -449,7 +449,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Berry Sweet",
 		spritenum: 706,
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		num: 1111,
 		gen: 8,
@@ -458,7 +458,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Big Nugget",
 		spritenum: 27,
 		fling: {
-			basePower: 130,
+			basePower: 150,
 		},
 		num: 581,
 		gen: 5,
@@ -467,7 +467,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Big Root",
 		spritenum: 29,
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		onTryHealPriority: 1,
 		onTryHeal(damage, target, source, effect) {
@@ -483,7 +483,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Binding Band",
 		spritenum: 31,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		// implemented in statuses
 		num: 544,
@@ -493,7 +493,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Black Belt",
 		spritenum: 32,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
@@ -508,7 +508,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Black Glasses",
 		spritenum: 35,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
@@ -523,7 +523,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Black Sludge",
 		spritenum: 34,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		onResidualOrder: 5,
 		onResidualSubOrder: 4,
@@ -602,7 +602,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Blunder Policy",
 		spritenum: 716,
 		fling: {
-			basePower: 80,
+			basePower: 130,
 		},
 		// Item activation located in scripts.js
 		num: 1121,
@@ -612,7 +612,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Booster Energy",
 		spritenum: 745,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		onStart() {
 			this.effectState.started = true;
@@ -639,7 +639,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Bottle Cap",
 		spritenum: 696,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		num: 795,
 		gen: 7,
@@ -648,7 +648,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Bright Powder",
 		spritenum: 51,
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		onModifyAccuracyPriority: -2,
 		onModifyAccuracy(accuracy) {
@@ -735,7 +735,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Cell Battery",
 		spritenum: 60,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		onDamagingHit(damage, target, source, move) {
 			if (move.type === 'Electric') {
@@ -752,7 +752,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Charcoal",
 		spritenum: 61,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
@@ -909,7 +909,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Chipped Pot",
 		spritenum: 720,
 		fling: {
-			basePower: 80,
+			basePower: 130,
 		},
 		num: 1254,
 		gen: 8,
@@ -918,7 +918,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Choice Band",
 		spritenum: 68,
 		fling: {
-			basePower: 10,
+			basePower: 130,
 		},
 		onStart(pokemon) {
 			if (pokemon.volatiles['choicelock']) {
@@ -942,7 +942,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Choice Scarf",
 		spritenum: 69,
 		fling: {
-			basePower: 10,
+			basePower: 130,
 		},
 		onStart(pokemon) {
 			if (pokemon.volatiles['choicelock']) {
@@ -965,7 +965,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Choice Specs",
 		spritenum: 70,
 		fling: {
-			basePower: 10,
+			basePower: 130,
 		},
 		onStart(pokemon) {
 			if (pokemon.volatiles['choicelock']) {
@@ -1013,7 +1013,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Claw Fossil",
 		spritenum: 72,
 		fling: {
-			basePower: 100,
+			basePower: 130,
 		},
 		num: 100,
 		gen: 3,
@@ -1023,7 +1023,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Clear Amulet",
 		spritenum: 747,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		onTryBoost(boost, target, source, effect) {
 			if (source && target === source) return;
@@ -1046,7 +1046,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Clover Sweet",
 		spritenum: 707,
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		num: 1112,
 		gen: 8,
@@ -1103,7 +1103,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Cornerstone Mask",
 		spritenum: 758,
 		fling: {
-			basePower: 60,
+			basePower: 130,
 		},
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
@@ -1137,7 +1137,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Cover Fossil",
 		spritenum: 85,
 		fling: {
-			basePower: 100,
+			basePower: 130,
 		},
 		num: 572,
 		gen: 5,
@@ -1147,7 +1147,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Covert Cloak",
 		spritenum: 750,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		onModifySecondaries(secondaries) {
 			this.debug('Covert Cloak prevent secondary');
@@ -1160,7 +1160,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Cracked Pot",
 		spritenum: 719,
 		fling: {
-			basePower: 80,
+			basePower: 130,
 		},
 		num: 1253,
 		gen: 8,
@@ -1194,7 +1194,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Damp Rock",
 		spritenum: 88,
 		fling: {
-			basePower: 60,
+			basePower: 130,
 		},
 		num: 285,
 		gen: 4,
@@ -1245,7 +1245,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Dawn Stone",
 		spritenum: 92,
 		fling: {
-			basePower: 80,
+			basePower: 130,
 		},
 		num: 109,
 		gen: 4,
@@ -1265,7 +1265,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Deep Sea Scale",
 		spritenum: 93,
 		fling: {
-			basePower: 30,
+			basePower: 130,
 		},
 		onModifySpDPriority: 2,
 		onModifySpD(spd, pokemon) {
@@ -1282,7 +1282,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Deep Sea Tooth",
 		spritenum: 94,
 		fling: {
-			basePower: 90,
+			basePower: 130,
 		},
 		onModifySpAPriority: 1,
 		onModifySpA(spa, pokemon) {
@@ -1299,7 +1299,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Destiny Knot",
 		spritenum: 95,
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		onAttractPriority: -100,
 		onAttract(target, source) {
@@ -1335,7 +1335,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Dome Fossil",
 		spritenum: 102,
 		fling: {
-			basePower: 100,
+			basePower: 130,
 		},
 		num: 102,
 		gen: 3,
@@ -1381,7 +1381,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Dragon Fang",
 		spritenum: 106,
 		fling: {
-			basePower: 70,
+			basePower: 130,
 		},
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
@@ -1426,7 +1426,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Dragon Scale",
 		spritenum: 108,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		num: 235,
 		gen: 2,
@@ -1474,7 +1474,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Dubious Disc",
 		spritenum: 113,
 		fling: {
-			basePower: 50,
+			basePower: 60,
 		},
 		num: 324,
 		gen: 4,
@@ -1503,7 +1503,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Dusk Stone",
 		spritenum: 116,
 		fling: {
-			basePower: 80,
+			basePower: 130,
 		},
 		num: 108,
 		gen: 4,
@@ -1543,7 +1543,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Eject Button",
 		spritenum: 118,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		onAfterMoveSecondaryPriority: 2,
 		onAfterMoveSecondary(target, source, move) {
@@ -1568,7 +1568,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Eject Pack",
 		spritenum: 714,
 		fling: {
-			basePower: 50,
+			basePower: 60,
 		},
 		onAfterBoost(boost, target, source, effect) {
 			if (this.activeMove?.id === 'partingshot') return;
@@ -1597,7 +1597,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Electirizer",
 		spritenum: 119,
 		fling: {
-			basePower: 80,
+			basePower: 130,
 		},
 		num: 322,
 		gen: 4,
@@ -1636,7 +1636,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Electric Seed",
 		spritenum: 664,
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		onStart(pokemon) {
 			if (!pokemon.ignoringItem() && this.field.isTerrain('electricterrain')) {
@@ -1692,7 +1692,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Eviolite",
 		spritenum: 130,
 		fling: {
-			basePower: 40,
+			basePower: 150,
 		},
 		onModifyDefPriority: 2,
 		onModifyDef(def, pokemon) {
@@ -1713,7 +1713,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Expert Belt",
 		spritenum: 132,
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		onModifyDamage(damage, source, target, move) {
 			if (move && target.getMoveHitData(move).typeMod > 0) {
@@ -1739,7 +1739,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Fairy Feather",
 		spritenum: 754,
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
@@ -1889,7 +1889,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Fire Stone",
 		spritenum: 142,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		num: 82,
 		gen: 1,
@@ -1930,7 +1930,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Flame Orb",
 		spritenum: 145,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 			status: 'brn',
 		},
 		onResidualOrder: 28,
@@ -1965,7 +1965,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Float Stone",
 		spritenum: 147,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		onModifyWeight(weighthg) {
 			return this.trunc(weighthg / 2);
@@ -1977,7 +1977,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Flower Sweet",
 		spritenum: 708,
 		fling: {
-			basePower: 0,
+			basePower: 60,
 		},
 		num: 1113,
 		gen: 8,
@@ -2028,7 +2028,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Focus Band",
 		spritenum: 150,
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		onDamagePriority: -40,
 		onDamage(damage, target, source, effect) {
@@ -2044,7 +2044,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Focus Sash",
 		spritenum: 151,
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		onDamagePriority: -40,
 		onDamage(damage, target, source, effect) {
@@ -2061,7 +2061,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Fossilized Bird",
 		spritenum: 700,
 		fling: {
-			basePower: 100,
+			basePower: 130,
 		},
 		num: 1105,
 		gen: 8,
@@ -2071,7 +2071,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Fossilized Dino",
 		spritenum: 703,
 		fling: {
-			basePower: 100,
+			basePower: 130,
 		},
 		num: 1108,
 		gen: 8,
@@ -2081,7 +2081,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Fossilized Drake",
 		spritenum: 702,
 		fling: {
-			basePower: 100,
+			basePower: 130,
 		},
 		num: 1107,
 		gen: 8,
@@ -2091,7 +2091,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Fossilized Fish",
 		spritenum: 701,
 		fling: {
-			basePower: 100,
+			basePower: 130,
 		},
 		num: 1106,
 		gen: 8,
@@ -2108,7 +2108,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Full Incense",
 		spritenum: 155,
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		onFractionalPriority: -0.1,
 		num: 316,
@@ -2119,7 +2119,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Galarica Cuff",
 		spritenum: 739,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		num: 1582,
 		gen: 8,
@@ -2128,7 +2128,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Galarica Wreath",
 		spritenum: 740,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		num: 1592,
 		gen: 8,
@@ -2269,7 +2269,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Gold Bottle Cap",
 		spritenum: 697,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		num: 796,
 		gen: 7,
@@ -2320,7 +2320,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Grassy Seed",
 		spritenum: 667,
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		onStart(pokemon) {
 			if (!pokemon.ignoringItem() && this.field.isTerrain('grassyterrain')) {
@@ -2361,7 +2361,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Grip Claw",
 		spritenum: 179,
 		fling: {
-			basePower: 90,
+			basePower: 130,
 		},
 		// implemented in statuses
 		num: 286,
@@ -2391,7 +2391,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Griseous Orb",
 		spritenum: 180,
 		fling: {
-			basePower: 60,
+			basePower: 130,
 		},
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
@@ -2487,7 +2487,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Hard Stone",
 		spritenum: 187,
 		fling: {
-			basePower: 100,
+			basePower: 130,
 		},
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
@@ -2509,7 +2509,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Hearthflame Mask",
 		spritenum: 760,
 		fling: {
-			basePower: 60,
+			basePower: 130,
 		},
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
@@ -2530,7 +2530,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Heat Rock",
 		spritenum: 193,
 		fling: {
-			basePower: 60,
+			basePower: 130,
 		},
 		num: 284,
 		gen: 4,
@@ -2546,7 +2546,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Heavy-Duty Boots",
 		spritenum: 715,
 		fling: {
-			basePower: 80,
+			basePower: 130,
 		},
 		num: 1120,
 		gen: 8,
@@ -2556,7 +2556,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Helix Fossil",
 		spritenum: 195,
 		fling: {
-			basePower: 100,
+			basePower: 130,
 		},
 		num: 101,
 		gen: 3,
@@ -2662,7 +2662,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Ice Stone",
 		spritenum: 693,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		num: 849,
 		gen: 7,
@@ -2703,7 +2703,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Icy Rock",
 		spritenum: 221,
 		fling: {
-			basePower: 40,
+			basePower: 60,
 		},
 		num: 282,
 		gen: 4,
@@ -2743,7 +2743,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Iron Ball",
 		spritenum: 224,
 		fling: {
-			basePower: 130,
+			basePower: 150,
 		},
 		onEffectiveness(typeMod, target, type, move) {
 			if (!target) return;
@@ -2800,7 +2800,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Jaw Fossil",
 		spritenum: 694,
 		fling: {
-			basePower: 100,
+			basePower: 130,
 		},
 		num: 710,
 		gen: 6,
@@ -2904,7 +2904,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "King's Rock",
 		spritenum: 236,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 			volatileStatus: 'flinch',
 		},
 		onModifyMovePriority: -1,
@@ -2938,7 +2938,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Lagging Tail",
 		spritenum: 237,
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		onFractionalPriority: -0.1,
 		num: 279,
@@ -2996,7 +2996,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Lax Incense",
 		spritenum: 240,
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		onModifyAccuracyPriority: -2,
 		onModifyAccuracy(accuracy) {
@@ -3012,7 +3012,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Leaf Stone",
 		spritenum: 241,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		num: 85,
 		gen: 1,
@@ -3020,7 +3020,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	leek: {
 		name: "Leek",
 		fling: {
-			basePower: 60,
+			basePower: 130,
 		},
 		spritenum: 475,
 		onModifyCritRatio(critRatio, user) {
@@ -3038,7 +3038,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		spritenum: 242,
 		isBerry: true,
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		onTryEatItem(item, pokemon) {
 			if (!this.runEvent('TryHeal', pokemon, null, this.effect, pokemon.baseMaxhp / 4)) return false;
@@ -3107,7 +3107,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Life Orb",
 		spritenum: 249,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		onModifyDamage(damage, source, target, move) {
 			return this.chainModify([5324, 4096]);
@@ -3124,7 +3124,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Light Ball",
 		spritenum: 251,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 			status: 'par',
 		},
 		onModifyAtkPriority: 1,
@@ -3147,7 +3147,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Light Clay",
 		spritenum: 252,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		// implemented in the corresponding thing
 		num: 269,
@@ -3157,7 +3157,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Loaded Dice",
 		spritenum: 751,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		// partially implemented in sim/battle-actions.ts:BattleActions#hitStepMoveHitLoop
 		onModifyMove(move) {
@@ -3193,7 +3193,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Love Sweet",
 		spritenum: 705,
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		num: 1110,
 		gen: 8,
@@ -3216,7 +3216,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Lucky Punch",
 		spritenum: 261,
 		fling: {
-			basePower: 40,
+			basePower: 60,
 		},
 		onModifyCritRatio(critRatio, user) {
 			if (user.baseSpecies.name === 'Chansey') {
@@ -3256,7 +3256,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Luminous Moss",
 		spritenum: 595,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		onDamagingHit(damage, target, source, move) {
 			if (move.type === 'Water') {
@@ -3311,7 +3311,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Lustrous Orb",
 		spritenum: 265,
 		fling: {
-			basePower: 60,
+			basePower: 130,
 		},
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
@@ -3346,7 +3346,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		spritenum: 269,
 		ignoreKlutz: true,
 		fling: {
-			basePower: 60,
+			basePower: 130,
 		},
 		onModifySpe(spe) {
 			return this.chainModify(0.5);
@@ -3359,7 +3359,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Magmarizer",
 		spritenum: 272,
 		fling: {
-			basePower: 80,
+			basePower: 130,
 		},
 		num: 323,
 		gen: 4,
@@ -3368,7 +3368,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Magnet",
 		spritenum: 273,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
@@ -3433,7 +3433,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Malicious Armor",
 		spritenum: 744,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		num: 1861,
 		gen: 9,
@@ -3493,7 +3493,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Masterpiece Teacup",
 		spritenum: 757,
 		fling: {
-			basePower: 80,
+			basePower: 130,
 		},
 		num: 2404,
 		gen: 9,
@@ -3550,7 +3550,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Mental Herb",
 		spritenum: 285,
 		fling: {
-			basePower: 10,
+			basePower: 60,
 			effect(pokemon) {
 				const conditions = ['attract', 'taunt', 'encore', 'torment', 'disable', 'healblock'];
 				for (const firstCondition of conditions) {
@@ -3608,7 +3608,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Metal Coat",
 		spritenum: 286,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
@@ -3622,7 +3622,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	metalpowder: {
 		name: "Metal Powder",
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		spritenum: 287,
 		onModifyDefPriority: 2,
@@ -3640,7 +3640,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Metronome",
 		spritenum: 289,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		onStart(pokemon) {
 			pokemon.addVolatile('metronome');
@@ -3785,7 +3785,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	miracleseed: {
 		name: "Miracle Seed",
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		spritenum: 292,
 		onBasePowerPriority: 15,
@@ -3801,7 +3801,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Mirror Herb",
 		spritenum: 748,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		onFoeAfterBoost(boost, target, source, effect) {
 			if (effect?.name === 'Opportunist' || effect?.name === 'Mirror Herb') return;
@@ -3826,7 +3826,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Misty Seed",
 		spritenum: 666,
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		onStart(pokemon) {
 			if (!pokemon.ignoringItem() && this.field.isTerrain('mistyterrain')) {
@@ -3855,7 +3855,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Moon Stone",
 		spritenum: 295,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		num: 81,
 		gen: 1,
@@ -3864,7 +3864,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Muscle Band",
 		spritenum: 297,
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		onBasePowerPriority: 16,
 		onBasePower(basePower, user, target, move) {
@@ -3879,7 +3879,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Mystic Water",
 		spritenum: 300,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
@@ -3921,7 +3921,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Never-Melt Ice",
 		spritenum: 305,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
@@ -3996,7 +3996,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Odd Incense",
 		spritenum: 312,
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
@@ -4012,7 +4012,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Old Amber",
 		spritenum: 314,
 		fling: {
-			basePower: 100,
+			basePower: 130,
 		},
 		num: 103,
 		gen: 3,
@@ -4044,7 +4044,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Oval Stone",
 		spritenum: 321,
 		fling: {
-			basePower: 80,
+			basePower: 130,
 		},
 		num: 110,
 		gen: 4,
@@ -4265,7 +4265,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Plume Fossil",
 		spritenum: 339,
 		fling: {
-			basePower: 100,
+			basePower: 130,
 		},
 		num: 573,
 		gen: 5,
@@ -4275,7 +4275,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Poison Barb",
 		spritenum: 343,
 		fling: {
-			basePower: 70,
+			basePower: 130,
 			status: 'psn',
 		},
 		onBasePowerPriority: 15,
@@ -4353,7 +4353,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		spritenum: 354,
 		ignoreKlutz: true,
 		fling: {
-			basePower: 70,
+			basePower: 130,
 		},
 		onModifySpe(spe) {
 			return this.chainModify(0.5);
@@ -4366,7 +4366,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		spritenum: 355,
 		ignoreKlutz: true,
 		fling: {
-			basePower: 70,
+			basePower: 130,
 		},
 		onModifySpe(spe) {
 			return this.chainModify(0.5);
@@ -4379,7 +4379,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		spritenum: 356,
 		ignoreKlutz: true,
 		fling: {
-			basePower: 70,
+			basePower: 130,
 		},
 		onModifySpe(spe) {
 			return this.chainModify(0.5);
@@ -4392,7 +4392,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		spritenum: 357,
 		ignoreKlutz: true,
 		fling: {
-			basePower: 70,
+			basePower: 130,
 		},
 		onModifySpe(spe) {
 			return this.chainModify(0.5);
@@ -4412,7 +4412,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Power Herb",
 		spritenum: 358,
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		num: 271,
 		gen: 4,
@@ -4422,7 +4422,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		spritenum: 359,
 		ignoreKlutz: true,
 		fling: {
-			basePower: 70,
+			basePower: 130,
 		},
 		onModifySpe(spe) {
 			return this.chainModify(0.5);
@@ -4435,7 +4435,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		spritenum: 360,
 		ignoreKlutz: true,
 		fling: {
-			basePower: 70,
+			basePower: 130,
 		},
 		onModifySpe(spe) {
 			return this.chainModify(0.5);
@@ -4465,7 +4465,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Prism Scale",
 		spritenum: 365,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		num: 537,
 		gen: 5,
@@ -4474,7 +4474,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Protective Pads",
 		spritenum: 663,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		// protective effect handled in Battle#checkMoveMakesContact
 		num: 880,
@@ -4484,7 +4484,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Protector",
 		spritenum: 367,
 		fling: {
-			basePower: 80,
+			basePower: 130,
 		},
 		num: 321,
 		gen: 4,
@@ -4523,7 +4523,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Psychic Seed",
 		spritenum: 665,
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		onStart(pokemon) {
 			if (!pokemon.ignoringItem() && this.field.isTerrain('psychicterrain')) {
@@ -4557,7 +4557,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Punching Glove",
 		spritenum: 749,
 		fling: {
-			basePower: 30,
+			basePower: 130,
 		},
 		onBasePowerPriority: 23,
 		onBasePower(basePower, attacker, defender, move) {
@@ -4604,7 +4604,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Quick Claw",
 		spritenum: 373,
 		fling: {
-			basePower: 80,
+			basePower: 130,
 		},
 		num: 217,
 		gen: 2,
@@ -4613,7 +4613,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Quick Powder",
 		spritenum: 374,
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		onModifySpe(spe, pokemon) {
 			if (pokemon.species.name === 'Ditto' && !pokemon.transformed) {
@@ -4642,7 +4642,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Rare Bone",
 		spritenum: 379,
 		fling: {
-			basePower: 100,
+			basePower: 130,
 		},
 		num: 106,
 		gen: 4,
@@ -4672,7 +4672,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Razor Claw",
 		spritenum: 382,
 		fling: {
-			basePower: 80,
+			basePower: 130,
 		},
 		onModifyCritRatio(critRatio) {
 			return critRatio + 1;
@@ -4684,7 +4684,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Razor Fang",
 		spritenum: 383,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 			volatileStatus: 'flinch',
 		},
 		onModifyMovePriority: -1,
@@ -4720,7 +4720,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Reaper Cloth",
 		spritenum: 385,
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		num: 325,
 		gen: 4,
@@ -4729,7 +4729,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Red Card",
 		spritenum: 387,
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		onAfterMoveSecondary(target, source, move) {
 			if (source && source !== target && source.hp && target.hp && move && move.category !== 'Status') {
@@ -4778,7 +4778,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Ribbon Sweet",
 		spritenum: 710,
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		num: 1115,
 		gen: 8,
@@ -4811,7 +4811,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Ring Target",
 		spritenum: 410,
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		onNegateImmunity: false,
 		num: 543,
@@ -4835,7 +4835,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Rock Incense",
 		spritenum: 416,
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
@@ -4879,7 +4879,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Rocky Helmet",
 		spritenum: 417,
 		fling: {
-			basePower: 60,
+			basePower: 130,
 		},
 		onDamagingHitOrder: 2,
 		onDamagingHit(damage, target, source, move) {
@@ -4894,7 +4894,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Room Service",
 		spritenum: 717,
 		fling: {
-			basePower: 100,
+			basePower: 130,
 		},
 		onStart(pokemon) {
 			if (!pokemon.ignoringItem() && this.field.getPseudoWeather('trickroom')) {
@@ -4917,7 +4917,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Root Fossil",
 		spritenum: 418,
 		fling: {
-			basePower: 100,
+			basePower: 130,
 		},
 		num: 99,
 		gen: 3,
@@ -4927,7 +4927,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Rose Incense",
 		spritenum: 419,
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
@@ -5026,7 +5026,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Sachet",
 		spritenum: 691,
 		fling: {
-			basePower: 80,
+			basePower: 130,
 		},
 		num: 647,
 		gen: 6,
@@ -5043,7 +5043,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Safety Goggles",
 		spritenum: 604,
 		fling: {
-			basePower: 80,
+			basePower: 130,
 		},
 		onImmunity(type, pokemon) {
 			if (type === 'sandstorm' || type === 'hail' || type === 'powder') return false;
@@ -5061,7 +5061,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Sail Fossil",
 		spritenum: 695,
 		fling: {
-			basePower: 100,
+			basePower: 130,
 		},
 		num: 711,
 		gen: 6,
@@ -5133,7 +5133,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Scope Lens",
 		spritenum: 429,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		onModifyCritRatio(critRatio) {
 			return critRatio + 1;
@@ -5145,7 +5145,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Sea Incense",
 		spritenum: 430,
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
@@ -5161,7 +5161,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Sharp Beak",
 		spritenum: 436,
 		fling: {
-			basePower: 50,
+			basePower: 60,
 		},
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
@@ -5190,7 +5190,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Shed Shell",
 		spritenum: 437,
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		onTrapPokemonPriority: -10,
 		onTrapPokemon(pokemon) {
@@ -5203,7 +5203,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Shell Bell",
 		spritenum: 438,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		onAfterMoveSecondarySelfPriority: -1,
 		onAfterMoveSecondarySelf(pokemon, target, move) {
@@ -5218,7 +5218,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Shiny Stone",
 		spritenum: 439,
 		fling: {
-			basePower: 80,
+			basePower: 130,
 		},
 		num: 107,
 		gen: 4,
@@ -5267,7 +5267,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Silk Scarf",
 		spritenum: 444,
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
@@ -5282,7 +5282,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Silver Powder",
 		spritenum: 447,
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
@@ -5319,7 +5319,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Skull Fossil",
 		spritenum: 449,
 		fling: {
-			basePower: 100,
+			basePower: 130,
 		},
 		num: 105,
 		gen: 4,
@@ -5363,7 +5363,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Smooth Rock",
 		spritenum: 453,
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		num: 283,
 		gen: 4,
@@ -5383,7 +5383,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Snowball",
 		spritenum: 606,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		onDamagingHit(damage, target, source, move) {
 			if (move.type === 'Ice') {
@@ -5400,7 +5400,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Soft Sand",
 		spritenum: 456,
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
@@ -5445,7 +5445,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Spell Tag",
 		spritenum: 461,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
@@ -5552,7 +5552,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Star Sweet",
 		spritenum: 709,
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		num: 1114,
 		gen: 8,
@@ -5616,7 +5616,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	stick: {
 		name: "Stick",
 		fling: {
-			basePower: 60,
+			basePower: 130,
 		},
 		spritenum: 475,
 		onModifyCritRatio(critRatio, user) {
@@ -5633,7 +5633,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Sticky Barb",
 		spritenum: 476,
 		fling: {
-			basePower: 80,
+			basePower: 130,
 		},
 		onResidualOrder: 28,
 		onResidualSubOrder: 3,
@@ -5683,7 +5683,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Strawberry Sweet",
 		spritenum: 704,
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		num: 1109,
 		gen: 8,
@@ -5692,7 +5692,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Sun Stone",
 		spritenum: 480,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		num: 80,
 		gen: 2,
@@ -5715,7 +5715,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Sweet Apple",
 		spritenum: 711,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		num: 1116,
 		gen: 8,
@@ -5724,7 +5724,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Syrupy Apple",
 		spritenum: 755,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		num: 2402,
 		gen: 9,
@@ -5780,7 +5780,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Tart Apple",
 		spritenum: 712,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		num: 1117,
 		gen: 8,
@@ -5789,7 +5789,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Terrain Extender",
 		spritenum: 662,
 		fling: {
-			basePower: 60,
+			basePower: 130,
 		},
 		num: 879,
 		gen: 7,
@@ -5798,7 +5798,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Thick Club",
 		spritenum: 491,
 		fling: {
-			basePower: 90,
+			basePower: 130,
 		},
 		onModifyAtkPriority: 1,
 		onModifyAtk(atk, pokemon) {
@@ -5815,7 +5815,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Throat Spray",
 		spritenum: 713,
 		fling: {
-			basePower: 30,
+			basePower: 130,
 		},
 		onAfterMoveSecondarySelf(target, source, move) {
 			if (move.flags['vibration']) {
@@ -5832,7 +5832,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Thunder Stone",
 		spritenum: 492,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		num: 83,
 		gen: 1,
@@ -5848,7 +5848,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Toxic Orb",
 		spritenum: 515,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 			status: 'tox',
 		},
 		onResidualOrder: 28,
@@ -5882,7 +5882,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr00: {
 		name: "TR00",
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		spritenum: 721,
 		num: 1130,
@@ -5892,7 +5892,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr01: {
 		name: "TR01",
 		fling: {
-			basePower: 85,
+			basePower: 130,
 		},
 		spritenum: 721,
 		num: 1131,
@@ -5902,7 +5902,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr02: {
 		name: "TR02",
 		fling: {
-			basePower: 90,
+			basePower: 130,
 		},
 		spritenum: 730,
 		num: 1132,
@@ -5912,7 +5912,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr03: {
 		name: "TR03",
 		fling: {
-			basePower: 110,
+			basePower: 130,
 		},
 		spritenum: 731,
 		num: 1133,
@@ -5922,7 +5922,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr04: {
 		name: "TR04",
 		fling: {
-			basePower: 90,
+			basePower: 130,
 		},
 		spritenum: 731,
 		num: 1134,
@@ -5932,7 +5932,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr05: {
 		name: "TR05",
 		fling: {
-			basePower: 90,
+			basePower: 130,
 		},
 		spritenum: 735,
 		num: 1135,
@@ -5942,7 +5942,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr06: {
 		name: "TR06",
 		fling: {
-			basePower: 110,
+			basePower: 130,
 		},
 		spritenum: 735,
 		num: 1136,
@@ -5952,7 +5952,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr07: {
 		name: "TR07",
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		spritenum: 722,
 		num: 1137,
@@ -5962,7 +5962,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr08: {
 		name: "TR08",
 		fling: {
-			basePower: 90,
+			basePower: 130,
 		},
 		spritenum: 733,
 		num: 1138,
@@ -5972,7 +5972,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr09: {
 		name: "TR09",
 		fling: {
-			basePower: 110,
+			basePower: 130,
 		},
 		spritenum: 733,
 		num: 1139,
@@ -5982,7 +5982,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr10: {
 		name: "TR10",
 		fling: {
-			basePower: 100,
+			basePower: 130,
 		},
 		spritenum: 725,
 		num: 1140,
@@ -5992,7 +5992,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr11: {
 		name: "TR11",
 		fling: {
-			basePower: 90,
+			basePower: 130,
 		},
 		spritenum: 734,
 		num: 1141,
@@ -6002,7 +6002,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr12: {
 		name: "TR12",
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		spritenum: 734,
 		num: 1142,
@@ -6012,7 +6012,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr13: {
 		name: "TR13",
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		spritenum: 721,
 		num: 1143,
@@ -6022,7 +6022,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr14: {
 		name: "TR14",
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		spritenum: 721,
 		num: 1144,
@@ -6032,7 +6032,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr15: {
 		name: "TR15",
 		fling: {
-			basePower: 110,
+			basePower: 130,
 		},
 		spritenum: 730,
 		num: 1145,
@@ -6042,7 +6042,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr16: {
 		name: "TR16",
 		fling: {
-			basePower: 80,
+			basePower: 130,
 		},
 		spritenum: 731,
 		num: 1146,
@@ -6052,7 +6052,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr17: {
 		name: "TR17",
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		spritenum: 734,
 		num: 1147,
@@ -6062,7 +6062,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr18: {
 		name: "TR18",
 		fling: {
-			basePower: 80,
+			basePower: 130,
 		},
 		spritenum: 727,
 		num: 1148,
@@ -6092,7 +6092,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr21: {
 		name: "TR21",
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		spritenum: 722,
 		num: 1151,
@@ -6102,7 +6102,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr22: {
 		name: "TR22",
 		fling: {
-			basePower: 90,
+			basePower: 130,
 		},
 		spritenum: 724,
 		num: 1152,
@@ -6112,7 +6112,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr23: {
 		name: "TR23",
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		spritenum: 725,
 		num: 1153,
@@ -6122,7 +6122,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr24: {
 		name: "TR24",
 		fling: {
-			basePower: 120,
+			basePower: 130,
 		},
 		spritenum: 736,
 		num: 1154,
@@ -6132,7 +6132,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr25: {
 		name: "TR25",
 		fling: {
-			basePower: 80,
+			basePower: 130,
 		},
 		spritenum: 734,
 		num: 1155,
@@ -6142,7 +6142,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr26: {
 		name: "TR26",
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		spritenum: 721,
 		num: 1156,
@@ -6152,7 +6152,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr27: {
 		name: "TR27",
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		spritenum: 721,
 		num: 1157,
@@ -6162,7 +6162,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr28: {
 		name: "TR28",
 		fling: {
-			basePower: 120,
+			basePower: 130,
 		},
 		spritenum: 727,
 		num: 1158,
@@ -6172,7 +6172,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr29: {
 		name: "TR29",
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		spritenum: 721,
 		num: 1159,
@@ -6182,7 +6182,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr30: {
 		name: "TR30",
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		spritenum: 721,
 		num: 1160,
@@ -6192,7 +6192,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr31: {
 		name: "TR31",
 		fling: {
-			basePower: 100,
+			basePower: 130,
 		},
 		spritenum: 729,
 		num: 1161,
@@ -6202,7 +6202,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr32: {
 		name: "TR32",
 		fling: {
-			basePower: 80,
+			basePower: 130,
 		},
 		spritenum: 737,
 		num: 1162,
@@ -6212,7 +6212,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr33: {
 		name: "TR33",
 		fling: {
-			basePower: 80,
+			basePower: 130,
 		},
 		spritenum: 728,
 		num: 1163,
@@ -6222,7 +6222,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr34: {
 		name: "TR34",
 		fling: {
-			basePower: 120,
+			basePower: 130,
 		},
 		spritenum: 734,
 		num: 1164,
@@ -6232,7 +6232,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr35: {
 		name: "TR35",
 		fling: {
-			basePower: 90,
+			basePower: 130,
 		},
 		spritenum: 721,
 		num: 1165,
@@ -6242,7 +6242,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr36: {
 		name: "TR36",
 		fling: {
-			basePower: 95,
+			basePower: 130,
 		},
 		spritenum: 730,
 		num: 1166,
@@ -6252,7 +6252,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr37: {
 		name: "TR37",
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		spritenum: 737,
 		num: 1167,
@@ -6262,7 +6262,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr38: {
 		name: "TR38",
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		spritenum: 734,
 		num: 1168,
@@ -6272,7 +6272,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr39: {
 		name: "TR39",
 		fling: {
-			basePower: 120,
+			basePower: 130,
 		},
 		spritenum: 722,
 		num: 1169,
@@ -6282,7 +6282,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr40: {
 		name: "TR40",
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		spritenum: 734,
 		num: 1170,
@@ -6292,7 +6292,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr41: {
 		name: "TR41",
 		fling: {
-			basePower: 85,
+			basePower: 130,
 		},
 		spritenum: 730,
 		num: 1171,
@@ -6302,7 +6302,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr42: {
 		name: "TR42",
 		fling: {
-			basePower: 90,
+			basePower: 130,
 		},
 		spritenum: 721,
 		num: 1172,
@@ -6322,7 +6322,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr44: {
 		name: "TR44",
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		spritenum: 734,
 		num: 1174,
@@ -6332,7 +6332,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr45: {
 		name: "TR45",
 		fling: {
-			basePower: 90,
+			basePower: 130,
 		},
 		spritenum: 731,
 		num: 1175,
@@ -6342,7 +6342,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr46: {
 		name: "TR46",
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		spritenum: 729,
 		num: 1176,
@@ -6352,7 +6352,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr47: {
 		name: "TR47",
 		fling: {
-			basePower: 80,
+			basePower: 130,
 		},
 		spritenum: 736,
 		num: 1177,
@@ -6362,7 +6362,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr48: {
 		name: "TR48",
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		spritenum: 722,
 		num: 1178,
@@ -6372,7 +6372,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr49: {
 		name: "TR49",
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		spritenum: 734,
 		num: 1179,
@@ -6382,7 +6382,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr50: {
 		name: "TR50",
 		fling: {
-			basePower: 90,
+			basePower: 130,
 		},
 		spritenum: 732,
 		num: 1180,
@@ -6392,7 +6392,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr51: {
 		name: "TR51",
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		spritenum: 736,
 		num: 1181,
@@ -6402,7 +6402,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr52: {
 		name: "TR52",
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		spritenum: 729,
 		num: 1182,
@@ -6412,7 +6412,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr53: {
 		name: "TR53",
 		fling: {
-			basePower: 120,
+			basePower: 130,
 		},
 		spritenum: 722,
 		num: 1183,
@@ -6422,7 +6422,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr54: {
 		name: "TR54",
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		spritenum: 724,
 		num: 1184,
@@ -6432,7 +6432,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr55: {
 		name: "TR55",
 		fling: {
-			basePower: 120,
+			basePower: 130,
 		},
 		spritenum: 730,
 		num: 1185,
@@ -6442,7 +6442,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr56: {
 		name: "TR56",
 		fling: {
-			basePower: 80,
+			basePower: 130,
 		},
 		spritenum: 722,
 		num: 1186,
@@ -6452,7 +6452,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr57: {
 		name: "TR57",
 		fling: {
-			basePower: 80,
+			basePower: 130,
 		},
 		spritenum: 724,
 		num: 1187,
@@ -6462,7 +6462,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr58: {
 		name: "TR58",
 		fling: {
-			basePower: 80,
+			basePower: 130,
 		},
 		spritenum: 737,
 		num: 1188,
@@ -6472,7 +6472,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr59: {
 		name: "TR59",
 		fling: {
-			basePower: 80,
+			basePower: 130,
 		},
 		spritenum: 732,
 		num: 1189,
@@ -6482,7 +6482,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr60: {
 		name: "TR60",
 		fling: {
-			basePower: 80,
+			basePower: 130,
 		},
 		spritenum: 727,
 		num: 1190,
@@ -6492,7 +6492,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr61: {
 		name: "TR61",
 		fling: {
-			basePower: 90,
+			basePower: 130,
 		},
 		spritenum: 727,
 		num: 1191,
@@ -6502,7 +6502,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr62: {
 		name: "TR62",
 		fling: {
-			basePower: 85,
+			basePower: 130,
 		},
 		spritenum: 736,
 		num: 1192,
@@ -6512,7 +6512,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr63: {
 		name: "TR63",
 		fling: {
-			basePower: 80,
+			basePower: 130,
 		},
 		spritenum: 726,
 		num: 1193,
@@ -6522,7 +6522,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr64: {
 		name: "TR64",
 		fling: {
-			basePower: 120,
+			basePower: 130,
 		},
 		spritenum: 722,
 		num: 1194,
@@ -6532,7 +6532,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr65: {
 		name: "TR65",
 		fling: {
-			basePower: 90,
+			basePower: 130,
 		},
 		spritenum: 732,
 		num: 1195,
@@ -6542,7 +6542,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr66: {
 		name: "TR66",
 		fling: {
-			basePower: 120,
+			basePower: 130,
 		},
 		spritenum: 723,
 		num: 1196,
@@ -6552,7 +6552,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr67: {
 		name: "TR67",
 		fling: {
-			basePower: 90,
+			basePower: 130,
 		},
 		spritenum: 725,
 		num: 1197,
@@ -6562,7 +6562,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr68: {
 		name: "TR68",
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		spritenum: 737,
 		num: 1198,
@@ -6572,7 +6572,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr69: {
 		name: "TR69",
 		fling: {
-			basePower: 80,
+			basePower: 130,
 		},
 		spritenum: 734,
 		num: 1199,
@@ -6582,7 +6582,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr70: {
 		name: "TR70",
 		fling: {
-			basePower: 80,
+			basePower: 130,
 		},
 		spritenum: 729,
 		num: 1200,
@@ -6592,7 +6592,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr71: {
 		name: "TR71",
 		fling: {
-			basePower: 130,
+			basePower: 150,
 		},
 		spritenum: 732,
 		num: 1201,
@@ -6602,7 +6602,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr72: {
 		name: "TR72",
 		fling: {
-			basePower: 120,
+			basePower: 130,
 		},
 		spritenum: 732,
 		num: 1202,
@@ -6612,7 +6612,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr73: {
 		name: "TR73",
 		fling: {
-			basePower: 120,
+			basePower: 130,
 		},
 		spritenum: 724,
 		num: 1203,
@@ -6622,7 +6622,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr74: {
 		name: "TR74",
 		fling: {
-			basePower: 80,
+			basePower: 130,
 		},
 		spritenum: 729,
 		num: 1204,
@@ -6632,7 +6632,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr75: {
 		name: "TR75",
 		fling: {
-			basePower: 100,
+			basePower: 130,
 		},
 		spritenum: 726,
 		num: 1205,
@@ -6642,7 +6642,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr76: {
 		name: "TR76",
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		spritenum: 726,
 		num: 1206,
@@ -6652,7 +6652,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr77: {
 		name: "TR77",
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		spritenum: 732,
 		num: 1207,
@@ -6662,7 +6662,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr78: {
 		name: "TR78",
 		fling: {
-			basePower: 95,
+			basePower: 130,
 		},
 		spritenum: 724,
 		num: 1208,
@@ -6672,7 +6672,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr79: {
 		name: "TR79",
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		spritenum: 729,
 		num: 1209,
@@ -6682,7 +6682,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr80: {
 		name: "TR80",
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		spritenum: 733,
 		num: 1210,
@@ -6692,7 +6692,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr81: {
 		name: "TR81",
 		fling: {
-			basePower: 95,
+			basePower: 130,
 		},
 		spritenum: 737,
 		num: 1211,
@@ -6702,7 +6702,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr82: {
 		name: "TR82",
 		fling: {
-			basePower: 20,
+			basePower: 60,
 		},
 		spritenum: 734,
 		num: 1212,
@@ -6712,7 +6712,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr83: {
 		name: "TR83",
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		spritenum: 734,
 		num: 1213,
@@ -6722,7 +6722,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr84: {
 		name: "TR84",
 		fling: {
-			basePower: 80,
+			basePower: 130,
 		},
 		spritenum: 731,
 		num: 1214,
@@ -6732,7 +6732,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr85: {
 		name: "TR85",
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		spritenum: 721,
 		num: 1215,
@@ -6742,7 +6742,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr86: {
 		name: "TR86",
 		fling: {
-			basePower: 90,
+			basePower: 130,
 		},
 		spritenum: 733,
 		num: 1216,
@@ -6752,7 +6752,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr87: {
 		name: "TR87",
 		fling: {
-			basePower: 80,
+			basePower: 130,
 		},
 		spritenum: 725,
 		num: 1217,
@@ -6762,7 +6762,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr88: {
 		name: "TR88",
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		spritenum: 730,
 		num: 1218,
@@ -6772,7 +6772,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr89: {
 		name: "TR89",
 		fling: {
-			basePower: 110,
+			basePower: 130,
 		},
 		spritenum: 723,
 		num: 1219,
@@ -6782,7 +6782,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr90: {
 		name: "TR90",
 		fling: {
-			basePower: 90,
+			basePower: 130,
 		},
 		spritenum: 738,
 		num: 1220,
@@ -6792,7 +6792,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr91: {
 		name: "TR91",
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		spritenum: 724,
 		num: 1221,
@@ -6802,7 +6802,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr92: {
 		name: "TR92",
 		fling: {
-			basePower: 80,
+			basePower: 130,
 		},
 		spritenum: 738,
 		num: 1222,
@@ -6812,7 +6812,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr93: {
 		name: "TR93",
 		fling: {
-			basePower: 85,
+			basePower: 130,
 		},
 		spritenum: 737,
 		num: 1223,
@@ -6822,7 +6822,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr94: {
 		name: "TR94",
 		fling: {
-			basePower: 95,
+			basePower: 130,
 		},
 		spritenum: 725,
 		num: 1224,
@@ -6832,7 +6832,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr95: {
 		name: "TR95",
 		fling: {
-			basePower: 80,
+			basePower: 130,
 		},
 		spritenum: 737,
 		num: 1225,
@@ -6842,7 +6842,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr96: {
 		name: "TR96",
 		fling: {
-			basePower: 90,
+			basePower: 130,
 		},
 		spritenum: 727,
 		num: 1226,
@@ -6852,7 +6852,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr97: {
 		name: "TR97",
 		fling: {
-			basePower: 85,
+			basePower: 130,
 		},
 		spritenum: 734,
 		num: 1227,
@@ -6862,7 +6862,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr98: {
 		name: "TR98",
 		fling: {
-			basePower: 85,
+			basePower: 130,
 		},
 		spritenum: 731,
 		num: 1228,
@@ -6872,7 +6872,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	tr99: {
 		name: "TR99",
 		fling: {
-			basePower: 80,
+			basePower: 130,
 		},
 		spritenum: 722,
 		num: 1229,
@@ -6883,7 +6883,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Twisted Spoon",
 		spritenum: 520,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
@@ -6930,7 +6930,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Unremarkable Teacup",
 		spritenum: 756,
 		fling: {
-			basePower: 80,
+			basePower: 130,
 		},
 		num: 2403,
 		gen: 9,
@@ -6939,7 +6939,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Up-Grade",
 		spritenum: 523,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		num: 252,
 		gen: 2,
@@ -6948,7 +6948,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Utility Umbrella",
 		spritenum: 718,
 		fling: {
-			basePower: 60,
+			basePower: 130,
 		},
 		// Partially implemented in Pokemon.effectiveWeather() in sim/pokemon.ts
 		onStart(pokemon) {
@@ -7044,7 +7044,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Water Stone",
 		spritenum: 529,
 		fling: {
-			basePower: 30,
+			basePower: 60,
 		},
 		num: 84,
 		gen: 1,
@@ -7078,7 +7078,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Wave Incense",
 		spritenum: 531,
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
@@ -7094,7 +7094,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Weakness Policy",
 		spritenum: 609,
 		fling: {
-			basePower: 80,
+			basePower: 130,
 		},
 		onDamagingHit(damage, target, source, move) {
 			if (!move.damage && !move.damageCallback && target.getMoveHitData(move).typeMod > 0) {
@@ -7112,7 +7112,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Wellspring Mask",
 		spritenum: 759,
 		fling: {
-			basePower: 60,
+			basePower: 130,
 		},
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
@@ -7146,7 +7146,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Whipped Dream",
 		spritenum: 692,
 		fling: {
-			basePower: 80,
+			basePower: 130,
 		},
 		num: 646,
 		gen: 6,
@@ -7156,7 +7156,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "White Herb",
 		spritenum: 535,
 		fling: {
-			basePower: 10,
+			basePower: 60,
 			effect(pokemon) {
 				let activate = false;
 				const boosts: SparseBoostsTable = {};
@@ -7195,7 +7195,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Wide Lens",
 		spritenum: 537,
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		onSourceModifyAccuracyPriority: -2,
 		onSourceModifyAccuracy(accuracy) {
@@ -7236,7 +7236,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Wise Glasses",
 		spritenum: 539,
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		onBasePowerPriority: 16,
 		onBasePower(basePower, user, target, move) {
@@ -7295,7 +7295,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Zoom Lens",
 		spritenum: 574,
 		fling: {
-			basePower: 10,
+			basePower: 60,
 		},
 		onSourceModifyAccuracyPriority: -2,
 		onSourceModifyAccuracy(accuracy, target) {
@@ -7608,7 +7608,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Vile Vial",
 		spritenum: 752,
 		fling: {
-			basePower: 60,
+			basePower: 130,
 		},
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {

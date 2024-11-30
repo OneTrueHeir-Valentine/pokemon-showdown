@@ -2441,6 +2441,19 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 89,
 	},
+	powerlash: {
+		onBasePowerPriority: 23,
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.flags['lash']) {
+				this.debug('Power Lash boost');
+				return this.chainModify(1.4);
+			}
+		},
+		flags: {},
+		name: "Power Lash",
+		rating: 4,
+		num: 89,
+	},
 	potentdrain: {
 		onBasePowerPriority: 23,
 		onBasePower(basePower, attacker, defender, move) {
@@ -2688,7 +2701,23 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			},
 		flags: {},
 		name: "Liquid Voice",
-		rating: 2.5,
+		rating: 3.5,
+		num: 204,
+	},
+	fairysong: {
+		onModifyTypePriority: -1,
+		onModifyType(move, pokemon) {
+			if (move.flags['vibration'] && !pokemon.volatiles['dynamax']) { // hardcode
+				move.type = 'Fairy';
+			}
+		},
+		onBasePowerPriority: 23,
+		onBasePower(basePower, pokemon, target, move) {
+			if (move.typeChangerBoosted === this.effect) return this.chainModify([5325, 4096]);
+			},
+		flags: {},
+		name: "Liquid Voice",
+		rating: 3.5,
 		num: 204,
 	},
 	longreach: {
@@ -3776,6 +3805,14 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 232,
 	},
 	propellertail: {
+		onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Water') {
+				if (!this.boost({spe: 1})) {
+					this.add('-immune', target, '[from] ability: Propeller Tail');
+				}
+				return null;
+			}
+		},
 		onModifyMovePriority: 1,
 		onModifyMove(move) {
 			// most of the implementation is in Battle#getTarget
@@ -4929,6 +4966,18 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 80,
 	},
 	steamengine: {
+		onSourceModifyAtkPriority: 5,
+		onSourceModifyAtk(atk, attacker, defender, move) {
+			if (move.type === 'Water') {
+				return this.chainModify(0.5);
+			}
+		},
+		onSourceModifySpAPriority: 5,
+		onSourceModifySpA(atk, attacker, defender, move) {
+			if (move.type === 'Water') {
+				return this.chainModify(0.5);
+			}
+		},
 		onDamagingHit(damage, target, source, move) {
 			if (['Water', 'Fire'].includes(move.type)) {
 				this.boost({spe: 6});
@@ -4936,7 +4985,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {},
 		name: "Steam Engine",
-		rating: 2,
+		rating: 4,
 		num: 243,
 	},
 	steelworker: {
@@ -5060,6 +5109,18 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {},
 		name: "Strong Jaw",
+		rating: 3.5,
+		num: 173,
+	},
+	stronglash: {
+		onBasePowerPriority: 19,
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.flags['lash']) {
+				return this.chainModify(1.5);
+			}
+		},
+		flags: {},
+		name: "Strong Lash",
 		rating: 3.5,
 		num: 173,
 	},
@@ -5602,6 +5663,15 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 205,
 	},
+	crackingwhip: {
+		onModifyPriority(priority, pokemon, target, move) {
+			if (move?.flags['lash']) return priority + 1;
+		},
+		flags: {},
+		name: "Cracking Whip",
+		rating: 4.5,
+		num: 205,
+	},
 	truant: {
 		onStart(pokemon) {
 			pokemon.removeVolatile('truant');
@@ -5912,14 +5982,24 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 199,
 	},
 	watercompaction: {
-		onDamagingHit(damage, target, source, move) {
+		onTryHitPriority: 1,
+		onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Water') {
+				if (!this.boost({def: 2})) {
+					this.add('-immune', target, '[from] ability: Sap Sipper');
+				}
+				return null;
+			}
+		},
+		onAllyTryHitSide(target, source, move) {
+			if (source === this.effectState.target || !target.isAlly(source)) return;
 			if (move.type === 'Water') {
-				this.boost({def: 2});
+				this.boost({def: 2}, this.effectState.target);
 			}
 		},
 		flags: {},
 		name: "Water Compaction",
-		rating: 1.5,
+		rating: 3.5,
 		num: 195,
 	},
 	waterveil: {

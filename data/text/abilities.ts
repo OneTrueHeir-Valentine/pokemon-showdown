@@ -986,8 +986,13 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	liquidvoice: {
 		name: "Liquid Voice",
-		desc: "This Pokemon's vibration-based moves become Water-type moves. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
-		shortDesc: "This Pokemon's vibration-based moves become Water type.",
+		desc: "This Pokemon's vibration-based moves become Water-type moves and have their power multiplied by 1.3. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
+		shortDesc: "This Pokemon's vibration-based moves become Water type and have 1.3x power.",
+	},
+	fairysong: {
+		name: "Fairy Song",
+		desc: "This Pokemon's vibration-based moves become Fairy-type moves and have their power multiplied by 1.3. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
+		shortDesc: "This Pokemon's vibration-based moves become Fairy type and have 1.3x power.",
 	},
 	longreach: {
 		name: "Long Reach",
@@ -1421,7 +1426,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	propellertail: {
 		name: "Propeller Tail",
-		shortDesc: "This Pokemon's moves cannot be redirected to a different target by any effect.",
+		shortDesc: "This Pokemon's Speed is raised 1 stage if hit by an Water move; Water immunity, & moves cannot be redirected to a different target.",
 	},
 	protean: {
 		name: "Protean",
@@ -1859,8 +1864,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	steamengine: {
 		name: "Steam Engine",
-		desc: "This Pokemon's Speed is raised by 6 stages after it is damaged by a Fire- or Water-type move.",
-		shortDesc: "This Pokemon's Speed is raised by 6 stages after it is damaged by Fire/Water moves.",
+		desc: "Decreases the damage taken by Water Type moves by 50%. This Pokemon's Speed is raised by 6 stages after it is damaged by a Fire- or Water-type move.",
+		shortDesc: "Decreases the damage taken by Water Type moves by 50%. Speed is raised by 6 stages after it is damaged by Fire/Water moves.",
 	},
 	steelworker: {
 		name: "Steelworker",
@@ -2148,6 +2153,15 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Triage",
 		shortDesc: "This Pokemon's healing moves have their priority increased by 3.",
 	},
+	crackingwhip: {
+		name: "Cracking Whip",
+		shortDesc: "This Pokemon's lash moves have their priority increased by 1.",
+	},
+	powerlash: {
+		name: "Power Lash",
+		desc: "This Pokemon's lash-based attacks have their power multiplied by 1.4.",
+		shortDesc: "This Pokemon's lash-based attacks have 1.4x power.",
+	},
 	truant: {
 		name: "Truant",
 		shortDesc: "This Pokemon skips every other turn instead of using a move.",
@@ -2264,8 +2278,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		shortDesc: "This Pokemon's Water power is 2x; it can't be burned; Fire power against it is halved.",
 	},
 	watercompaction: {
-		name: "Water Compaction",
-		shortDesc: "This Pokemon's Defense is raised 2 stages after it is damaged by a Water-type move.",
+		desc: "This Pokemon is immune to Water-type moves and raises its Defense by 2 stages when hit by a Water-type move.",
+		shortDesc: "This Pokemon's Defense is raised 2 stages if hit by a Water move; Water immunity.",
 	},
 	waterveil: {
 		name: "Water Veil",

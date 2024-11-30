@@ -203,9 +203,9 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Has a 100% chance to raise the user's Speed by 1 stage.",
 		shortDesc: "100% chance to raise the user's Speed by 1.",
 	},
-	aquatail: {
-		name: "Aqua Tail",
-		shortDesc: "No additional effect.",
+	aqualash: {
+		desc: "Has a 100% chance to lower the target's Defense by 1 stage.",
+		shortDesc: "100% chance to lower the target's Defense by 1.",
 	},
 	armorcannon: {
 		name: "Armor Cannon",
@@ -409,8 +409,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	beakblast: {
 		name: "Beak Blast",
-		desc: "If the user is hit by a contact move this turn before it can execute this move, the attacker is burned.",
-		shortDesc: "Burns on contact with the user before it moves.",
+		desc: "Has a 30% chance to burn the target. If the user is hit by a contact move this turn before it can execute this move, the attacker is burned.",
+		shortDesc: "Burns on contact with the user before it moves. Has a 30% chance to burn the target.",
 
 		start: "  [POKEMON] started heating up its beak!",
 	},
@@ -1613,6 +1613,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "If both the user and the target have not fainted, the target is forced to switch out and be replaced with a random unfainted ally. This effect fails if the target used Ingrain previously, has the Suction Cups Ability, or this move hit a substitute.",
 		shortDesc: "Forces the target to switch to a random ally.",
 	},
+	dragonlash: {
+		name: "Dragon Lash",
+		desc: "Has a 100% chance to lower the target's Defense by 1 stage.",
+		shortDesc: "100% chance to lower the target's Defense by 1.",
+	},
 	drainingkiss: {
 		name: "Draining Kiss",
 		desc: "The user recovers 3/4 the HP lost by the target, rounded half up. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down.",
@@ -2188,6 +2193,16 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 
 		removeItem: "  [POKEMON] flung its [ITEM]!",
 	},
+	telekinetictoss: {
+		name: "Telekinetic Toss",
+		desc: "The power of this move is based on the user's held item. The held item is lost and it activates for the target if applicable. If there is no target or the target avoids this move by protecting itself, the user's held item is still lost. The user can regain a thrown item with Recycle or the Harvest Ability. Fails if the user has no held item, if the held item cannot be thrown, if the user is under the effect of Embargo or Magic Room, or if the user has the Klutz Ability.",
+		shortDesc: "Tosses the user's item at the target with psychic Power. Power varies.",
+		gen4: {
+			desc: "The power of this move is based on the user's held item. The held item is lost and it activates for the target if applicable. If the target avoids this move by protecting itself, the user's held item is still lost. The user can regain a thrown item with Recycle. Fails if the user has no held item, if the held item cannot be thrown, or if the user is under the effect of Embargo.",
+		},
+
+		removeItem: "  [POKEMON] flung its [ITEM]!",
+	},
 	flipturn: {
 		name: "Flip Turn",
 		desc: "If this move is successful and the user has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members, or if the target switched out using an Eject Button or through the effect of the Emergency Exit or Wimp Out Abilities.",
@@ -2374,7 +2389,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 			desc: "Hits two to five times. Has a 3/8 chance to hit two or three times, and a 1/8 chance to hit four or five times. Damage is calculated once for the first hit and used for every hit. If one of the hits breaks the target's substitute, the move ends.",
 		},
 	},
-	furycutter: {
+	furylash: {
 		name: "Fury Cutter",
 		desc: "Power doubles with each successful hit, up to a maximum of 160 power. The power is reset if this move misses or another move is used.",
 		shortDesc: "Power doubles with each hit, up to 160.",
@@ -3405,10 +3420,10 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Has a 30% chance to make the target flinch.",
 		shortDesc: "30% chance to make the target flinch.",
 	},
-	irontail: {
-		name: "Iron Tail",
-		desc: "Has a 30% chance to lower the target's Defense by 1 stage.",
-		shortDesc: "30% chance to lower the target's Defense by 1.",
+	ironlash: {
+		name: "Iron Lash",
+		desc: "Has a 100% chance to lower the target's Defense by 1 stage.",
+		shortDesc: "100% chance to lower the target's Defense by 1.",
 	},
 	ivycudgel: {
 		name: "Ivy Cudgel",
@@ -3470,10 +3485,10 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	kingsshield: {
 		name: "King's Shield",
-		desc: "The user is protected from most attacks made by other Pokemon during this turn, and Pokemon trying to make contact with the user have their Attack lowered by 1 stage. Non-damaging moves go through this protection. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Burning Bulwark, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Silk Trap, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
-		shortDesc: "Protects from damaging attacks. Contact: -1 Atk.",
+		desc: "The user is protected from most attacks made by other Pokemon during this turn, and Pokemon trying to make contact with the user have their Attack lowered by 2 stages. Non-damaging moves go through this protection. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Burning Bulwark, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Silk Trap, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
+		shortDesc: "Protects from damaging attacks. Contact: -2 Atk.",
 		gen8: {
-			desc: "The user is protected from most attacks made by other Pokemon during this turn, and Pokemon trying to make contact with the user have their Attack lowered by 1 stage. Non-damaging moves go through this protection. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
+			desc: "The user is protected from most attacks made by other Pokemon during this turn, and Pokemon trying to make contact with the user have their Attack lowered by 2 stages. Non-damaging moves go through this protection. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
 		},
 		gen7: {
 			desc: "The user is protected from most attacks made by other Pokemon during this turn, and Pokemon trying to make contact with the user have their Attack lowered by 2 stages. Non-damaging moves go through this protection. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Detect, Endure, King's Shield, Protect, Quick Guard, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
@@ -3506,6 +3521,13 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		},
 
 		removeItem: "  [SOURCE] knocked off [POKEMON]'s [ITEM]!",
+	},
+	sleightofhand: {
+		name: "Sleight of Hand",
+		desc: "If the target is holding an item that can be removed from it, ignoring the Sticky Hold Ability, this move's power is multiplied by 1.5. If the user has not fainted, the target loses its held item. This move cannot cause Pokemon with the Sticky Hold Ability to lose their held item or cause a Kyogre, a Groudon, a Giratina, an Arceus, a Genesect, a Silvally, a Zacian, or a Zamazenta to lose their Blue Orb, Red Orb, Griseous Orb, Plate, Drive, Memory, Rusted Sword, or Rusted Shield respectively. Items lost to this move cannot be regained with Recycle or the Harvest Ability.",
+		shortDesc: "1.5x damage if foe holds an item. Removes item.",
+
+		removeItem: "  [SOURCE] stole [POKEMON]'s [ITEM]!",
 	},
 	kowtowcleave: {
 		name: "Kowtow Cleave",
@@ -4753,10 +4775,10 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 			shortDesc: "20% chance to poison the target.",
 		},
 	},
-	poisontail: {
-		name: "Poison Tail",
-		desc: "Has a 10% chance to poison the target and a higher chance for a critical hit.",
-		shortDesc: "High critical hit ratio. 10% chance to poison.",
+	poisonlash: {
+		name: "Poison Lash",
+		desc: "Has a 30% chance to poison the target and a higher chance for a critical hit.",
+		shortDesc: "High critical hit ratio. 30% chance to poison.",
 	},
 	pollenpuff: {
 		name: "Pollen Puff",
@@ -4955,8 +4977,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Lowers the user's Special Attack by 2 stages.",
 		shortDesc: "Lowers the user's Sp. Atk by 2.",
 	},
-	psychocut: {
-		name: "Psycho Cut",
+	psycholash: {
+		name: "Psycho Lash",
 		desc: "Has a higher chance for a critical hit.",
 		shortDesc: "High critical hit ratio.",
 	},
