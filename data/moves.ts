@@ -8363,7 +8363,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {snatch: 1, metronome: 1},
 		onModifyMove(move, pokemon) {
-			if (['sunnyday', 'desolateland'].includes(pokemon.effectiveWeather())) move.boosts = {atk: 2, spa: 2};
+			if (['sundance', 'desolateland'].includes(pokemon.effectiveWeather())) move.boosts = {atk: 2, spa: 2};
 		},
 		boosts: {
 			atk: 1,
@@ -8568,7 +8568,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		maxMove: {basePower: 130},
 		contestType: "Cool",
 	},
-	hail: {
+	haildance: {
 		num: 258,
 		accuracy: true,
 		basePower: 0,
@@ -9566,7 +9566,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			case 'primordialsea':
 				move.accuracy = true;
 				break;
-			case 'sunnyday':
+			case 'sundance':
 			case 'desolateland':
 				move.accuracy = 50;
 				break;
@@ -11761,7 +11761,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		self: {
 			onHit(source) {
 				if (!source.volatiles['dynamax']) return;
-				this.field.setWeather('sunnyday');
+				this.field.setWeather('sundance');
 			},
 		},
 		target: "adjacentFoe",
@@ -11862,7 +11862,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Normal",
 		contestType: "Cool",
 	},
-	maxhailstorm: {
+	maxhaildancestorm: {
 		num: 763,
 		accuracy: true,
 		basePower: 10,
@@ -12953,14 +12953,14 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		onHit(pokemon) {
 			let factor = 0.5;
 			switch (pokemon.effectiveWeather()) {
-			case 'sunnyday':
+			case 'sundance':
 			case 'desolateland':
 				factor = 0.667;
 				break;
 			case 'raindance':
 			case 'primordialsea':
-			case 'sandstorm':
-			case 'hail':
+			case 'sandstormdance':
+			case 'haildance':
 			case 'snow':
 				factor = 0.25;
 				break;
@@ -12990,14 +12990,14 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		onHit(pokemon) {
 			let factor = 0.5;
 			switch (pokemon.effectiveWeather()) {
-			case 'sunnyday':
+			case 'sundance':
 			case 'desolateland':
 				factor = 0.667;
 				break;
 			case 'raindance':
 			case 'primordialsea':
-			case 'sandstorm':
-			case 'hail':
+			case 'sandstormdance':
+			case 'haildance':
 			case 'snow':
 				factor = 0.25;
 				break;
@@ -16565,16 +16565,16 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "allAdjacentFoes",
 		type: "Ground",
 	},
-	sandstorm: {
+	sandstormdance: {
 		num: 201,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
-		name: "Sandstorm",
+		name: "Sandstorm Dance",
 		pp: 10,
 		priority: 0,
-		flags: {metronome: 1, wind: 1},
-		weather: 'Sandstorm',
+		flags: {metronome: 1, wind: 1, dance: 1},
+		weather: 'Sandstorm Dance',
 		secondary: null,
 		target: "all",
 		type: "Rock",
@@ -18187,7 +18187,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				return;
 			}
 			this.add('-prepare', attacker, move.name);
-			if (['sunnyday', 'desolateland'].includes(attacker.effectiveWeather())) {
+			if (['sundance', 'desolateland'].includes(attacker.effectiveWeather())) {
 				this.attrLastMove('[still]');
 				this.addMove('-anim', attacker, move.name, defender);
 				return;
@@ -18199,7 +18199,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			return null;
 		},
 		onBasePower(basePower, pokemon, target) {
-			const weakWeathers = ['raindance', 'primordialsea', 'sandstorm', 'hail', 'snow'];
+			const weakWeathers = ['raindance', 'primordialsea', 'sandstormdance', 'haildance', 'snow'];
 			if (weakWeathers.includes(pokemon.effectiveWeather())) {
 				this.debug('weakened by weather');
 				return this.chainModify(0.5);
@@ -18224,7 +18224,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				return;
 			}
 			this.add('-prepare', attacker, move.name);
-			if (['sunnyday', 'desolateland'].includes(attacker.effectiveWeather())) {
+			if (['sundance', 'desolateland'].includes(attacker.effectiveWeather())) {
 				this.attrLastMove('[still]');
 				this.addMove('-anim', attacker, move.name, defender);
 				return;
@@ -18236,7 +18236,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			return null;
 		},
 		onBasePower(basePower, pokemon, target) {
-			const weakWeathers = ['raindance', 'primordialsea', 'sandstorm', 'hail', 'snow'];
+			const weakWeathers = ['raindance', 'primordialsea', 'sandstormdance', 'haildance', 'snow'];
 			if (weakWeathers.includes(pokemon.effectiveWeather())) {
 				this.debug('weakened by weather');
 				return this.chainModify(0.5);
@@ -19403,16 +19403,16 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Dark",
 		contestType: "Clever",
 	},
-	sunnyday: {
+	sundance: {
 		num: 241,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
-		name: "Sunny Day",
+		name: "Sun Dance",
 		pp: 5,
 		priority: 0,
-		flags: {metronome: 1},
-		weather: 'sunnyday',
+		flags: {metronome: 1, dance: 1},
+		weather: 'sundance',
 		secondary: null,
 		target: "all",
 		type: "Fire",
@@ -19739,7 +19739,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		onHit(pokemon) {
 			let factor = 0.5;
 			switch (pokemon.effectiveWeather()) {
-			case 'sunnyday':
+			case 'sundance':
 			case 'desolateland':
 				factor = 0.667;
 				break;
@@ -20486,7 +20486,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			case 'primordialsea':
 				move.accuracy = true;
 				break;
-			case 'sunnyday':
+			case 'sundance':
 			case 'desolateland':
 				move.accuracy = 50;
 				break;
@@ -21786,7 +21786,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		flags: {protect: 1, mirror: 1, metronome: 1, bullet: 1},
 		onModifyType(move, pokemon) {
 			switch (pokemon.effectiveWeather()) {
-			case 'sunnyday':
+			case 'sundance':
 			case 'desolateland':
 				move.type = 'Fire';
 				break;
@@ -21794,10 +21794,10 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			case 'primordialsea':
 				move.type = 'Water';
 				break;
-			case 'sandstorm':
+			case 'sandstormdance':
 				move.type = 'Rock';
 				break;
-			case 'hail':
+			case 'haildance':
 			case 'snow':
 				move.type = 'Ice';
 				break;
@@ -21805,7 +21805,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		onModifyMove(move, pokemon) {
 			switch (pokemon.effectiveWeather()) {
-			case 'sunnyday':
+			case 'sundance':
 			case 'desolateland':
 				move.basePower *= 2;
 				break;
@@ -21813,10 +21813,10 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			case 'primordialsea':
 				move.basePower *= 2;
 				break;
-			case 'sandstorm':
+			case 'sandstormdance':
 				move.basePower *= 2;
 				break;
-			case 'hail':
+			case 'haildance':
 			case 'snow':
 				move.basePower *= 2;
 				break;

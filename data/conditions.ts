@@ -77,40 +77,18 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		name: 'frz',
 		effectType: 'Status',
 		onStart(target, source, sourceEffect) {
-			if (sourceEffect && sourceEffect.effectType === 'Ability') {
+			if (sourceEffect && sourceEffect.id === 'flameorb') {
+				this.add('-status', target, 'frz', '[from] item: Frost Orb');
+			} else if (sourceEffect && sourceEffect.effectType === 'Ability') {
 				this.add('-status', target, 'frz', '[from] ability: ' + sourceEffect.name, '[of] ' + source);
 			} else {
 				this.add('-status', target, 'frz');
 			}
-			if (target.species.name === 'Shaymin-Sky' && target.baseSpecies.baseSpecies === 'Shaymin') {
-				target.formeChange('Shaymin', this.effect, true);
-			}
 		},
-		onBeforeMovePriority: 10,
-		onBeforeMove(pokemon, target, move) {
-			if (move.flags['defrost']) return;
-			if (this.randomChance(1, 1)) {
-				pokemon.cureStatus();
-				return;
-			}
-			this.add('cant', pokemon, 'frz');
-			return false;
-		},
-		onModifyMove(move, pokemon) {
-			if (move.flags['defrost']) {
-				this.add('-curestatus', pokemon, 'frz', '[from] move: ' + move);
-				pokemon.clearStatus();
-			}
-		},
-		onAfterMoveSecondary(target, source, move) {
-			if (move.thawsTarget) {
-				target.cureStatus();
-			}
-		},
-		onDamagingHit(damage, target, source, move) {
-			if (move.type === 'Fire' && move.category !== 'Status') {
-				target.cureStatus();
-			}
+		// Damage reduction is handled directly in the sim/battle.js damage function
+		onResidualOrder: 10,
+		onResidual(pokemon) {
+			this.damage(pokemon.baseMaxhp / 16);
 		},
 	},
 	psn: {
@@ -214,10 +192,10 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 	},
 	partiallytrapped: {
 		name: 'partiallytrapped',
-		duration: 5,
+		duration: 6,
 		durationCallback(target, source) {
-			if (source?.hasItem('gripclaw')) return 8;
-			return this.random(5, 7);
+			if (source?.hasItem('gripclaw')) return 12;
+			return this.random(6, 8);
 		},
 		onStart(pokemon, source) {
 			this.add('-activate', pokemon, 'move: ' + this.effectState.sourceEffect, '[of] ' + source);
@@ -458,9 +436,9 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		duration: 5,
 		durationCallback(source, effect) {
 			if (source?.hasItem('damprock')) {
-				return 8;
+				return 12;
 			}
-			return 5;
+			return 6;
 		},
 		onWeatherModifyDamage(damage, attacker, defender, move) {
 			if (defender.hasItem('utilityumbrella')) return;
@@ -522,8 +500,8 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 			this.add('-weather', 'none');
 		},
 	},
-	sunnyday: {
-		name: 'SunnyDay',
+	sundance: {
+		name: 'SunDance',
 		effectType: 'Weather',
 		duration: 5,
 		durationCallback(source, effect) {
@@ -534,25 +512,25 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		},
 		onWeatherModifyDamage(damage, attacker, defender, move) {
 			if (move.id === 'hydrosteam' && !attacker.hasItem('utilityumbrella')) {
-				this.debug('Sunny Day Hydro Steam boost');
+				this.debug('Sun Dance Hydro Steam boost');
 				return this.chainModify(1.5);
 			}
 			if (defender.hasItem('utilityumbrella')) return;
 			if (move.type === 'Fire') {
-				this.debug('Sunny Day fire boost');
+				this.debug('Sun Dance fire boost');
 				return this.chainModify(1.5);
 			}
 			if (move.type === 'Water') {
-				this.debug('Sunny Day water suppress');
+				this.debug('Sun Dance water suppress');
 				return this.chainModify(0.5);
 			}
 		},
 		onFieldStart(battle, source, effect) {
 			if (effect?.effectType === 'Ability') {
 				if (this.gen <= 5) this.effectState.duration = 0;
-				this.add('-weather', 'SunnyDay', '[from] ability: ' + effect.name, '[of] ' + source);
+				this.add('-weather', 'SunDance', '[from] ability: ' + effect.name, '[of] ' + source);
 			} else {
-				this.add('-weather', 'SunnyDay');
+				this.add('-weather', 'SunDance');
 			}
 		},
 		onImmunity(type, pokemon) {
@@ -561,7 +539,7 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		},
 		onFieldResidualOrder: 1,
 		onFieldResidual() {
-			this.add('-weather', 'SunnyDay', '[upkeep]');
+			this.add('-weather', 'SunDance', '[upkeep]');
 			this.eachEvent('Weather');
 		},
 		onFieldEnd() {
@@ -584,7 +562,7 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		onWeatherModifyDamage(damage, attacker, defender, move) {
 			if (defender.hasItem('utilityumbrella')) return;
 			if (move.type === 'Fire') {
-				this.debug('Sunny Day fire boost');
+				this.debug('Sun Dance fire boost');
 				return this.chainModify(1.5);
 			}
 		},
@@ -604,15 +582,15 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 			this.add('-weather', 'none');
 		},
 	},
-	sandstorm: {
-		name: 'Sandstorm',
+	sandstormdance: {
+		name: 'SandstormDance',
 		effectType: 'Weather',
-		duration: 5,
+		duration: 6,
 		durationCallback(source, effect) {
 			if (source?.hasItem('smoothrock')) {
-				return 8;
+				return 12;
 			}
-			return 5;
+			return 6;
 		},
 		// This should be applied directly to the stat before any of the other modifiers are chained
 		// So we give it increased priority.
@@ -625,15 +603,15 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		onFieldStart(field, source, effect) {
 			if (effect?.effectType === 'Ability') {
 				if (this.gen <= 5) this.effectState.duration = 0;
-				this.add('-weather', 'Sandstorm', '[from] ability: ' + effect.name, '[of] ' + source);
+				this.add('-weather', 'SandstormDance', '[from] ability: ' + effect.name, '[of] ' + source);
 			} else {
-				this.add('-weather', 'Sandstorm');
+				this.add('-weather', 'SandstormDance');
 			}
 		},
 		onFieldResidualOrder: 1,
 		onFieldResidual() {
-			this.add('-weather', 'Sandstorm', '[upkeep]');
-			if (this.field.isWeather('sandstorm')) this.eachEvent('Weather');
+			this.add('-weather', 'SandstormDance', '[upkeep]');
+			if (this.field.isWeather('sandstormdance')) this.eachEvent('Weather');
 		},
 		onWeather(target) {
 			this.damage(target.baseMaxhp / 16);
@@ -642,28 +620,34 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 			this.add('-weather', 'none');
 		},
 	},
-	hail: {
-		name: 'Hail',
+	haildance: {
+		name: 'HailDance',
 		effectType: 'Weather',
-		duration: 5,
+		duration: 6,
 		durationCallback(source, effect) {
 			if (source?.hasItem('icyrock')) {
-				return 8;
+				return 12;
 			}
-			return 5;
+			return 6;
+		},
+		onModifyDefPriority: 10,
+		onModifyDef(def, pokemon) {
+			if (pokemon.hasType('Ice') && this.field.isWeather('haildance')) {
+				return this.modify(def, 1.5);
+			}
 		},
 		onFieldStart(field, source, effect) {
 			if (effect?.effectType === 'Ability') {
 				if (this.gen <= 5) this.effectState.duration = 0;
-				this.add('-weather', 'Hail', '[from] ability: ' + effect.name, '[of] ' + source);
+				this.add('-weather', 'HailDance', '[from] ability: ' + effect.name, '[of] ' + source);
 			} else {
-				this.add('-weather', 'Hail');
+				this.add('-weather', 'HailDance');
 			}
 		},
 		onFieldResidualOrder: 1,
 		onFieldResidual() {
-			this.add('-weather', 'Hail', '[upkeep]');
-			if (this.field.isWeather('hail')) this.eachEvent('Weather');
+			this.add('-weather', 'HailDance', '[upkeep]');
+			if (this.field.isWeather('haildance')) this.eachEvent('Weather');
 		},
 		onWeather(target) {
 			this.damage(target.baseMaxhp / 16);
@@ -673,33 +657,38 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		},
 	},
 	snow: {
-		name: 'Snow',
+		name: 'SnowDance',
 		effectType: 'Weather',
-		duration: 5,
+		duration: 6,
 		durationCallback(source, effect) {
 			if (source?.hasItem('icyrock')) {
-				return 8;
+				return 12;
 			}
-			return 5;
+			return 6;
 		},
-		onModifyDefPriority: 10,
-		onModifyDef(def, pokemon) {
-			if (pokemon.hasType('Ice') && this.field.isWeather('snow')) {
-				return this.modify(def, 1.5);
+		onWeatherModifyDamage(damage, attacker, defender, move) {
+			if (defender.hasItem('utilityumbrella')) return;
+			if (move.type === 'Ice') {
+				this.debug('Sun Dance fire boost');
+				return this.chainModify(1.5);
+			}
+			if (move.flags === 'vibration') {
+				this.debug('Snow Dance vibration suppress');
+				return this.chainModify(0.5);
 			}
 		},
 		onFieldStart(field, source, effect) {
 			if (effect?.effectType === 'Ability') {
 				if (this.gen <= 5) this.effectState.duration = 0;
-				this.add('-weather', 'Snow', '[from] ability: ' + effect.name, '[of] ' + source);
+				this.add('-weather', 'SnowDance', '[from] ability: ' + effect.name, '[of] ' + source);
 			} else {
-				this.add('-weather', 'Snow');
+				this.add('-weather', 'SnowDance');
 			}
 		},
 		onFieldResidualOrder: 1,
 		onFieldResidual() {
-			this.add('-weather', 'Snow', '[upkeep]');
-			if (this.field.isWeather('snow')) this.eachEvent('Weather');
+			this.add('-weather', 'SnowDance', '[upkeep]');
+			if (this.field.isWeather('snowdance')) this.eachEvent('Weather');
 		},
 		onFieldEnd() {
 			this.add('-weather', 'none');

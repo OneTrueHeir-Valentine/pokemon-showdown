@@ -141,8 +141,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	aurabreak: {
 		name: "Aura Break",
-		desc: "While this Pokemon is active, the effects of the Aura Abilities are reversed, multiplying the power of respective moves by 3/4 instead of 1.33.",
-		shortDesc: "While this Pokemon is active, the Dark Aura and Fairy Aura power modifier is 0.75x.",
+		desc: "This Pokemon is immune to aura, pulse, and bullet moves. While this Pokemon is active, the effects of the Aura Abilities are reversed, multiplying the power of respective moves by 3/4 instead of 1.33.",
+		shortDesc: "This Pokemon is immune to aura, pulse, and bullet moves & while active, the Aura abilities power modifier is 0.75x.",
 
 		start: "  [POKEMON] reversed all other Pok\u00E9mon's auras!",
 	},
@@ -211,7 +211,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	bulletproof: {
 		name: "Bulletproof",
-		shortDesc: "This Pokemon is immune to bullet and pulse moves.",
+		shortDesc: "This Pokemon is immune to aura, pulse, and bullet moves.",
 	},
 	cheekpouch: {
 		name: "Cheek Pouch",
@@ -649,7 +649,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	gooey: {
 		name: "Gooey",
-		shortDesc: "This Pokemon cannot lose its held item & Pokemon making contact with it have their Speed lowered by 2.",
+		shortDesc: "This Pokemon cannot be forced to switch, lose its held item, & Pokemon making contact with it have their Speed lowered by 2.",
 	},
 	gorillatactics: {
 		name: "Gorilla Tactics",
@@ -693,8 +693,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	harvest: {
 		name: "Harvest",
-		desc: "If the last item this Pokemon used is a Berry, there is a 50% chance it gets restored at the end of each turn. If Sunny Day is active, this chance is 100%.",
-		shortDesc: "If last item used is a Berry, 50% chance to restore it each end of turn. 100% in Sun.",
+		desc: "If the last item this Pokemon used is a Berry it gets restored at the end of each turn. If Sun is active, restore 1/16 of its maximum HP, rounded down, at the end of each turn.",
+		shortDesc: "If last item used is a Berry, restore it each end of turn. Heal 1/16 max HP at the end of each turn in Sun.",
 
 		addItem: "  [POKEMON] harvested one [ITEM]!",
 	},
@@ -747,11 +747,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	hydration: {
 		name: "Hydration",
-		desc: "This Pokemon has its non-volatile status condition cured at the end of each turn if Rain Dance is active. This effect is prevented if this Pokemon is holding a Utility Umbrella.",
-		shortDesc: "This Pokemon has its status cured at the end of each turn if Rain Dance is active.",
-		gen7: {
-			desc: "This Pokemon has its non-volatile status condition cured at the end of each turn if Rain Dance is active.",
-		},
+		desc: "This Pokemon has its non-volatile status condition cured and restores 1/16 of its maximum HP, rounded down, at the end of each turn if Rain Dance is active. This effect is prevented if this Pokemon is holding a Utility Umbrella.",
+		shortDesc: "This Pokemon heals 1/16 of its max HP & has its status cured at the end of each turn if Rain is active.",
 	},
 	hypercutter: {
 		name: "Hyper Cutter",
@@ -759,11 +756,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	icebody: {
 		name: "Ice Body",
-		desc: "If Snow is active, this Pokemon restores 1/16 of its maximum HP, rounded down, at the end of each turn.",
-		shortDesc: "If Snow is active, this Pokemon heals 1/16 of its max HP each turn.",
-		gen8: {
-			desc: "If Hail is active, this Pokemon restores 1/16 of its maximum HP, rounded down, at the end of each turn. This Pokemon takes no damage from Hail.",
-			shortDesc: "If Hail is active, this Pokemon heals 1/16 of its max HP each turn; immunity to Hail.",
+		desc: "If Rain Dance is active, this Pokemon restores 1/8 of its maximum HP, rounded down, at the end of each turn. This effect is prevented if this Pokemon is holding a Utility Umbrella.",
+		shortDesc: "If Rain Dance is active, this Pokemon heals 1/8 of its max HP each turn.",
 		},
 	},
 	iceface: {
@@ -797,7 +791,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	immunity: {
 		name: "Immunity",
-		shortDesc: "This Pokemon cannot be poisoned. Gaining this Ability while poisoned cures it.",
+		desc: "This Pokemon is immune to Poison-type moves and raises its Attack by 1 stage when hit by a Poison-type move.",
+		shortDesc: "This Pokemon's Attack is raised 1 stage if hit by a Poison move; Poison immunity.",
 	},
 	imposter: {
 		name: "Imposter",
@@ -906,15 +901,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	leafguard: {
 		name: "Leaf Guard",
-		desc: "If Sunny Day is active, this Pokemon cannot become affected by a non-volatile status condition or Yawn, and Rest will fail for it. This effect is prevented if this Pokemon is holding a Utility Umbrella.",
-		shortDesc: "If Sunny Day is active, this Pokemon cannot be statused and Rest will fail for it.",
-		gen7: {
-			desc: "If Sunny Day is active, this Pokemon cannot become affected by a non-volatile status condition or Yawn, and Rest will fail for it.",
-		},
-		gen4: {
-			desc: "If Sunny Day is active, this Pokemon cannot become affected by a non-volatile status condition or Yawn, but can use Rest normally.",
-			shortDesc: "If Sunny Day is active, this Pokemon cannot be statused, but Rest works normally.",
-		},
+		desc: "This Pokemon has its non-volatile status condition cured and restores 1/16 of its maximum HP, rounded down, at the end of each turn if Sun Dance is active. This effect is prevented if this Pokemon is holding a Utility Umbrella.",
+		shortDesc: "This Pokemon heals 1/16 of its max HP & has its status cured at the end of each turn if Sun is active.",
 	},
 	levitate: {
 		name: "Levitate",
@@ -977,17 +965,23 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	liquidooze: {
 		name: "Liquid Ooze",
-		shortDesc: "This Pokemon damages those draining HP from it for as much as they would heal.",
+		shortDesc: "This Pokemon damages those draining HP from it for as much as they would heal andNormal-type moves become Poison-type moves and have their power multiplied by 1.2. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
 		gen4: {
-			desc: "This Pokemon damages those draining HP from it for as much as they would heal. This effect does not consider Dream Eater.",
+			desc: "This Pokemon damages those draining HP from it for as much as they would heal and its Normal-type moves become Poison-type and have 1.2x power.",
 		},
 
 		damage: "  [POKEMON] sucked up the liquid ooze!",
 	},
+		
 	liquidvoice: {
 		name: "Liquid Voice",
 		desc: "This Pokemon's vibration-based moves become Water-type moves and have their power multiplied by 1.3. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
 		shortDesc: "This Pokemon's vibration-based moves become Water type and have 1.3x power.",
+	},
+	eerievoice: {
+		name: "Eerie Voice",
+		desc: "This Pokemon's vibration-based moves become Dark-type moves and have their power multiplied by 1.3. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
+		shortDesc: "This Pokemon's vibration-based moves become Dark-type and have 1.3x power.",
 	},
 	fairysong: {
 		name: "Fairy Song",
@@ -1183,7 +1177,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	naturalcure: {
 		name: "Natural Cure",
-		shortDesc: "This Pokemon has its non-volatile status condition cured when it switches out.",
+		shortDesc: "This Pokemon has its non-volatile status condition cured and restores 1/5 of its maximum HP, rounded down, when it switches out.",
 
 		activate: "  ([POKEMON] is cured by its Natural Cure!)",
 	},
@@ -1503,11 +1497,13 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	raindish: {
 		name: "Rain Dish",
-		desc: "If Rain Dance is active, this Pokemon restores 1/16 of its maximum HP, rounded down, at the end of each turn. This effect is prevented if this Pokemon is holding a Utility Umbrella.",
-		shortDesc: "If Rain Dance is active, this Pokemon heals 1/16 of its max HP each turn.",
-		gen7: {
-			desc: "If Rain Dance is active, this Pokemon restores 1/16 of its maximum HP, rounded down, at the end of each turn.",
-		},
+		desc: "If Rain Dance is active, this Pokemon restores 1/8 of its maximum HP, rounded down, at the end of each turn. This effect is prevented if this Pokemon is holding a Utility Umbrella.",
+		shortDesc: "If Rain Dance is active, this Pokemon heals 1/8 of its max HP each turn.",
+	},
+	sunbathe: {
+		name: "Sun Bathe",
+		desc: "If Sun Dance is active, this Pokemon restores 1/8 of its maximum HP, rounded down, at the end of each turn. This effect is prevented if this Pokemon is holding a Utility Umbrella.",
+		shortDesc: "If Sun Dance is active, this Pokemon heals 1/8 of its max HP each turn.",
 	},
 	rattled: {
 		name: "Rattled",
@@ -1592,7 +1588,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	runaway: {
 		name: "Run Away",
-		shortDesc: "No competitive use.",
+		shortDesc: "This pokemon cannot be trapped and has its speed *1.5",
 	},
 	sandforce: {
 		name: "Sand Force",
@@ -1617,8 +1613,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	sandveil: {
 		name: "Sand Veil",
-		desc: "If Sandstorm is active, the accuracy of moves used against this Pokemon is multiplied by 0.8. This Pokemon takes no damage from Sandstorm.",
-		shortDesc: "If Sandstorm is active, this Pokemon's evasiveness is 1.25x; immunity to Sandstorm.",
+		desc: "This Pokemon has its non-volatile status condition cured and restores 1/16 of its maximum HP, rounded down, at the end of each turn if Sandstorm Dance is active. This effect is prevented if this Pokemon is holding a Utility Umbrella.",
+		shortDesc: "This Pokemon heals 1/16 of its max HP & has its status cured at the end of each turn if Sandstorm is active.",
 	},
 	sapsipper: {
 		name: "Sap Sipper",
@@ -1772,16 +1768,19 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	snowcloak: {
 		name: "Snow Cloak",
-		desc: "If Snow is active, the accuracy of moves used against this Pokemon is multiplied by 0.8.",
-		shortDesc: "If Snow is active, this Pokemon's evasiveness is 1.25x.",
-		gen8: {
-			desc: "If Hail is active, the accuracy of moves used against this Pokemon is multiplied by 0.8. This Pokemon takes no damage from Hail.",
-			shortDesc: "If Hail is active, this Pokemon's evasiveness is 1.25x; immunity to Hail.",
-		},
+		desc: "This Pokemon has its non-volatile status condition cured and restores 1/16 of its maximum HP, rounded down, at the end of each turn if Hail/Snow Dance is active. This effect is prevented if this Pokemon is holding a Utility Umbrella.",
+		shortDesc: "This Pokemon heals 1/16 of its max HP & has its status cured at the end of each turn if Hail/Snow is active.",
 	},
 	snowwarning: {
 		name: "Snow Warning",
 		shortDesc: "On switch-in, this Pokemon summons Snow.",
+		gen8: {
+			shortDesc: "On switch-in, this Pokemon summons Snow.",
+		},
+	},
+	raininghail: {
+		name: "Raining Hail",
+		shortDesc: "On switch-in, this Pokemon summons Hail.",
 		gen8: {
 			shortDesc: "On switch-in, this Pokemon summons Hail.",
 		},
@@ -1928,7 +1927,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	suctioncups: {
 		name: "Suction Cups",
-		shortDesc: "This Pokemon cannot be forced to switch out by another Pokemon's attack or item.",
+		shortDesc: "This Pokemon cannot be forced to switch, lose its held item, & Pokemon making contact with it have their Speed lowered by 2.",
 
 		block: "  [POKEMON] is anchored in place with its suction cups!",
 	},
@@ -1998,11 +1997,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	synchronize: {
 		name: "Synchronize",
-		desc: "If another Pokemon burns, paralyzes, poisons, or badly poisons this Pokemon, that Pokemon receives the same non-volatile status condition.",
-		shortDesc: "If another Pokemon burns/poisons/paralyzes this Pokemon, it also gets that status.",
-		gen4: {
-			desc: "If another Pokemon burns, paralyzes, or poisons this Pokemon, that Pokemon receives the same non-volatile status condition. If another Pokemon badly poisons this Pokemon, that Pokemon becomes poisoned.",
-		},
+		desc: "If another Pokemon burns, paralyzes, poisons, or badly poisons this Pokemon, that Pokemon receives the same non-volatile status condition. This Pokemon will cure its non-volatile status condition at the end of each turn.",
+		shortDesc: "If another Pokemon burns/poisons/paralyzes this Pokemon, it also gets that status. This Pokemon has its status cured at the end of each turn.",
 	},
 	tabletsofruin: {
 		name: "Tablets of Ruin",
@@ -2016,7 +2012,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	tanglinghair: {
 		name: "Tangling Hair",
-		shortDesc: "Pokemon making contact with this Pokemon have their Speed lowered by 1 stage.",
+		shortDesc: "This Pokemon cannot be forced to switch, lose its held item, & Pokemon making contact with are inflicted with paralysis.",
 	},
 	technician: {
 		name: "Technician",
@@ -2283,7 +2279,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	waterveil: {
 		name: "Water Veil",
-		shortDesc: "This Pokemon cannot be burned. Gaining this Ability while burned cures it.",
+		desc: "This Pokemon's offensive stat *1.5 while using a Water-type attack. If a Pokemon uses a Fire-type attack against this Pokemon, that Pokemon's offensive stat is halved when calculating the damage to this Pokemon. This Pokemon cannot be burned. Gaining this Ability while burned cures it.",
+		shortDesc: "This Pokemon's Water power is 1.5x; it can't be burned; Fire power against it is halved.",
 	},
 	weakarmor: {
 		name: "Weak Armor",

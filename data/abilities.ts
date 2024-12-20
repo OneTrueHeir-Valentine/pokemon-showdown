@@ -382,9 +382,15 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (target === source || move.category === 'Status') return;
 			move.hasAuraBreak = true;
 		},
+		onTryHit(pokemon, target, move) {
+			if (move.flags['bullet'] || move.flags['pulse']) {
+				this.add('-immune', pokemon, '[from] ability: Aura Break');
+				return null;
+			}
+		},
 		flags: {breakable: 1},
 		name: "Aura Break",
-		rating: 1,
+		rating: 3.5,
 		num: 188,
 	},
 	baddreams: {
@@ -599,7 +605,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	chlorophyll: {
 		onModifySpe(spe, pokemon) {
-			if (['sunnyday', 'desolateland'].includes(pokemon.effectiveWeather())) {
+			if (['sundance', 'desolateland'].includes(pokemon.effectiveWeather())) {
 				return this.chainModify(2);
 			}
 		},
@@ -610,7 +616,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	clearbody: {
 		onTryBoost(boost, target, source, effect) {
-			if (source && target === source) return;
+			if (source) return;
 			let showMsg = false;
 			let i: BoostID;
 			for (i in boost) {
@@ -1188,7 +1194,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				if (action.choice === 'runPrimal' && action.pokemon === source && source.species.id === 'groudon') return;
 				if (action.choice !== 'runSwitch' && action.choice !== 'runPrimal') break;
 			}
-			this.field.setWeather('sunnyday');
+			this.field.setWeather('sundance');
 		},
 		flags: {},
 		name: "Drought",
@@ -1214,7 +1220,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (target.hasItem('utilityumbrella')) return;
 			if (effect.id === 'raindance' || effect.id === 'primordialsea') {
 				this.heal(target.baseMaxhp / 8);
-			} else if (effect.id === 'sunnyday' || effect.id === 'desolateland') {
+			} else if (effect.id === 'sundance' || effect.id === 'desolateland') {
 				this.damage(target.baseMaxhp / 16, target, target);
 			}
 		},
@@ -1239,13 +1245,13 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				} else if (r < 42) {
 					source.setStatus('par', target);
 				} else if (r < 60) {
-					source.setStatus('psn', target);
+					source.setStatus('tox', target);
 				}
 			}
 		},
 		flags: {},
 		name: "Effect Spore",
-		rating: 3.5,
+		rating: 4.5,
 		num: 27,
 	},
 	electricsurge: {
@@ -1450,7 +1456,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {},
 		name: "Flame Body",
-		rating: 3.5,
+		rating: 4.5,
 		num: 49,
 	},
 	flareboost: {
@@ -1547,7 +1553,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onWeatherChange(pokemon) {
 			if (!pokemon.isActive || pokemon.baseSpecies.baseSpecies !== 'Cherrim' || pokemon.transformed) return;
 			if (!pokemon.hp) return;
-			if (['sunnyday', 'desolateland'].includes(pokemon.effectiveWeather())) {
+			if (['sundance', 'desolateland'].includes(pokemon.effectiveWeather())) {
 				if (pokemon.species.id !== 'cherrimsunshine') {
 					pokemon.formeChange('Cherrim-Sunshine', this.effect, false, '[msg]');
 				}
@@ -1560,14 +1566,14 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onAllyModifyAtkPriority: 3,
 		onAllyModifyAtk(atk, pokemon) {
 			if (this.effectState.target.baseSpecies.baseSpecies !== 'Cherrim') return;
-			if (['sunnyday', 'desolateland'].includes(pokemon.effectiveWeather())) {
+			if (['sundance', 'desolateland'].includes(pokemon.effectiveWeather())) {
 				return this.chainModify(1.5);
 			}
 		},
 		onAllyModifySpDPriority: 4,
 		onAllyModifySpD(spd, pokemon) {
 			if (this.effectState.target.baseSpecies.baseSpecies !== 'Cherrim') return;
-			if (['sunnyday', 'desolateland'].includes(pokemon.effectiveWeather())) {
+			if (['sundance', 'desolateland'].includes(pokemon.effectiveWeather())) {
 				return this.chainModify(1.5);
 			}
 		},
@@ -1635,7 +1641,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (pokemon.baseSpecies.baseSpecies !== 'Castform' || pokemon.transformed) return;
 			let forme = null;
 			switch (pokemon.effectiveWeather()) {
-			case 'sunnyday':
+			case 'sundance':
 			case 'desolateland':
 				if (pokemon.species.id !== 'castformsunny') forme = 'Castform-Sunny';
 				break;
@@ -1810,6 +1816,11 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 283,
 	},
 	gooey: {
+		onDragOutPriority: 1,
+		onDragOut(pokemon) {
+			this.add('-activate', pokemon, 'ability: Gooey');
+			return null;
+		},
 		onDamagingHit(damage, target, source, move) {
 			if (this.checkMoveMakesContact(move, source, target, true)) {
 				this.add('-ability', target, 'Gooey');
@@ -1823,7 +1834,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.add('-activate', pokemon, 'ability: Gooey');
 				return false;
 			}
-			},
+		},
 		flags: {},
 		name: "Gooey",
 		rating: 4,
@@ -1979,10 +1990,16 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 289,
 	},
 	harvest: {
+		onWeather(target, source, effect) {
+			if (target.hasItem('utilityumbrella')) return;
+			if (effect.id === 'sundance' || effect.id === 'desolateland') {
+				this.heal(target.baseMaxhp / 16);
+			}
+		},
 		onResidualOrder: 28,
 		onResidualSubOrder: 2,
 		onResidual(pokemon) {
-			if (this.field.isWeather(['sunnyday', 'desolateland']) || this.randomChance(1, 2)) {
+			if (this.field.isWeather(['sundance', 'desolateland']) || this.randomChance(1, 1)) {
 				if (pokemon.hp && !pokemon.item && this.dex.items.get(pokemon.lastItem).isBerry) {
 					pokemon.setItem(pokemon.lastItem);
 					pokemon.lastItem = '';
@@ -1992,7 +2009,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {},
 		name: "Harvest",
-		rating: 2.5,
+		rating: 3.5,
 		num: 139,
 	},
 	healer: {
@@ -2110,6 +2127,12 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				pokemon.cureStatus();
 			}
 		},
+		onWeather(target, source, effect) {
+			if (target.hasItem('utilityumbrella')) return;
+			if (effect.id === 'raindance' || effect.id === 'primordialsea') {
+				this.heal(target.baseMaxhp / 16);
+			}
+		},
 		flags: {},
 		name: "Hydration",
 		rating: 1.5,
@@ -2133,7 +2156,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	icebody: {
 		onWeather(target, source, effect) {
 			if (effect.id === 'hail' || effect.id === 'snow') {
-				this.heal(target.baseMaxhp / 16);
+				this.heal(target.baseMaxhp / 8);
 			}
 		},
 		onImmunity(type, pokemon) {
@@ -2141,6 +2164,20 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {},
 		name: "Ice Body",
+		rating: 1,
+		num: 115,
+	},
+	rockbody: {
+		onWeather(target, source, effect) {
+			if (effect.id === 'sandstorm') {
+				this.heal(target.baseMaxhp / 8);
+			}
+		},
+		onImmunity(type, pokemon) {
+			if (type === 'sandstorm') return false;
+		},
+		flags: {},
+		name: "Rock Body",
 		rating: 1,
 		num: 115,
 	},
@@ -2285,9 +2322,24 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 			return false;
 		},
+		onTryHitPriority: 1,
+		onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Poison') {
+				if (!this.boost({atk: 1})) {
+					this.add('-immune', target, '[from] ability: Immunity');
+				}
+				return null;
+			}
+		},
+		onAllyTryHitSide(target, source, move) {
+			if (source === this.effectState.target || !target.isAlly(source)) return;
+			if (move.type === 'Poison') {
+				this.boost({atk: 1}, this.effectState.target);
+			}
+		},
 		flags: {breakable: 1},
 		name: "Immunity",
-		rating: 2,
+		rating: 3.5,
 		num: 17,
 	},
 	imposter: {
@@ -2566,15 +2618,21 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onResidualOrder: 5,
 		onResidualSubOrder: 3,
 		onResidual(pokemon) {
-			if (pokemon.status && ['sunnyday', 'desolateland'].includes(pokemon.effectiveWeather())) {
+			if (pokemon.status && ['sundance', 'desolateland'].includes(pokemon.effectiveWeather())) {
 				this.debug('leafguard');
 				this.add('-activate', pokemon, 'ability: Leaf Guard');
 				pokemon.cureStatus();
 			}
 		},
+		onWeather(target, source, effect) {
+			if (target.hasItem('utilityumbrella')) return;
+			if (effect.id === 'sundance' || effect.id === 'desolateland') {
+				this.heal(target.baseMaxhp / 16);
+			}
+		},
 		flags: {breakable: 1},
 		name: "Leaf Guard",
-		rating: 1.5,
+		rating: 3,
 		num: 102,
 	},
 	levitate: {
@@ -2683,9 +2741,24 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				return 0;
 			}
 		},
+		onModifyTypePriority: -1,
+		onModifyType(move, pokemon) {
+			const noModifyType = [
+				'judgment', 'multiattack', 'naturalgift', 'revelationdance', 'technoblast', 'terrainpulse', 'weatherball',
+			];
+			if (move.type === 'Normal' && !noModifyType.includes(move.id) &&
+				!(move.isZ && move.category !== 'Status') && !(move.name === 'Tera Blast' && pokemon.terastallized)) {
+				move.type = 'Poison';
+				move.typeChangerBoosted = this.effect;
+			}
+		},
+		onBasePowerPriority: 23,
+		onBasePower(basePower, pokemon, target, move) {
+			if (move.typeChangerBoosted === this.effect) return this.chainModify(1.2);
+		},
 		flags: {},
 		name: "Liquid Ooze",
-		rating: 2.5,
+		rating: 4,
 		num: 64,
 	},
 	liquidvoice: {
@@ -2701,6 +2774,22 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			},
 		flags: {},
 		name: "Liquid Voice",
+		rating: 3.5,
+		num: 204,
+	},
+	eerievoice: {
+		onModifyTypePriority: -1,
+		onModifyType(move, pokemon) {
+			if (move.flags['vibration'] && !pokemon.volatiles['dynamax']) { // hardcode
+				move.type = 'Dark';
+			}
+		},
+		onBasePowerPriority: 23,
+		onBasePower(basePower, pokemon, target, move) {
+			if (move.typeChangerBoosted === this.effect) return this.chainModify([5325, 4096]);
+			},
+		flags: {},
+		name: "Eerie Voice",
 		rating: 3.5,
 		num: 204,
 	},
@@ -3177,6 +3266,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			// (once you know a Pokemon has Natural Cure, its cures are always known)
 			if (!pokemon.showCure) pokemon.showCure = undefined;
 		},
+		onSwitchOut(pokemon) {
+			pokemon.heal(pokemon.baseMaxhp / 5);
+		},
 		flags: {},
 		name: "Natural Cure",
 		rating: 2.5,
@@ -3345,7 +3437,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {breakable: 1},
 		name: "Oblivious",
-		rating: 2.5,
+		rating: 3.5,
 		num: 12,
 	},
 	opportunist: {
@@ -3369,15 +3461,15 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	orichalcumpulse: {
 		onStart(pokemon) {
-			if (this.field.setWeather('sunnyday')) {
+			if (this.field.setWeather('sundance')) {
 				this.add('-activate', pokemon, 'Orichalcum Pulse', '[source]');
-			} else if (this.field.isWeather('sunnyday')) {
+			} else if (this.field.isWeather('sundance')) {
 				this.add('-activate', pokemon, 'ability: Orichalcum Pulse');
 			}
 		},
 		onModifyAtkPriority: 5,
 		onModifyAtk(atk, pokemon) {
-			if (['sunnyday', 'desolateland'].includes(pokemon.effectiveWeather())) {
+			if (['sundance', 'desolateland'].includes(pokemon.effectiveWeather())) {
 				this.debug('Orichalcum boost');
 				return this.chainModify([5461, 4096]);
 			}
@@ -3399,7 +3491,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 		onModifySecondaries(secondaries) {
-			this.debug('Shield Dust prevent secondary');
+			this.debug('Overcoat prevent secondary');
 			return secondaries.filter(effect => !!(effect.self || effect.dustproof));
 		},
 		flags: {breakable: 1},
@@ -3458,9 +3550,15 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.add('-fail', target, 'unboost', 'Attack', '[from] ability: Own Tempo', '[of] ' + target);
 			}
 		},
+		onTryBoost(boost, target, source, effect) {
+			if (effect.name === 'Pressure' && boost.atk) {
+				delete boost.atk;
+				this.add('-fail', target, 'unboost', 'Special Attack', '[from] ability: Own Tempo', '[of] ' + target);
+			}
+		},
 		flags: {breakable: 1},
 		name: "Own Tempo",
-		rating: 1.5,
+		rating: 2.5,
 		num: 20,
 	},
 	parentalbond: {
@@ -3848,9 +3946,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		onWeatherChange(pokemon) {
 			// Protosynthesis is not affected by Utility Umbrella
-			if (this.field.isWeather('sunnyday')) {
+			if (this.field.isWeather('sundance')) {
 				pokemon.addVolatile('protosynthesis');
-			} else if (!pokemon.volatiles['protosynthesis']?.fromBooster && this.field.weather !== 'sunnyday') {
+			} else if (!pokemon.volatiles['protosynthesis']?.fromBooster && this.field.weather !== 'sundance') {
 				// Protosynthesis will not deactivite if Sun is suppressed, hence the direct ID check (isWeather respects supression)
 				pokemon.removeVolatile('protosynthesis');
 			}
@@ -4123,12 +4221,36 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onWeather(target, source, effect) {
 			if (target.hasItem('utilityumbrella')) return;
 			if (effect.id === 'raindance' || effect.id === 'primordialsea') {
-				this.heal(target.baseMaxhp / 16);
+				this.heal(target.baseMaxhp / 8);
 			}
 		},
 		flags: {},
 		name: "Rain Dish",
-		rating: 1.5,
+		rating: 3,
+		num: 44,
+	},
+	sunbathe: {
+		onWeather(target, source, effect) {
+			if (target.hasItem('utilityumbrella')) return;
+			if (effect.id === 'sundance' || effect.id === 'desolateland') {
+				this.heal(target.baseMaxhp / 8);
+			}
+		},
+		flags: {},
+		name: "Sun Bathe",
+		rating: 3,
+		num: 44,
+	},
+	photoregeneration: {
+		onWeather(target, source, effect) {
+			if (target.hasItem('utilityumbrella')) return;
+			if (effect.id === 'sundance' || effect.id === 'desolateland') {
+				this.heal(target.baseMaxhp / 8);
+			}
+		},
+		flags: {},
+		name: "Photoregeneration",
+		rating: 3,
 		num: 44,
 	},
 	rattled: {
@@ -4166,12 +4288,12 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onBasePower(basePower, attacker, defender, move) {
 			if (move.recoil || move.hasCrashDamage) {
 				this.debug('Reckless boost');
-				return this.chainModify([5325, 4096]);
+				return this.chainModify(1.3);
 			}
 		},
 		flags: {},
 		name: "Reckless",
-		rating: 3.5,
+		rating: 4,
 		num: 120,
 	},
 	refrigerate: {
@@ -4318,7 +4440,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			pokemon.trapped = pokemon.maybeTrapped = false;
 		},
 		onModifySpePriority: 5,
-		onModifySpe(atk) {
+		onModifySpe(spe) {
 			return this.chainModify(1.5);		},
 		flags: {},
 		name: "Run Away",
@@ -4397,17 +4519,24 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onImmunity(type, pokemon) {
 			if (type === 'sandstorm') return false;
 		},
-		onModifyAccuracyPriority: -1,
-		onModifyAccuracy(accuracy) {
-			if (typeof accuracy !== 'number') return;
-			if (this.field.isWeather('sandstorm')) {
-				this.debug('Sand Veil - decreasing accuracy');
-				return this.chainModify([3277, 4096]);
+		onResidualOrder: 5,
+		onResidualSubOrder: 3,
+		onResidual(pokemon) {
+			if (pokemon.status && ['sandstorm'].includes(pokemon.effectiveWeather())) {
+				this.debug('sandveil');
+				this.add('-activate', pokemon, 'ability: Sand Veil');
+				pokemon.cureStatus();
+			}
+		},
+		onWeather(target, source, effect) {
+			if (target.hasItem('utilityumbrella')) return;
+			if (effect.id === 'sandstorm') {
+				this.heal(target.baseMaxhp / 16);
 			}
 		},
 		flags: {breakable: 1},
 		name: "Sand Veil",
-		rating: 1.5,
+		rating: 3,
 		num: 8,
 	},
 	sapsipper: {
@@ -4630,7 +4759,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onTryHitPriority: 1,
 		onTryHit(target, source, move) {
 			if (move.flags['powder'] && target !== source && this.dex.getImmunity('powder', target)) {
-				this.add('-immune', target, '[from] ability: Overcoat');
+				this.add('-immune', target, '[from] ability: Shield Dust');
 				return null;
 			}
 		},
@@ -4770,16 +4899,22 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 97,
 	},
 	snowcloak: {
-		onImmunity(type, pokemon) {
-			if (type === 'hail') return false;
-		},
-		onModifyAccuracyPriority: -1,
-		onModifyAccuracy(accuracy) {
-			if (typeof accuracy !== 'number') return;
-			if (this.field.isWeather(['hail', 'snow'])) {
-				this.debug('Snow Cloak - decreasing accuracy');
-				return this.chainModify([3277, 4096]);
+		onResidualOrder: 5,
+		onResidualSubOrder: 3,
+		onResidual(pokemon) {
+			if (pokemon.status && ['hail', 'snow'].includes(pokemon.effectiveWeather())) {
+				this.debug('snowcloak');
+				this.add('-activate', pokemon, 'ability: Snow Cloak');
+				pokemon.cureStatus();
 			}
+		},
+		onWeather(target, source, effect) {
+			if (effect.id === 'haildance' || effect.id === 'snowdance') {
+				this.heal(target.baseMaxhp / 16);
+			}
+		},
+		onImmunity(type, pokemon) {
+			if (type === 'haildance') return false;
 		},
 		flags: {breakable: 1},
 		name: "Snow Cloak",
@@ -4788,7 +4923,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	snowwarning: {
 		onStart(source) {
-			this.field.setWeather('snow');
+			this.field.setWeather('snowdance');
 		},
 		flags: {},
 		name: "Snow Warning",
@@ -4797,7 +4932,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	raininghail: {
 		onStart(source) {
-			this.field.setWeather('hail');
+			this.field.setWeather('haildance');
 		},
 		flags: {},
 		name: "Raining Hail",
@@ -4807,13 +4942,13 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	solarpower: {
 		onModifySpAPriority: 5,
 		onModifySpA(spa, pokemon) {
-			if (['sunnyday', 'desolateland'].includes(pokemon.effectiveWeather())) {
+			if (['sundance', 'desolateland'].includes(pokemon.effectiveWeather())) {
 				return this.chainModify(2);
 			}
 		},
 		onWeather(target, source, effect) {
 			if (target.hasItem('utilityumbrella')) return;
-			if (effect.id === 'sunnyday' || effect.id === 'desolateland') {
+			if (effect.id === 'sundance' || effect.id === 'desolateland') {
 				this.damage(target.baseMaxhp / 16, target, target);
 			}
 		},
@@ -5149,6 +5284,20 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			this.add('-activate', pokemon, 'ability: Suction Cups');
 			return null;
 		},
+		onDamagingHit(damage, target, source, move) {
+			if (this.checkMoveMakesContact(move, source, target, true)) {
+				this.add('-ability', target, 'Suction Cups');
+				this.boost({spe: -2}, source, target, null, true);
+			}
+		},
+		onTakeItem(item, pokemon, source) {
+			if (!this.activeMove) throw new Error("Battle.activeMove is null");
+			if (!pokemon.hp || pokemon.item === 'stickybarb') return;
+			if ((source && source !== pokemon) || this.activeMove.id === 'knockoff') {
+				this.add('-activate', pokemon, 'ability: Suction Cups');
+				return false;
+			}
+		},
 		flags: {breakable: 1},
 		name: "Suction Cups",
 		rating: 1,
@@ -5308,6 +5457,15 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			// and show messages when activating against it.
 			source.trySetStatus(status, target, {status: status.id, id: 'synchronize'} as Effect);
 		},
+		onResidualOrder: 5,
+		onResidualSubOrder: 3,
+		onResidual(pokemon) {
+			if (pokemon.hp && pokemon.status && this.randomChance(100, 100)) {
+				this.debug('shed skin');
+				this.add('-activate', pokemon, 'ability: Synchronize');
+				pokemon.cureStatus();
+			}
+		},
 		flags: {},
 		name: "Synchronize",
 		rating: 2,
@@ -5363,9 +5521,23 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	tanglinghair: {
 		onDamagingHit(damage, target, source, move) {
-			if (this.checkMoveMakesContact(move, source, target, true)) {
-				this.add('-ability', target, 'Tangling Hair');
-				this.boost({spe: -2}, source, target, null, true);
+			if (this.checkMoveMakesContact(move, source, target)) {
+				if (this.randomChance(10, 10)) {
+					source.trySetStatus('par', target);
+				}
+			}
+		},
+		onDragOutPriority: 1,
+		onDragOut(pokemon) {
+			this.add('-activate', pokemon, 'ability: Suction Cups');
+			return null;
+		},
+		onTakeItem(item, pokemon, source) {
+			if (!this.activeMove) throw new Error("Battle.activeMove is null");
+			if (!pokemon.hp || pokemon.item === 'stickybarb') return;
+			if ((source && source !== pokemon) || this.activeMove.id === 'knockoff') {
+				this.add('-activate', pokemon, 'ability: Suction Cups');
+				return false;
 			}
 		},
 		flags: {},
@@ -5495,19 +5667,19 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onSourceModifyAtk(atk, attacker, defender, move) {
 			if (move.type === 'Ice' || move.type === 'Fire') {
 				this.debug('Thick Fat weaken');
-				return this.chainModify(0.5);
+				return this.chainModify(0.25);
 			}
 		},
 		onSourceModifySpAPriority: 5,
 		onSourceModifySpA(atk, attacker, defender, move) {
 			if (move.type === 'Ice' || move.type === 'Fire') {
 				this.debug('Thick Fat weaken');
-				return this.chainModify(0.5);
+				return this.chainModify(0.25);
 			}
 		},
 		flags: {breakable: 1},
 		name: "Thick Fat",
-		rating: 3.5,
+		rating: 4,
 		num: 47,
 	},
 	tintedlens: {
@@ -6003,16 +6175,37 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 195,
 	},
 	waterveil: {
+		onSourceModifyAtkPriority: 5,
+		onSourceModifyAtk(atk, attacker, defender, move) {
+			if (move.type === 'Fire') {
+				return this.chainModify(0.5);
+			}
+		},
+		onSourceModifySpAPriority: 5,
+		onSourceModifySpA(atk, attacker, defender, move) {
+			if (move.type === 'Fire') {
+				return this.chainModify(0.5);
+			}
+		},
+		onModifyAtk(atk, attacker, defender, move) {
+			if (move.type === 'Water') {
+				return this.chainModify(1.5);			}
+		},
+		onModifySpA(atk, attacker, defender, move) {
+			if (move.type === 'Water') {
+				return this.chainModify(1.5);
+			}
+		},
 		onUpdate(pokemon) {
 			if (pokemon.status === 'brn') {
-				this.add('-activate', pokemon, 'ability: Water Veil');
+				this.add('-activate', pokemon, 'ability: Water Bubble');
 				pokemon.cureStatus();
 			}
 		},
 		onSetStatus(status, target, source, effect) {
 			if (status.id !== 'brn') return;
 			if ((effect as Move)?.status) {
-				this.add('-immune', target, '[from] ability: Water Veil');
+				this.add('-immune', target, '[from] ability: Water Bubble');
 			}
 			return false;
 		},
