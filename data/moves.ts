@@ -3543,12 +3543,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		zMove: {effect: 'curse'},
 		contestType: "Tough",
 	},
-	hex: {
+	jinx: {
 		num: 174,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
-		name: "Hex",
+		name: "Jinx",
 		pp: 10,
 		priority: 0,
 		flags: {bypasssub: 1, metronome: 1},
@@ -3574,7 +3574,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		condition: {
 			onStart(pokemon, source) {
-				this.add('-start', pokemon, 'Hex', '[of] ' + source);
+				this.add('-start', pokemon, 'Jinx', '[of] ' + source);
 			},
 			onResidualOrder: 12,
 			onResidual(pokemon) {
