@@ -65044,7 +65044,6 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			steelbeam: ["9M", "8T"],
 			stoneedge: ["9M"],
 			substitute: ["9M", "8M", "7M", "6M", "5M"],
-			suckerpunch: ["9E", "8E", "7E", "6E", "5E", "5D"],
 			swagger: ["7M", "6M", "5M"],
 			swordsdance: ["9M", "9L60", "8M", "8L60", "7M", "7L57", "6M", "6L57", "5M", "5L57"],
 			takedown: ["9M"],
