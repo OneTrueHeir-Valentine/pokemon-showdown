@@ -3543,7 +3543,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 		onTryBoost(boost, target, source, effect) {
-			if (effect.name === 'Intimidate' && boost.atk ||) {
+			if (effect.name === 'Intimidate' && boost.atk) {
 				delete boost.atk;
 				this.add('-fail', target, 'unboost', 'Attack', '[from] ability: Own Tempo', '[of] ' + target);
 			}
