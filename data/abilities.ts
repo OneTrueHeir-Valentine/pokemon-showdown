@@ -3253,6 +3253,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 		onSwitchOut(pokemon) {
+			pokemon.heal(pokemon.baseMaxhp / 5);
 			if (!pokemon.status) return;
 
 			// if pokemon.showCure is undefined, it was skipped because its ability
@@ -3265,9 +3266,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			// only reset .showCure if it's false
 			// (once you know a Pokemon has Natural Cure, its cures are always known)
 			if (!pokemon.showCure) pokemon.showCure = undefined;
-		},
-		onSwitchOut(pokemon) {
-			pokemon.heal(pokemon.baseMaxhp / 5);
 		},
 		flags: {},
 		name: "Natural Cure",
@@ -3545,14 +3543,12 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 		onTryBoost(boost, target, source, effect) {
-			if (effect.name === 'Intimidate' && boost.atk) {
+			if (effect.name === 'Intimidate' && boost.atk ||) {
 				delete boost.atk;
 				this.add('-fail', target, 'unboost', 'Attack', '[from] ability: Own Tempo', '[of] ' + target);
 			}
-		},
-		onTryBoost(boost, target, source, effect) {
-			if (effect.name === 'Pressure' && boost.atk) {
-				delete boost.atk;
+			if (effect.name === 'Pressure' && boost.spa) {
+				delete boost.spa;
 				this.add('-fail', target, 'unboost', 'Special Attack', '[from] ability: Own Tempo', '[of] ' + target);
 			}
 		},

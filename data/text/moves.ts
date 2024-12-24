@@ -456,6 +456,13 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 
 		boost: "  [POKEMON] cut its own HP and maximized its Attack!",
 	},
+	migraine: {
+		name: "Migraine",
+		desc: "Raises the user's Special Attack by 12 stages in exchange for the user losing 1/2 of its maximum HP, rounded down. Fails if the user would faint or if its Special Attack stat stage is 6.",
+		shortDesc: "User loses 50% max HP. Maximizes Special Attack.",
+
+		boost: "  [POKEMON] cut its own HP and maximized its Special Attack!",
+	},
 	bestow: {
 		name: "Bestow",
 		desc: "The target receives the user's held item. Fails if the user has no item or is holding a Mail or Z-Crystal, if the target is already holding an item, if the user is a Kyogre holding a Blue Orb, a Groudon holding a Red Orb, a Giratina holding a Griseous Orb, an Arceus holding a Plate, a Genesect holding a Drive, a Silvally holding a Memory, a Pokemon that can Mega Evolve holding the Mega Stone for its species, or if the target is one of those Pokemon and the user is holding the respective item.",

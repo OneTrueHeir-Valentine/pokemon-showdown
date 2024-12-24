@@ -76,7 +76,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {snatch: 1, metronome: 1},
 		boosts: {
-			def: 2,
+			def: 4,
 		},
 		secondary: null,
 		target: "self",
@@ -380,7 +380,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {snatch: 1, metronome: 1},
 		boosts: {
-			spd: 2,
+			spd: 3,
 		},
 		secondary: null,
 		target: "self",
@@ -717,7 +717,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {bypasssub: 1, metronome: 1},
 		boosts: {
-			spd: 1,
+			spd: 2,
 		},
 		secondary: null,
 		target: "adjacentAlly",
@@ -964,15 +964,15 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		flags: {snatch: 1, metronome: 1},
 		sideCondition: 'auroraveil',
 		onTry() {
-			return this.field.isWeather(['hail', 'snow']);
+			return this.field.isWeather(['haildance', 'snowdance']);
 		},
 		condition: {
-			duration: 5,
+			duration: 6,
 			durationCallback(target, source, effect) {
 				if (source?.hasItem('lightclay')) {
-					return 8;
+					return 12;
 				}
-				return 5;
+				return 6;
 			},
 			onAnyModifyDamage(damage, source, target, move) {
 				if (target !== source && this.effectState.target.hasAlly(target)) {
@@ -1383,6 +1383,29 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		zMove: {effect: 'heal'},
 		contestType: "Cute",
 	},
+	migraine: {
+		num: 96,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		isNonstandard: "Past",
+		name: "Migraine",
+		pp: 40,
+		priority: 0,
+		flags: {snatch: 1, metronome: 1},
+		onHit(target) {
+			if (target.hp <= target.maxhp / 2 || target.boosts.spa >= 6 || target.maxhp === 1) { // Shedinja clause
+				return false;
+			}
+			this.directDamage(target.maxhp / 2);
+			this.boost({spa: 12}, target);
+		},
+		secondary: null,
+		target: "self",
+		type: "Psychic",
+		zMove: {effect: 'heal'},
+		contestType: "Beautiful",
+	},
 	bestow: {
 		num: 516,
 		accuracy: true,
@@ -1653,7 +1676,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {protect: 1, mirror: 1, metronome: 1, wind: 1},
 		onModifyMove(move) {
-			if (this.field.isWeather(['hail', 'snow'])) move.accuracy = true;
+			if (this.field.isWeather(['haildance', 'snowdance'])) move.accuracy = true;
 		},
 		secondary: {
 			chance: 10,
@@ -2799,7 +2822,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		flags: {snatch: 1, metronome: 1},
 		boosts: {
 			atk: 1,
-			def: 1,
+			def: 2,
 			accuracy: 1,
 		},
 		secondary: null,
@@ -3136,12 +3159,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		basePower: 0,
 		category: "Status",
 		name: "Cosmic Power",
-		pp: 20,
+		pp: 10,
 		priority: 0,
 		flags: {snatch: 1, metronome: 1},
 		boosts: {
-			def: 1,
-			spd: 1,
+			def: 2,
+			spd: 2,
 		},
 		secondary: null,
 		target: "self",
@@ -3159,7 +3182,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {snatch: 1, metronome: 1},
 		boosts: {
-			def: 3,
+			def: 4,
 		},
 		secondary: null,
 		target: "self",
@@ -3496,7 +3519,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			if (!source.hasType('Ghost')) {
 				delete move.volatileStatus;
 				delete move.onHit;
-				move.self = {boosts: {spe: -1, atk: 1, def: 1}};
+				move.self = {boosts: {spe: -1, atk: 1, def: 2}};
 			} else if (move.volatileStatus && target.volatiles['curse']) {
 				return false;
 			}
@@ -3507,6 +3530,51 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		condition: {
 			onStart(pokemon, source) {
 				this.add('-start', pokemon, 'Curse', '[of] ' + source);
+			},
+			onResidualOrder: 12,
+			onResidual(pokemon) {
+				this.damage(pokemon.baseMaxhp / 4);
+			},
+		},
+		secondary: null,
+		target: "normal",
+		nonGhostTarget: "self",
+		type: "Ghost",
+		zMove: {effect: 'curse'},
+		contestType: "Tough",
+	},
+	hex: {
+		num: 174,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Hex",
+		pp: 10,
+		priority: 0,
+		flags: {bypasssub: 1, metronome: 1},
+		volatileStatus: 'curse',
+		onModifyMove(move, source, target) {
+			if (!source.hasType('Ghost')) {
+				move.target = move.nonGhostTarget as MoveTarget;
+			} else if (source.isAlly(target)) {
+				move.target = 'randomNormal';
+			}
+		},
+		onTryHit(target, source, move) {
+			if (!source.hasType('Ghost')) {
+				delete move.volatileStatus;
+				delete move.onHit;
+				move.self = {boosts: {spe: -1, spa: 1, spd: 2}};
+			} else if (move.volatileStatus && target.volatiles['curse']) {
+				return false;
+			}
+		},
+		onHit(target, source) {
+			this.directDamage(source.maxhp / 2, source, source);
+		},
+		condition: {
+			onStart(pokemon, source) {
+				this.add('-start', pokemon, 'Hex', '[of] ' + source);
 			},
 			onResidualOrder: 12,
 			onResidual(pokemon) {
@@ -3633,8 +3701,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {snatch: 1, metronome: 1},
 		boosts: {
-			def: 1,
-			spd: 1,
+			def: 2,
+			spd: 2,
 		},
 		secondary: null,
 		target: "self",
@@ -3836,7 +3904,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		condition: {
 			duration: 2,
 			onImmunity(type, pokemon) {
-				if (type === 'sandstorm' || type === 'hail') return false;
+				if (type === 'sandstorm' || type === 'haildance') return false;
 			},
 			onInvulnerability(target, source, move) {
 				if (['earthquake', 'magnitude'].includes(move.id)) {
@@ -4011,7 +4079,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		condition: {
 			duration: 2,
 			onImmunity(type, pokemon) {
-				if (type === 'sandstorm' || type === 'hail') return false;
+				if (type === 'sandstorm' || type === 'haildance') return false;
 			},
 			onInvulnerability(target, source, move) {
 				if (['surf', 'whirlpool'].includes(move.id)) {
@@ -8574,11 +8642,11 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		basePower: 0,
 		category: "Status",
 		isNonstandard: "Past",
-		name: "Hail",
+		name: "Hail Dance",
 		pp: 10,
 		priority: 0,
-		flags: {metronome: 1},
-		weather: 'hail',
+		flags: {metronome: 1, dance: 1},
+		weather: 'haildance',
 		secondary: null,
 		target: "all",
 		type: "Ice",
@@ -9478,7 +9546,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {snatch: 1, metronome: 1},
 		boosts: {
-			atk: 1,
+			atk: 2,
 			accuracy: 1,
 		},
 		secondary: null,
@@ -10271,7 +10339,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {snatch: 1, metronome: 1},
 		boosts: {
-			def: 2,
+			def: 3,
 		},
 		secondary: null,
 		target: "self",
@@ -11876,7 +11944,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		self: {
 			onHit(source) {
 				if (!source.volatiles['dynamax']) return;
-				this.field.setWeather('hail');
+				this.field.setWeather('haildance');
 			},
 		},
 		target: "adjacentFoe",
@@ -16079,7 +16147,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {snatch: 1, metronome: 1},
 		boosts: {
-			spe: 2,
+			spe: 3,
 		},
 		secondary: null,
 		target: "self",
@@ -19746,8 +19814,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			case 'raindance':
 			case 'primordialsea':
 			case 'sandstorm':
-			case 'hail':
-			case 'snow':
+			case 'haildance':
+			case 'snowdance':
 				factor = 0.25;
 				break;
 			}
@@ -21798,7 +21866,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				move.type = 'Rock';
 				break;
 			case 'haildance':
-			case 'snow':
+			case 'snowdance':
 				move.type = 'Ice';
 				break;
 			}
@@ -21817,7 +21885,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				move.basePower *= 2;
 				break;
 			case 'haildance':
-			case 'snow':
+			case 'snowdance':
 				move.basePower *= 2;
 				break;
 			}
@@ -22051,7 +22119,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {snatch: 1, metronome: 1},
 		boosts: {
-			def: 1,
+			def: 2,
 		},
 		secondary: null,
 		target: "self",
